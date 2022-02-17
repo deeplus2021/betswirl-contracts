@@ -1,0 +1,84 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="281pt" height="292pt" viewBox="0.00 0.00 281.37 292.00">
+<g id="graph0" class="graph" transform="translate(10.927549371446972,269.55617570376535) scale(0.9125654885434519)" data-name="G">
+
+<polygon fill="#2e3e56" stroke="transparent" points="-4,4 -4,-288 277.37,-288 277.37,4 -4,4" style=""/>
+<g id="clust1" class="cluster" data-name="clusterBetsToken">
+
+<path fill="#445773" stroke="#445773" d="M20,-8C20,-8 253.37,-8 253.37,-8 259.37,-8 265.37,-14 265.37,-20 265.37,-20 265.37,-127 265.37,-127 265.37,-133 259.37,-139 253.37,-139 253.37,-139 20,-139 20,-139 14,-139 8,-133 8,-127 8,-127 8,-20 8,-20 8,-14 14,-8 20,-8" style=""/>
+<text text-anchor="middle" x="136.69" y="-122.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">BetsToken</text>
+</g>
+<g id="clust2" class="cluster" data-name="cluster_01">
+
+<polygon fill="#2e3e56" stroke="black" points="10.52,-147 10.52,-276 257.21,-276 257.21,-147 10.52,-147" style=""/>
+<text text-anchor="middle" x="133.86" y="-259.4" font-family="Times,serif" font-size="14.00" style="">Legend</text>
+</g>
+<!-- BetsToken.&lt;Constructor&gt; -->
+<g id="node1" class="node" pointer-events="visible" data-name="BetsToken.&lt;Constructor&gt;">
+
+<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="83.52" cy="-88" rx="67.54" ry="18" style=""/>
+<text text-anchor="middle" x="83.52" y="-83.8" font-family="Times,serif" font-size="14.00" style="">&lt;Constructor&gt;</text>
+</g>
+<!-- BetsToken._mint -->
+<g id="node3" class="node" pointer-events="visible" data-name="BetsToken._mint">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="222.21" cy="-88" rx="33.65" ry="18" style=""/>
+<text text-anchor="middle" x="222.21" y="-83.8" font-family="Times,serif" font-size="14.00" style="">_mint</text>
+</g>
+<!-- BetsToken.&lt;Constructor&gt;&#45;&gt;BetsToken._mint -->
+<g id="edge1" class="edge" data-name="BetsToken.&lt;Constructor&gt;-&gt;BetsToken._mint">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M151.26,-88C160.42,-88 169.61,-88 178.18,-88" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="178.29,-91.5 188.29,-88 178.29,-84.5 178.29,-91.5" style=""/>
+</g>
+<!-- BetsToken.getOwner -->
+<g id="node2" class="node" pointer-events="visible" data-name="BetsToken.getOwner">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="83.52" cy="-34" rx="49.22" ry="18" style=""/>
+<text text-anchor="middle" x="83.52" y="-29.8" font-family="Times,serif" font-size="14.00" style="">getOwner</text>
+</g>
+<!-- BetsToken.owner -->
+<g id="node4" class="node" pointer-events="visible" data-name="BetsToken.owner">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="222.21" cy="-34" rx="35.33" ry="18" style=""/>
+<text text-anchor="middle" x="222.21" y="-29.8" font-family="Times,serif" font-size="14.00" style="">owner</text>
+</g>
+<!-- BetsToken.getOwner&#45;&gt;BetsToken.owner -->
+<g id="edge2" class="edge" data-name="BetsToken.getOwner-&gt;BetsToken.owner">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M132.71,-34C146.92,-34 162.41,-34 176.4,-34" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="176.75,-37.5 186.75,-34 176.75,-30.5 176.75,-37.5" style=""/>
+</g>
+<!-- key -->
+<g id="node5" class="node" pointer-events="visible" data-name="key">
+
+<polygon fill="#edad56" stroke="transparent" stroke-width="3" points="148.52,-243 18.52,-243 18.52,-155 148.52,-155 148.52,-243" style=""/>
+<text text-anchor="start" x="68.16" y="-224.4" font-family="Times,serif" font-size="14.00" style="">Internal Call</text>
+<text text-anchor="start" x="64.26" y="-204.4" font-family="Times,serif" font-size="14.00" style="">External Call</text>
+<text text-anchor="start" x="41.73" y="-184.4" font-family="Times,serif" font-size="14.00" style="">Defined Contract</text>
+<text text-anchor="start" x="28.12" y="-164.4" font-family="Times,serif" font-size="14.00" style="">Undefined Contract</text>
+</g>
+<!-- key2 -->
+<g id="node6" class="node" pointer-events="visible" data-name="key2">
+
+<polygon fill="#edad56" stroke="transparent" stroke-width="3" points="249.21,-243 195.21,-243 195.21,-155 249.21,-155 249.21,-243" style=""/>
+<text text-anchor="start" x="209.97" y="-224.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<text text-anchor="start" x="209.97" y="-204.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<polygon fill="#445773" stroke="transparent" points="208.21,-179 208.21,-199 236.21,-199 236.21,-179 208.21,-179" style=""/>
+<text text-anchor="start" x="209.97" y="-184.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<polygon fill="none" stroke="#e8726d" points="210.21,-161 210.21,-177 234.21,-177 234.21,-161 210.21,-161" style=""/>
+</g>
+<!-- key&#45;&gt;key2 -->
+<g id="edge3" class="edge" data-name="key-&gt;key2">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M141.52,-229C167.07,-229 175.85,-229 197.2,-229" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="197.21,-232.5 207.21,-229 197.21,-225.5 197.21,-232.5" style=""/>
+</g>
+<!-- key&#45;&gt;key2 -->
+<g id="edge4" class="edge" data-name="key-&gt;key2">
+
+<path fill="none" stroke="white" stroke-width="2" d="M141.52,-209C167.07,-209 175.85,-209 197.2,-209" style=""/>
+<polygon fill="white" stroke="white" stroke-width="2" points="197.21,-212.5 207.21,-209 197.21,-205.5 197.21,-212.5" style=""/>
+</g>
+</g>
+</svg>
