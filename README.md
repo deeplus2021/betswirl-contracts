@@ -2,13 +2,13 @@
 
 ## Contracts
 
-| Name       | Documentation              | Code flow                       | Audit |
-| ---------- | -------------------------- | ------------------------------- | ----- |
-| BETS token | [doc](./docs/BetsToken.md) | [graph](./graphs/BetsToken.svg) | -     |
-| Bank       | [doc](./docs/Bank.md)      | [graph](./graphs/Bank.svg)      | -     |
-| Referral   | [doc](./docs/Referral.md)  | [graph](./graphs/Referral.svg)  | -     |
-| Dice       | [doc](./docs/Dice.md)      | [graph](./graphs/Dice.svg)      | -     |
-| CoinToss   | [doc](./docs/CoinToss.md)  | [graph](./graphs/CoinToss.svg)  | -     |
+| Name       | Source                                   | Documentation              | Code flow                       | Audit |
+| ---------- | ---------------------------------------- | -------------------------- | ------------------------------- | ----- |
+| BETS token | [source](./contracts/BetsToken.sol)      | [doc](./docs/BetsToken.md) | [graph](./graphs/BetsToken.svg) | -     |
+| Bank       | [source](./contracts/bank/Bank.sol)      | [doc](./docs/Bank.md)      | [graph](./graphs/Bank.svg)      | -     |
+| Referral   | [source](./contracts/bank/Referral.sol)  | [doc](./docs/Referral.md)  | [graph](./graphs/Referral.svg)  | -     |
+| Dice       | [source](./contracts/games/Dice.sol)     | [doc](./docs/Dice.md)      | [graph](./graphs/Dice.svg)      | -     |
+| CoinToss   | [source](./contracts/games/CoinToss.sol) | [doc](./docs/CoinToss.md)  | [graph](./graphs/CoinToss.svg)  | -     |
 
 ## Deployments
 
