@@ -2,6 +2,7 @@
 
 pragma solidity ^0.8.10;
 
+import "@openzeppelin/contracts/utils/Address.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Multicall.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
@@ -10,7 +11,7 @@ import "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol";
 import "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol";
 
 import {IBank} from "../bank/IBank.sol";
-import {IReferral} from "../bank/Referral.sol";
+import {IReferral} from "../bank/IReferral.sol";
 
 // import "hardhat/console.sol";
 
@@ -247,7 +248,7 @@ abstract contract Game is Ownable, Pausable, Multicall, VRFConsumerBaseV2 {
         if (!isGasToken) {
             IERC20(token).safeTransferFrom(user, address(this), betAmount);
         } else if (betAmountOverflow != 0) {
-            payable(user).transfer(betAmountOverflow);
+            Address.sendValue(payable(user), betAmountOverflow);
         }
 
         return newBet;
@@ -289,7 +290,8 @@ abstract contract Game is Ownable, Pausable, Multicall, VRFConsumerBaseV2 {
             uint256 profitPayout = profit - profitFee;
             // Transfer the bet amount from the contract
             if (isGasToken) {
-                if (!user.send(betAmountPayout)) {
+                (bool success, ) = user.call{value: betAmountPayout}("");
+                if (!success) {
                     emit BetAmountTransferFail(
                         bet.id,
                         betAmount,
@@ -442,7 +444,7 @@ abstract contract Game is Ownable, Pausable, Multicall, VRFConsumerBaseV2 {
         onlyOwner
     {
         if (token == address(0)) {
-            payable(msg.sender).transfer(amount);
+            Address.sendValue(payable(msg.sender), amount);
         } else {
             IERC20(token).safeTransfer(msg.sender, amount);
         }
@@ -461,7 +463,7 @@ abstract contract Game is Ownable, Pausable, Multicall, VRFConsumerBaseV2 {
         bet.resolved = true;
 
         if (bet.token == address(0)) {
-            bet.user.transfer(bet.amount);
+            Address.sendValue(bet.user, bet.amount);
         } else {
             IERC20(bet.token).safeTransfer(bet.user, bet.amount);
         }

@@ -44,6 +44,23 @@ Role associated to Games smart contracts.
 |---|---|---|
 | _0 | bytes32 | undefined
 
+### SWIRLMASTER_ROLE
+
+```solidity
+function SWIRLMASTER_ROLE() external view returns (bytes32)
+```
+
+Role associated to SwirlMaster smart contract.
+
+
+
+
+#### Returns
+
+| Name | Type | Description |
+|---|---|---|
+| _0 | bytes32 | undefined
+
 ### addToken
 
 ```solidity
@@ -251,6 +268,24 @@ function grantRole(bytes32 role, address account) external nonpayable
 |---|---|---|
 | role | bytes32 | undefined
 | account | address | undefined
+
+### harvestDividends
+
+```solidity
+function harvestDividends() external nonpayable returns (address[], uint256[])
+```
+
+Harvests tokens dividends.
+
+
+
+
+#### Returns
+
+| Name | Type | Description |
+|---|---|---|
+| _0 | address[] | The list of tokens addresses and amount harvested.
+| _1 | uint256[] | undefined
 
 ### hasRole
 
@@ -530,6 +565,23 @@ Team wallet.
 |---|---|---|
 | _0 | address payable | undefined
 
+### tokensCount
+
+```solidity
+function tokensCount() external view returns (uint16)
+```
+
+
+
+
+
+
+#### Returns
+
+| Name | Type | Description |
+|---|---|---|
+| _0 | uint16 | undefined
+
 ### treasury
 
 ```solidity
@@ -656,6 +708,23 @@ Emitted after a token deposit.
 |---|---|---|
 | token `indexed` | address | Address of the token. |
 | amount  | uint256 | The number of token deposited. |
+
+### HarvestDividend
+
+```solidity
+event HarvestDividend(address indexed token, uint256 amount)
+```
+
+Emitted after the token&#39;s dividend allocation is distributed.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| token `indexed` | address | Address of the token. |
+| amount  | uint256 | The number of tokens sent to the SwirlMaster. |
 
 ### HouseEdgeDistribution
 

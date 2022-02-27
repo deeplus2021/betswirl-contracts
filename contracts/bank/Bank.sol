@@ -5,8 +5,9 @@ pragma solidity ^0.8.10;
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+import "@openzeppelin/contracts/utils/Address.sol";
 
-import {IReferral} from "./Referral.sol";
+import {IReferral} from "./IReferral.sol";
 
 // import "hardhat/console.sol";
 
@@ -110,6 +111,9 @@ contract Bank is AccessControl {
     /// @notice Role associated to Games smart contracts.
     bytes32 public constant GAME_ROLE = keccak256("GAME_ROLE");
 
+    /// @notice Role associated to SwirlMaster smart contract.
+    bytes32 public constant SWIRLMASTER_ROLE = keccak256("SWIRLMASTER_ROLE");
+
     /// @notice Maps tokens addresses to token configuration.
     mapping(address => Token) private _tokens;
 
@@ -184,6 +188,11 @@ contract Bank is AccessControl {
         uint256 treasuryAmount,
         uint256 teamAmount
     );
+
+    /// @notice Emitted after the token's dividend allocation is distributed.
+    /// @param token Address of the token.
+    /// @param amount The number of tokens sent to the SwirlMaster.
+    event HarvestDividend(address indexed token, uint256 amount);
 
     /// @notice Emitted after the token's balance overflow management configuration is set.
     /// @param token Address of the token.
@@ -276,7 +285,7 @@ contract Bank is AccessControl {
         uint256 amount
     ) private {
         if (_isGasToken(token)) {
-            user.transfer(amount);
+            Address.sendValue(user, amount);
         } else {
             IERC20(token).safeTransfer(user, amount);
         }
@@ -406,9 +415,8 @@ contract Bank is AccessControl {
     /// Token shouldn't exist yet.
     /// @param token Address of the token.
     function addToken(address token) external onlyRole(DEFAULT_ADMIN_ROLE) {
-        uint16 tokensCount = _tokensCount;
-        if (tokensCount > 0) {
-            for (uint16 i; i < tokensCount; i++) {
+        if (_tokensCount > 0) {
+            for (uint16 i; i < _tokensCount; i++) {
                 if (_tokensList[i] == token) {
                     revert TokenExists(token);
                 }
@@ -536,6 +544,36 @@ contract Bank is AccessControl {
         emit SetBalanceOverflow(token, thresholdRate, toTreasury, toTeam);
     }
 
+    /// @notice Harvests tokens dividends.
+    /// @return The list of tokens addresses and amount harvested.
+    function harvestDividends()
+        external
+        onlyRole(SWIRLMASTER_ROLE)
+        returns (address[] memory, uint256[] memory)
+    {
+        address[] memory tokens = new address[](_tokensCount);
+        uint256[] memory amounts = new uint256[](_tokensCount);
+
+        for (uint16 i; i < _tokensCount; i++) {
+            address tokenAddress = _tokensList[i];
+            Token storage token = _tokens[tokenAddress];
+            uint256 dividendAmount = token.houseEdgeSplit.dividendAmount;
+            if (dividendAmount > 0) {
+                token.houseEdgeSplit.dividendAmount = 0;
+                _safeTransfer(
+                    payable(msg.sender),
+                    tokenAddress,
+                    dividendAmount
+                );
+                emit HarvestDividend(tokenAddress, dividendAmount);
+                tokens[i] = tokenAddress;
+                amounts[i] = dividendAmount;
+            }
+        }
+
+        return (tokens, amounts);
+    }
+
     /// @notice Payouts a winning bet, and allocate the house edge fee.
     /// @param user Address of the gamer.
     /// @param token Address of the token.
@@ -636,9 +674,8 @@ contract Bank is AccessControl {
 
     /// @dev For the front-end
     function getTokens() external view returns (TokenMetadata[] memory) {
-        uint16 tokensCount = _tokensCount;
-        TokenMetadata[] memory tokens = new TokenMetadata[](tokensCount);
-        for (uint16 i; i < tokensCount; i++) {
+        TokenMetadata[] memory tokens = new TokenMetadata[](_tokensCount);
+        for (uint16 i; i < _tokensCount; i++) {
             address tokenAddress = _tokensList[i];
             Token memory token = _tokens[tokenAddress];
             if (_isGasToken(tokenAddress)) {
@@ -692,6 +729,10 @@ contract Bank is AccessControl {
     /// @return Whether the token is enabled for bets.
     function isAllowedToken(address token) external view returns (bool) {
         return _tokens[token].allowed;
+    }
+
+    function tokensCount() external view returns (uint16) {
+        return _tokensCount;
     }
 
     /// @notice Sets the new team wallet.

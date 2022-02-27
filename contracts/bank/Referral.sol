@@ -2,37 +2,12 @@
 
 pragma solidity ^0.8.10;
 
+import "@openzeppelin/contracts/utils/Address.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 
 // import "hardhat/console.sol";
-
-interface IReferral {
-    /// @notice Adds an address as referrer.
-    /// @param user The address of the user.
-    /// @param referrer The address would set as referrer of user.
-    function addReferrer(address user, address referrer) external;
-
-    /// @notice Updates referrer's last active timestamp.
-    /// @param user The address would like to update active time.
-    function updateReferrerActivity(address user) external;
-
-    /// @notice Calculates and allocate referrer(s) credits to uplines.
-    /// @param user Address of the gamer to find referrer(s).
-    /// @param token The token to allocate.
-    /// @param amount The number of tokens allocated for referrer(s).
-    function payReferral(
-        address user,
-        address token,
-        uint256 amount
-    ) external returns (uint256);
-
-    /// @notice Utils function for check whether an address has the referrer.
-    /// @param user The address of the user.
-    /// @return Whether user has a referrer.
-    function hasReferrer(address user) external view returns (bool);
-}
 
 /// @title Multi-level referral program
 /// @author Thundercore, customized by Romuald Hog
@@ -355,7 +330,7 @@ contract Referral is AccessControl, Pausable {
                 _credits[payee][token] = 0;
 
                 if (token == address(0)) {
-                    payee.transfer(credit);
+                    Address.sendValue(payee, credit);
                 } else {
                     IERC20(token).safeTransfer(payee, credit);
                 }
