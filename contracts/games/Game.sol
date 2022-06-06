@@ -332,12 +332,7 @@ abstract contract Game is Ownable, Pausable, Multicall, VRFConsumerBaseV2 {
                 }
             }
             try
-                bank.cashIn{value: isGasToken ? betAmount : 0}(
-                    user,
-                    token,
-                    betAmount,
-                    _getFees(token, betAmount)
-                )
+                bank.cashIn{value: isGasToken ? betAmount : 0}(token, betAmount)
             {} catch Error(string memory reason) {
                 emit BankCashInFail(bet.id, betAmount, reason);
             }
@@ -346,11 +341,11 @@ abstract contract Game is Ownable, Pausable, Multicall, VRFConsumerBaseV2 {
         return payout;
     }
 
-    /// @notice Gets the list of a user unresolved bets.
+    /// @notice Gets the list of the last user bets.
     /// @param user Address of the gamer.
-    /// @param dataLength The amount of unresolved bets to return.
+    /// @param dataLength The amount of bets to return.
     /// @return A list of Bet.
-    function _getLastUserUnresolvedBets(address user, uint256 dataLength)
+    function _getLastUserBets(address user, uint256 dataLength)
         internal
         view
         returns (Bet[] memory)
@@ -362,28 +357,16 @@ abstract contract Game is Ownable, Pausable, Multicall, VRFConsumerBaseV2 {
             dataLength = betsLength;
         }
 
-        uint32 unresolvedBetsCounter;
-        if (betsLength > 0) {
-            for (uint256 i = betsLength; i >= dataLength; i--) {
-                if (bets[userBetsIds[i - 1]].resolved == false) {
-                    unresolvedBetsCounter++;
-                }
-            }
-        }
-        Bet[] memory unresolvedBets = new Bet[](unresolvedBetsCounter);
-        if (unresolvedBetsCounter > 0) {
-            unresolvedBetsCounter = 0;
-            for (uint256 i = betsLength; i >= dataLength; i--) {
-                if (bets[userBetsIds[i - 1]].resolved == false) {
-                    unresolvedBets[unresolvedBetsCounter] = bets[
-                        userBetsIds[i - 1]
-                    ];
-                    unresolvedBetsCounter++;
-                }
+        Bet[] memory userBets = new Bet[](dataLength);
+        if (dataLength > 0) {
+            uint256 userBetsIndex = 0;
+            for (uint256 i = betsLength; i > betsLength - dataLength; i--) {
+                userBets[userBetsIndex] = bets[userBetsIds[i - 1]];
+                userBetsIndex++;
             }
         }
 
-        return unresolvedBets;
+        return userBets;
     }
 
     /// @notice Calculates the amount's fee based on the house edge.

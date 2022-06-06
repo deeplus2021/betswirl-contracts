@@ -53,14 +53,20 @@ contract CoinToss is Game {
 
     /// @notice Initialize the game base contract.
     /// @param bankAddress The address of the bank.
+    /// @param referralProgramAddress The address of the Referral program.
     /// @param chainlinkCoordinatorAddress Address of the Chainlink VRF Coordinator.
-    /// @param numRandomWords How many random words is needed to resolve a game's bet.
     constructor(
         address bankAddress,
         address referralProgramAddress,
-        address chainlinkCoordinatorAddress,
-        uint16 numRandomWords
-    ) Game(bankAddress, referralProgramAddress, chainlinkCoordinatorAddress, numRandomWords) {}
+        address chainlinkCoordinatorAddress
+    )
+        Game(
+            bankAddress,
+            referralProgramAddress,
+            chainlinkCoordinatorAddress,
+            1
+        )
+    {}
 
     /// @notice Sets the game house edge rate for a specific token.
     /// @param token Address of the token.
@@ -124,29 +130,26 @@ contract CoinToss is Game {
         );
     }
 
-    /// @notice Gets the list of a user unresolved bets.
+    /// @notice Gets the list of the last user bets.
     /// @param user Address of the gamer.
-    /// @param dataLength The amount of unresolved bets to return.
+    /// @param dataLength The amount of bets to return.
     /// @return A list of Coin Toss bet.
-    function getLastUserUnresolvedBets(address user, uint256 dataLength)
+    function getLastUserBets(address user, uint256 dataLength)
         external
         view
         returns (CoinTossBet[] memory)
     {
-        Bet[] memory unresolvedBets = _getLastUserUnresolvedBets(
-            user,
-            dataLength
+        Bet[] memory lastBets = _getLastUserBets(user, dataLength);
+        CoinTossBet[] memory lastCoinTossBets = new CoinTossBet[](
+            lastBets.length
         );
-        CoinTossBet[] memory unresolvedCoinTossBets = new CoinTossBet[](
-            unresolvedBets.length
-        );
-        for (uint256 i; i < unresolvedBets.length; i++) {
-            unresolvedCoinTossBets[i] = CoinTossBet(
-                unresolvedBets[i],
-                coinTossBets[unresolvedBets[i].id]
+        for (uint256 i; i < lastBets.length; i++) {
+            lastCoinTossBets[i] = CoinTossBet(
+                lastBets[i],
+                coinTossBets[lastBets[i].id]
             );
         }
-        return unresolvedCoinTossBets;
+        return lastCoinTossBets;
     }
 
     /// @notice Calculates the target payout amount.

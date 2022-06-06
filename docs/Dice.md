@@ -130,13 +130,13 @@ Maps bets IDs to chosen dice number.
 |---|---|---|
 | _0 | uint8 | undefined
 
-### getLastUserUnresolvedBets
+### getLastUserBets
 
 ```solidity
-function getLastUserUnresolvedBets(address user, uint256 dataLength) external view returns (struct Dice.DiceBet[])
+function getLastUserBets(address user, uint256 dataLength) external view returns (struct Dice.DiceBet[])
 ```
 
-Gets the list of a user unresolved bets.
+Gets the list of the last user bets.
 
 
 
@@ -145,7 +145,7 @@ Gets the list of a user unresolved bets.
 | Name | Type | Description |
 |---|---|---|
 | user | address | Address of the gamer.
-| dataLength | uint256 | The amount of unresolved bets to return.
+| dataLength | uint256 | The amount of bets to return.
 
 #### Returns
 
