@@ -6,9 +6,26 @@
 
 The game is played with a 100 sided dice. The game&#39;s goal is to guess whether the lucky number will be above your chosen number.
 
-*The cap is the dice number chosen by the gamer.*
+
 
 ## Methods
+
+### LINK_ETH_feed
+
+```solidity
+function LINK_ETH_feed() external view returns (contract AggregatorV3Interface)
+```
+
+Chainlink price feed.
+
+
+
+
+#### Returns
+
+| Name | Type | Description |
+|---|---|---|
+| _0 | contract AggregatorV3Interface | undefined
 
 ### MAX_CAP
 
@@ -47,7 +64,7 @@ The bank that manage to payout a won bet and collect a loss bet, and to interact
 ### bets
 
 ```solidity
-function bets(uint256) external view returns (bool resolved, address payable user, address token, uint256 id, uint256 amount, uint256 blockNumber)
+function bets(uint256) external view returns (bool resolved, address payable user, address token, uint256 id, uint256 amount, uint256 blockNumber, uint256 payout, uint256 vrfCost)
 ```
 
 Maps bets IDs to Bet information.
@@ -70,6 +87,8 @@ Maps bets IDs to Bet information.
 | id | uint256 | undefined
 | amount | uint256 | undefined
 | blockNumber | uint256 | undefined
+| payout | uint256 | undefined
+| vrfCost | uint256 | undefined
 
 ### chainlinkConfig
 
@@ -94,7 +113,7 @@ Chainlink VRF configuration state.
 ### chainlinkCoordinator
 
 ```solidity
-function chainlinkCoordinator() external view returns (contract VRFCoordinatorV2Interface)
+function chainlinkCoordinator() external view returns (contract IVRFCoordinatorV2)
 ```
 
 Reference to the VRFCoordinatorV2 deployed contract.
@@ -106,15 +125,15 @@ Reference to the VRFCoordinatorV2 deployed contract.
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | contract VRFCoordinatorV2Interface | undefined
+| _0 | contract IVRFCoordinatorV2 | undefined
 
 ### diceBets
 
 ```solidity
-function diceBets(uint256) external view returns (uint8)
+function diceBets(uint256) external view returns (uint8 cap, uint8 rolled)
 ```
 
-Maps bets IDs to chosen dice number.
+Maps bets IDs to chosen and rolled dice numbers.
 
 
 
@@ -128,12 +147,30 @@ Maps bets IDs to chosen dice number.
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | uint8 | undefined
+| cap | uint8 | undefined
+| rolled | uint8 | undefined
+
+### getChainlinkVRFCost
+
+```solidity
+function getChainlinkVRFCost() external view returns (uint256)
+```
+
+Returns the amount of ETH that should be passed to the wager transaction to cover Chainlink VRF fee.
+
+
+
+
+#### Returns
+
+| Name | Type | Description |
+|---|---|---|
+| _0 | uint256 | The bet resolution cost amount.
 
 ### getLastUserBets
 
 ```solidity
-function getLastUserBets(address user, uint256 dataLength) external view returns (struct Dice.DiceBet[])
+function getLastUserBets(address user, uint256 dataLength) external view returns (struct Dice.FullDiceBet[])
 ```
 
 Gets the list of the last user bets.
@@ -151,7 +188,7 @@ Gets the list of the last user bets.
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | Dice.DiceBet[] | A list of Dice bet.
+| _0 | Dice.FullDiceBet[] | A list of Dice bet.
 
 ### getPayout
 
@@ -406,13 +443,47 @@ Sets the minimum bet amount for a specific token.
 | token | address | Address of the token.
 | tokenMinBetAmount | uint256 | Minimum bet amount.
 
-### tokensHouseEdges
+### setTokenPartner
 
 ```solidity
-function tokensHouseEdges(address) external view returns (uint16)
+function setTokenPartner(address token, address partner) external nonpayable
 ```
 
-Maps tokens addresses to house edge rate.
+Changes the token&#39;s partner address.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| token | address | Address of the token.
+| partner | address | Address of the partner.
+
+### setTokenVRFSubId
+
+```solidity
+function setTokenVRFSubId(address token, uint64 subId) external nonpayable
+```
+
+Sets the Chainlink VRF subscription ID for a specific token.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| token | address | Address of the token.
+| subId | uint64 | Subscription ID.
+
+### tokens
+
+```solidity
+function tokens(address) external view returns (uint16 houseEdge, uint64 VRFSubId, address partner, uint256 minBetAmount, uint256 VRFFees)
+```
+
+Maps tokens addresses to token configuration.
 
 
 
@@ -426,29 +497,11 @@ Maps tokens addresses to house edge rate.
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | uint16 | undefined
-
-### tokensMinBetAmount
-
-```solidity
-function tokensMinBetAmount(address) external view returns (uint256)
-```
-
-Maps tokens addresses to minimum bet amount.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| _0 | address | undefined
-
-#### Returns
-
-| Name | Type | Description |
-|---|---|---|
-| _0 | uint256 | undefined
+| houseEdge | uint16 | undefined
+| VRFSubId | uint64 | undefined
+| partner | address | undefined
+| minBetAmount | uint256 | undefined
+| VRFFees | uint256 | undefined
 
 ### tokensMinCap
 
@@ -506,6 +559,22 @@ Creates a new bet and stores the chosen dice number.
 | token | address | Address of the token.
 | tokenAmount | uint256 | The number of tokens bet.
 | referrer | address | Address of the referrer.
+
+### withdrawTokensVRFFees
+
+```solidity
+function withdrawTokensVRFFees(address token) external nonpayable
+```
+
+Distributes the token&#39;s collected Chainlink fees.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| token | address | Address of the token.
 
 
 
@@ -583,6 +652,24 @@ Emitted after the bet amount transfer to the user failed.
 | amount  | uint256 | undefined |
 | reason  | string | undefined |
 
+### BetCostRefundFail
+
+```solidity
+event BetCostRefundFail(uint256 id, address user, uint256 chainlinkVRFCost)
+```
+
+Emitted after the bet resolution cost refund to user failed.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| id  | uint256 | undefined |
+| user  | address | undefined |
+| chainlinkVRFCost  | uint256 | undefined |
+
 ### BetProfitTransferFail
 
 ```solidity
@@ -617,6 +704,23 @@ Emitted after the bet amount is transfered to the user.
 |---|---|---|
 | id  | uint256 | undefined |
 | user  | address | undefined |
+| amount  | uint256 | undefined |
+
+### DistributeTokenVRFFees
+
+```solidity
+event DistributeTokenVRFFees(address indexed token, uint256 amount)
+```
+
+Emitted after the token&#39;s VRF fees amount is transfered to the user.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| token `indexed` | address | undefined |
 | amount  | uint256 | undefined |
 
 ### OwnershipTransferred
@@ -776,6 +880,40 @@ Emitted after the minimum bet amount is set for a token.
 | token `indexed` | address | undefined |
 | minBetAmount  | uint256 | undefined |
 
+### SetTokenPartner
+
+```solidity
+event SetTokenPartner(address indexed token, address partner)
+```
+
+Emitted after a token partner is set.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| token `indexed` | address | undefined |
+| partner  | address | undefined |
+
+### SetTokenVRFSubId
+
+```solidity
+event SetTokenVRFSubId(address indexed token, uint64 subId)
+```
+
+Emitted after the token&#39;s VRF subscription ID is set.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| token `indexed` | address | undefined |
+| subId  | uint64 | undefined |
+
 ### Unpaused
 
 ```solidity
@@ -795,6 +933,17 @@ event Unpaused(address account)
 
 
 ## Errors
+
+### AccessDenied
+
+```solidity
+error AccessDenied()
+```
+
+Reverting error when sender isn&#39;t allowed.
+
+
+
 
 ### CapNotInRange
 
@@ -845,6 +994,22 @@ Token is not allowed.
 | Name | Type | Description |
 |---|---|---|
 | token | address | Bet&#39;s token address. |
+
+### InvalidLinkWeiPrice
+
+```solidity
+error InvalidLinkWeiPrice(int256 linkWei)
+```
+
+Chainlink price feed not working
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| linkWei | int256 | LINK/ETH price returned. |
 
 ### NotFulfilled
 
@@ -911,5 +1076,16 @@ Insufficient bet amount.
 |---|---|---|
 | token | address | Bet&#39;s token address. |
 | value | uint256 | Bet amount. |
+
+### WrongGasValueToCoverFee
+
+```solidity
+error WrongGasValueToCoverFee()
+```
+
+The msg.value is not enough to cover Chainlink&#39;s fee.
+
+
+
 
 

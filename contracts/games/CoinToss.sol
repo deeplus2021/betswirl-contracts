@@ -8,18 +8,26 @@ import {Game} from "./Game.sol";
 /// @notice The game is played with a two-sided coin. The game's goal is to guess whether the lucky coin face will be Heads or Tails.
 /// @author Romuald Hog (based on Yakitori's Coin Toss)
 contract CoinToss is Game {
-    /// @notice Coin Toss bet information struct.
+    /// @notice Full coin toss bet information struct.
     /// @param bet The Bet struct information.
-    /// @param face The chosen coin face.
+    /// @param diceBet The Coin Toss bet struct information.
     /// @dev Used to package bet information for the front-end.
-    struct CoinTossBet {
+    struct FullCoinTossBet {
         Bet bet;
-        bool face;
+        CoinTossBet coinTossBet;
     }
 
-    /// @notice Maps bets IDs to chosen coin face.
+    /// @notice Coin Toss bet information struct.
+    /// @param face The chosen coin face.
+    /// @param rolled The rolled coin face.
+    struct CoinTossBet {
+        bool face;
+        bool rolled;
+    }
+
+    /// @notice Maps bets IDs to chosen and rolled coin faces.
     /// @dev Coin faces: true = Tails, false = Heads.
-    mapping(uint256 => bool) public coinTossBets;
+    mapping(uint256 => CoinTossBet) public coinTossBets;
 
     /// @notice Emitted after a bet is placed.
     /// @param id The bet ID.
@@ -55,16 +63,19 @@ contract CoinToss is Game {
     /// @param bankAddress The address of the bank.
     /// @param referralProgramAddress The address of the Referral program.
     /// @param chainlinkCoordinatorAddress Address of the Chainlink VRF Coordinator.
+    /// @param LINK_ETH_feedAddress Address of the Chainlink LINK/ETH price feed.
     constructor(
         address bankAddress,
         address referralProgramAddress,
-        address chainlinkCoordinatorAddress
+        address chainlinkCoordinatorAddress,
+        address LINK_ETH_feedAddress
     )
         Game(
             bankAddress,
             referralProgramAddress,
             chainlinkCoordinatorAddress,
-            1
+            1,
+            LINK_ETH_feedAddress
         )
     {}
 
@@ -93,7 +104,7 @@ contract CoinToss is Game {
             referrer
         );
 
-        coinTossBets[bet.id] = face;
+        coinTossBets[bet.id].face = face;
 
         emit PlaceBet(bet.id, bet.user, bet.token, face);
     }
@@ -106,16 +117,17 @@ contract CoinToss is Game {
         internal
         override
     {
-        bool face = coinTossBets[id];
+        CoinTossBet storage coinTossBet = coinTossBets[id];
         Bet storage bet = bets[id];
 
         uint256 rolled = randomWords[0] % 2;
 
         bool[2] memory coinSides = [false, true];
         bool rolledCoinSide = coinSides[rolled];
+        coinTossBet.rolled = rolledCoinSide;
         uint256 payout = _resolveBet(
             bet,
-            rolledCoinSide == face,
+            rolledCoinSide == coinTossBet.face,
             getPayout(bet.amount)
         );
 
@@ -124,7 +136,7 @@ contract CoinToss is Game {
             bet.user,
             bet.token,
             bet.amount,
-            face,
+            coinTossBet.face,
             rolledCoinSide,
             payout
         );
@@ -137,14 +149,14 @@ contract CoinToss is Game {
     function getLastUserBets(address user, uint256 dataLength)
         external
         view
-        returns (CoinTossBet[] memory)
+        returns (FullCoinTossBet[] memory)
     {
         Bet[] memory lastBets = _getLastUserBets(user, dataLength);
-        CoinTossBet[] memory lastCoinTossBets = new CoinTossBet[](
+        FullCoinTossBet[] memory lastCoinTossBets = new FullCoinTossBet[](
             lastBets.length
         );
         for (uint256 i; i < lastBets.length; i++) {
-            lastCoinTossBets[i] = CoinTossBet(
+            lastCoinTossBets[i] = FullCoinTossBet(
                 lastBets[i],
                 coinTossBets[lastBets[i].id]
             );

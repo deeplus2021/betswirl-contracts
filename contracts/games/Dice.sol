@@ -7,19 +7,26 @@ import {Game} from "./Game.sol";
 /// @title BetSwirl's Dice game
 /// @notice The game is played with a 100 sided dice. The game's goal is to guess whether the lucky number will be above your chosen number.
 /// @author Romuald Hog (based on Yakitori's Dice)
-/// @dev The cap is the dice number chosen by the gamer.
 contract Dice is Game {
-    /// @notice Dice bet information struct.
+    /// @notice Full dice bet information struct.
     /// @param bet The Bet struct information.
-    /// @param face The chosen dice number.
+    /// @param diceBet The Dice bet struct information.
     /// @dev Used to package bet information for the front-end.
-    struct DiceBet {
+    struct FullDiceBet {
         Bet bet;
-        uint8 cap;
+        DiceBet diceBet;
     }
 
-    /// @notice Maps bets IDs to chosen dice number.
-    mapping(uint256 => uint8) public diceBets;
+    /// @notice Dice bet information struct.
+    /// @param cap The chosen dice number.
+    /// @param rolled The rolled dice number.
+    struct DiceBet {
+        uint8 cap;
+        uint8 rolled;
+    }
+
+    /// @notice Maps bets IDs to chosen and rolled dice numbers.
+    mapping(uint256 => DiceBet) public diceBets;
 
     /// @notice Maximum dice number that a gamer can choose.
     /// @dev Dice cap 99 gives 1% chance.
@@ -74,16 +81,19 @@ contract Dice is Game {
     /// @param bankAddress The address of the bank.
     /// @param referralProgramAddress The address of the Referral program.
     /// @param chainlinkCoordinatorAddress Address of the Chainlink VRF Coordinator.
+    /// @param LINK_ETH_feedAddress Address of the Chainlink LINK/ETH price feed.
     constructor(
         address bankAddress,
         address referralProgramAddress,
-        address chainlinkCoordinatorAddress
+        address chainlinkCoordinatorAddress,
+        address LINK_ETH_feedAddress
     )
         Game(
             bankAddress,
             referralProgramAddress,
             chainlinkCoordinatorAddress,
-            1
+            1,
+            LINK_ETH_feedAddress
         )
     {}
 
@@ -134,7 +144,7 @@ contract Dice is Game {
             getPayout(10000, cap),
             referrer
         );
-        diceBets[bet.id] = cap;
+        diceBets[bet.id].cap = cap;
 
         emit PlaceBet(bet.id, bet.user, bet.token, cap);
     }
@@ -147,15 +157,15 @@ contract Dice is Game {
         internal
         override
     {
-        uint8 cap = diceBets[id];
+        DiceBet storage diceBet = diceBets[id];
         Bet storage bet = bets[id];
 
-        uint256 rolled = (randomWords[0] % 100) + 1;
-
+        uint8 rolled = uint8((randomWords[0] % 100) + 1);
+        diceBet.rolled = rolled;
         uint256 payout = _resolveBet(
             bet,
-            rolled > cap,
-            getPayout(bet.amount, cap)
+            rolled > diceBet.cap,
+            getPayout(bet.amount, diceBet.cap)
         );
 
         emit Roll(
@@ -163,8 +173,8 @@ contract Dice is Game {
             bet.user,
             bet.token,
             bet.amount,
-            cap,
-            uint8(rolled),
+            diceBet.cap,
+            rolled,
             payout
         );
     }
@@ -176,12 +186,15 @@ contract Dice is Game {
     function getLastUserBets(address user, uint256 dataLength)
         external
         view
-        returns (DiceBet[] memory)
+        returns (FullDiceBet[] memory)
     {
         Bet[] memory lastBets = _getLastUserBets(user, dataLength);
-        DiceBet[] memory lastDiceBets = new DiceBet[](lastBets.length);
+        FullDiceBet[] memory lastDiceBets = new FullDiceBet[](lastBets.length);
         for (uint256 i; i < lastBets.length; i++) {
-            lastDiceBets[i] = DiceBet(lastBets[i], diceBets[lastBets[i].id]);
+            lastDiceBets[i] = FullDiceBet(
+                lastBets[i],
+                diceBets[lastBets[i].id]
+            );
         }
         return lastDiceBets;
     }
