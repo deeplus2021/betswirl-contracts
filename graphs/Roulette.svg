@@ -1,0 +1,156 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="446pt" height="508pt" viewBox="0.00 0.00 446.28 508.00">
+<g id="graph0" class="graph" transform="translate(39.703891275386894,426.3055720021629) scale(0.8705505632961235)" data-name="G">
+
+<polygon fill="#2e3e56" stroke="transparent" points="-4,4 -4,-504 442.28,-504 442.28,4 -4,4" style=""/>
+<g id="clust1" class="cluster" data-name="clusterRoulette">
+
+<path fill="#445773" stroke="#445773" d="M20,-8C20,-8 418.28,-8 418.28,-8 424.28,-8 430.28,-14 430.28,-20 430.28,-20 430.28,-343 430.28,-343 430.28,-349 424.28,-355 418.28,-355 418.28,-355 20,-355 20,-355 14,-355 8,-349 8,-343 8,-343 8,-20 8,-20 8,-14 14,-8 20,-8" style=""/>
+<text text-anchor="middle" x="219.14" y="-338.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">Roulette</text>
+</g>
+<g id="clust2" class="cluster" data-name="cluster_01">
+
+<polygon fill="#2e3e56" stroke="black" points="34.5,-363 34.5,-492 363.64,-492 363.64,-363 34.5,-363" style=""/>
+<text text-anchor="middle" x="199.07" y="-475.4" font-family="Times,serif" font-size="14.00" style="">Legend</text>
+</g>
+<!-- Roulette.&lt;Constructor&gt; -->
+<g id="node1" class="node" pointer-events="visible" data-name="Roulette.&lt;Constructor&gt;">
+
+<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="107.5" cy="-304" rx="67.55" ry="18" style=""/>
+<text text-anchor="middle" x="107.5" y="-299.8" font-family="Times,serif" font-size="14.00" style="">&lt;Constructor&gt;</text>
+</g>
+<!-- Roulette.setHouseEdge -->
+<g id="node2" class="node" pointer-events="visible" data-name="Roulette.setHouseEdge">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="107.5" cy="-250" rx="66.06" ry="18" style=""/>
+<text text-anchor="middle" x="107.5" y="-245.8" font-family="Times,serif" font-size="14.00" style="">setHouseEdge</text>
+</g>
+<!-- Roulette._setHouseEdge -->
+<g id="node7" class="node" pointer-events="visible" data-name="Roulette._setHouseEdge">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="328.64" cy="-304" rx="71.22" ry="18" style=""/>
+<text text-anchor="middle" x="328.64" y="-299.8" font-family="Times,serif" font-size="14.00" style="">_setHouseEdge</text>
+</g>
+<!-- Roulette.setHouseEdge&#45;&gt;Roulette._setHouseEdge -->
+<g id="edge1" class="edge" data-name="Roulette.setHouseEdge-&gt;Roulette._setHouseEdge">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M157.13,-261.98C189.5,-269.96 232.26,-280.5 266.86,-289.02" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="266.31,-292.49 276.85,-291.49 267.98,-285.7 266.31,-292.49" style=""/>
+</g>
+<!-- Roulette.wager -->
+<g id="node3" class="node" pointer-events="visible" data-name="Roulette.wager">
+
+<ellipse fill="#ffbdb9" stroke="brown" stroke-width="3" cx="107.5" cy="-196" rx="34.75" ry="18" style=""/>
+<text text-anchor="middle" x="107.5" y="-191.8" font-family="Times,serif" font-size="14.00" style="">wager</text>
+</g>
+<!-- Roulette.getPayout -->
+<g id="node6" class="node" pointer-events="visible" data-name="Roulette.getPayout">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="328.64" cy="-142" rx="49.82" ry="18" style=""/>
+<text text-anchor="middle" x="328.64" y="-137.8" font-family="Times,serif" font-size="14.00" style="">getPayout</text>
+</g>
+<!-- Roulette.wager&#45;&gt;Roulette.getPayout -->
+<g id="edge4" class="edge" data-name="Roulette.wager-&gt;Roulette.getPayout">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M139.43,-188.38C175.26,-179.55 234.79,-164.88 277.3,-154.4" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="278.31,-157.76 287.18,-151.97 276.63,-150.96 278.31,-157.76" style=""/>
+</g>
+<!-- Roulette.NumbersNotInRange -->
+<g id="node8" class="node" pointer-events="visible" data-name="Roulette.NumbersNotInRange">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="328.64" cy="-196" rx="93.78" ry="18" style=""/>
+<text text-anchor="middle" x="328.64" y="-191.8" font-family="Times,serif" font-size="14.00" style="">NumbersNotInRange</text>
+</g>
+<!-- Roulette.wager&#45;&gt;Roulette.NumbersNotInRange -->
+<g id="edge2" class="edge" data-name="Roulette.wager-&gt;Roulette.NumbersNotInRange">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M142.26,-196C164.48,-196 194.86,-196 224.59,-196" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="224.64,-199.5 234.64,-196 224.64,-192.5 224.64,-199.5" style=""/>
+</g>
+<!-- Roulette._newBet -->
+<g id="node9" class="node" pointer-events="visible" data-name="Roulette._newBet">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="328.64" cy="-250" rx="45.23" ry="18" style=""/>
+<text text-anchor="middle" x="328.64" y="-245.8" font-family="Times,serif" font-size="14.00" style="">_newBet</text>
+</g>
+<!-- Roulette.wager&#45;&gt;Roulette._newBet -->
+<g id="edge3" class="edge" data-name="Roulette.wager-&gt;Roulette._newBet">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M139.43,-203.62C175.91,-212.61 236.97,-227.66 279.62,-238.17" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="278.95,-241.61 289.5,-240.6 280.63,-234.81 278.95,-241.61" style=""/>
+</g>
+<!-- Roulette.fulfillRandomWords -->
+<g id="node4" class="node" pointer-events="visible" data-name="Roulette.fulfillRandomWords">
+
+<ellipse fill="#f2c383" stroke="#f2c383" stroke-width="3" cx="107.5" cy="-115" rx="91.5" ry="18" style=""/>
+<text text-anchor="middle" x="107.5" y="-110.8" font-family="Times,serif" font-size="14.00" style="">fulfillRandomWords</text>
+</g>
+<!-- Roulette.fulfillRandomWords&#45;&gt;Roulette.getPayout -->
+<g id="edge6" class="edge" data-name="Roulette.fulfillRandomWords-&gt;Roulette.getPayout">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M185.45,-124.48C213.76,-127.97 245.26,-131.85 271.4,-135.07" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="271.16,-138.57 281.51,-136.32 272.02,-131.62 271.16,-138.57" style=""/>
+</g>
+<!-- Roulette._resolveBet -->
+<g id="node10" class="node" pointer-events="visible" data-name="Roulette._resolveBet">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="328.64" cy="-88" rx="57.32" ry="18" style=""/>
+<text text-anchor="middle" x="328.64" y="-83.8" font-family="Times,serif" font-size="14.00" style="">_resolveBet</text>
+</g>
+<!-- Roulette.fulfillRandomWords&#45;&gt;Roulette._resolveBet -->
+<g id="edge5" class="edge" data-name="Roulette.fulfillRandomWords-&gt;Roulette._resolveBet">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M185.45,-105.52C211.46,-102.31 240.18,-98.78 264.95,-95.72" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="265.45,-99.19 274.95,-94.49 264.59,-92.24 265.45,-99.19" style=""/>
+</g>
+<!-- Roulette.getLastUserBets -->
+<g id="node5" class="node" pointer-events="visible" data-name="Roulette.getLastUserBets">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="107.5" cy="-34" rx="74.73" ry="18" style=""/>
+<text text-anchor="middle" x="107.5" y="-29.8" font-family="Times,serif" font-size="14.00" style="">getLastUserBets</text>
+</g>
+<!-- Roulette._getLastUserBets -->
+<g id="node11" class="node" pointer-events="visible" data-name="Roulette._getLastUserBets">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="328.64" cy="-34" rx="79.88" ry="18" style=""/>
+<text text-anchor="middle" x="328.64" y="-29.8" font-family="Times,serif" font-size="14.00" style="">_getLastUserBets</text>
+</g>
+<!-- Roulette.getLastUserBets&#45;&gt;Roulette._getLastUserBets -->
+<g id="edge7" class="edge" data-name="Roulette.getLastUserBets-&gt;Roulette._getLastUserBets">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M182.38,-34C200.5,-34 220.08,-34 238.81,-34" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="238.82,-37.5 248.82,-34 238.82,-30.5 238.82,-37.5" style=""/>
+</g>
+<!-- key -->
+<g id="node12" class="node" pointer-events="visible" data-name="key">
+
+<polygon fill="#edad56" stroke="transparent" stroke-width="3" points="172.5,-459 42.5,-459 42.5,-371 172.5,-371 172.5,-459" style=""/>
+<text text-anchor="start" x="92.14" y="-440.4" font-family="Times,serif" font-size="14.00" style="">Internal Call</text>
+<text text-anchor="start" x="88.25" y="-420.4" font-family="Times,serif" font-size="14.00" style="">External Call</text>
+<text text-anchor="start" x="65.7" y="-400.4" font-family="Times,serif" font-size="14.00" style="">Defined Contract</text>
+<text text-anchor="start" x="52.1" y="-380.4" font-family="Times,serif" font-size="14.00" style="">Undefined Contract</text>
+</g>
+<!-- key2 -->
+<g id="node13" class="node" pointer-events="visible" data-name="key2">
+
+<polygon fill="#edad56" stroke="transparent" stroke-width="3" points="355.64,-459 301.64,-459 301.64,-371 355.64,-371 355.64,-459" style=""/>
+<text text-anchor="start" x="318.64" y="-440.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<text text-anchor="start" x="318.64" y="-420.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<polygon fill="#445773" stroke="transparent" points="316.64,-395 316.64,-415 341.64,-415 341.64,-395 316.64,-395" style=""/>
+<text text-anchor="start" x="318.64" y="-400.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<polygon fill="none" stroke="#e8726d" points="318.64,-377 318.64,-393 339.64,-393 339.64,-377 318.64,-377" style=""/>
+</g>
+<!-- key&#45;&gt;key2 -->
+<g id="edge8" class="edge" data-name="key-&gt;key2">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M165.5,-445C228.71,-445 247.01,-445 305.48,-445" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="305.64,-448.5 315.64,-445 305.64,-441.5 305.64,-448.5" style=""/>
+</g>
+<!-- key&#45;&gt;key2 -->
+<g id="edge9" class="edge" data-name="key-&gt;key2">
+
+<path fill="none" stroke="white" stroke-width="2" d="M165.5,-425C228.71,-425 247.01,-425 305.48,-425" style=""/>
+<polygon fill="white" stroke="white" stroke-width="2" points="305.64,-428.5 315.64,-425 305.64,-421.5 305.64,-428.5" style=""/>
+</g>
+</g>
+</svg>

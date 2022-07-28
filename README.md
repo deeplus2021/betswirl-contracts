@@ -9,6 +9,7 @@
 | Referral   | [source](./contracts/bank/Referral.sol)  | [doc](./docs/Referral.md)  | [graph](./graphs/Referral.svg)  | [RD Auditors](./audits/BetSwirl-Referral_Smart_Contract_Security_Report.pdf) |
 | Dice v3      | [source](./contracts/games/Dice.sol)     | [doc](./docs/Dice.md)      | [graph](./graphs/Dice.svg)      | [RD Auditors (deprecated)](./audits/BetSwirl-Dice_Smart_Contract_Security_Report_03.03.22.pdf)     |
 | CoinToss v3  | [source](./contracts/games/CoinToss.sol) | [doc](./docs/CoinToss.md)  | [graph](./graphs/CoinToss.svg)  | [RD Auditors (deprecated)](./audits/BetSwirl-CoinToss_Smart_Contract_Security_Report_03.03.22.pdf) |
+| Roulette v1  | [source](./contracts/games/Roulette.sol) | [doc](./docs/Roulette.md)  | [graph](./graphs/Roulette.svg)  | Not yet |
 
 ## Deployments
 
