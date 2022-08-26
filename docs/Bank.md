@@ -4,7 +4,7 @@
 
 > BetSwirl&#39;s Bank
 
-The Bank contract holds the casino&#39;s funds, whitelist the games betting tokens, define the max bet amount based on a risk, payout the bet profit to user and collect the loss bet amount from the game&#39;s contract, split and allocate the house edge taken from each bet (won or loss), manage the tokens balance overflow to dynamically send overflowed tokens to the treasury and team. The admin role is transfered to a Timelock that execute administrative tasks, only the Games could payout the bet profit from the bank, and send the loss bet amount to the bank.
+The Bank contract holds the casino&#39;s funds, whitelist the games betting tokens, define the max bet amount based on a risk, payout the bet profit to user and collect the loss bet amount from the game&#39;s contract, split and allocate the house edge taken from each bet (won or loss). The admin role is transfered to a Timelock that execute administrative tasks, only the Games could payout the bet profit from the bank, and send the loss bet amount to the bank.
 
 *All rates are in basis point.*
 
@@ -123,7 +123,7 @@ Runs by Chainlink Keepers at every block to determine if `performUpkeep` should 
 function deposit(address token, uint256 amount) external payable
 ```
 
-Deposit funds in the bank to allow gamers to win more. It is also setting the new balance reference, used to manage the bank overflow. ERC20 token allowance should be given prior to deposit.
+Deposit funds in the bank to allow gamers to win more. ERC20 token allowance should be given prior to deposit.
 
 
 
@@ -197,6 +197,28 @@ Calculates the max bet amount based on the token balance, the balance risk, and 
 |---|---|---|
 | _0 | uint256 | Maximum bet amount for the token.
 
+### getMinBetAmount
+
+```solidity
+function getMinBetAmount(address token) external view returns (uint256 minBetAmount)
+```
+
+Gets the token&#39;s min bet amount.
+
+*The min bet amount should be at least 10000 cause of the `getMaxBetAmount` calculation.*
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| token | address | Address of the token.
+
+#### Returns
+
+| Name | Type | Description |
+|---|---|---|
+| minBetAmount | uint256 | Min bet amount.
+
 ### getRoleAdmin
 
 ```solidity
@@ -219,6 +241,73 @@ function getRoleAdmin(bytes32 role) external view returns (bytes32)
 |---|---|---|
 | _0 | bytes32 | undefined
 
+### getRoleMember
+
+```solidity
+function getRoleMember(bytes32 role, uint256 index) external view returns (address)
+```
+
+
+
+*Returns one of the accounts that have `role`. `index` must be a value between 0 and {getRoleMemberCount}, non-inclusive. Role bearers are not sorted in any particular way, and their ordering may change at any point. WARNING: When using {getRoleMember} and {getRoleMemberCount}, make sure you perform all queries on the same block. See the following https://forum.openzeppelin.com/t/iterating-over-elements-on-enumerableset-in-openzeppelin-contracts/2296[forum post] for more information.*
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| role | bytes32 | undefined
+| index | uint256 | undefined
+
+#### Returns
+
+| Name | Type | Description |
+|---|---|---|
+| _0 | address | undefined
+
+### getRoleMemberCount
+
+```solidity
+function getRoleMemberCount(bytes32 role) external view returns (uint256)
+```
+
+
+
+*Returns the number of accounts that have `role`. Can be used together with {getRoleMember} to enumerate all bearers of a role.*
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| role | bytes32 | undefined
+
+#### Returns
+
+| Name | Type | Description |
+|---|---|---|
+| _0 | uint256 | undefined
+
+### getTokenOwner
+
+```solidity
+function getTokenOwner(address token) external view returns (address)
+```
+
+Gets the token&#39;s owner.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| token | address | Address of the token.
+
+#### Returns
+
+| Name | Type | Description |
+|---|---|---|
+| _0 | address | Address of the owner.
+
 ### getTokens
 
 ```solidity
@@ -236,6 +325,28 @@ function getTokens() external view returns (struct Bank.TokenMetadata[])
 |---|---|---|
 | _0 | Bank.TokenMetadata[] | undefined
 
+### getVRFSubId
+
+```solidity
+function getVRFSubId(address token) external view returns (uint64)
+```
+
+Gets the token&#39;s Chainlink VRF v2 Subscription ID.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| token | address | Address of the token.
+
+#### Returns
+
+| Name | Type | Description |
+|---|---|---|
+| _0 | uint64 | Chainlink VRF v2 Subscription ID.
+
 ### grantRole
 
 ```solidity
@@ -244,7 +355,7 @@ function grantRole(bytes32 role, address account) external nonpayable
 
 
 
-*Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``&#39;s admin role.*
+*Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``&#39;s admin role. May emit a {RoleGranted} event.*
 
 #### Parameters
 
@@ -297,7 +408,7 @@ function hasRole(bytes32 role, address account) external view returns (bool)
 ### isAllowedToken
 
 ```solidity
-function isAllowedToken(address token) external view returns (bool)
+function isAllowedToken(address tokenAddress) external view returns (bool)
 ```
 
 Gets the token&#39;s allow status used on the games smart contracts.
@@ -308,7 +419,7 @@ Gets the token&#39;s allow status used on the games smart contracts.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
+| tokenAddress | address | Address of the token.
 
 #### Returns
 
@@ -316,38 +427,27 @@ Gets the token&#39;s allow status used on the games smart contracts.
 |---|---|---|
 | _0 | bool | Whether the token is enabled for bets.
 
-### keeperRegistry
+### multicall
 
 ```solidity
-function keeperRegistry() external view returns (address)
+function multicall(bytes[] data) external nonpayable returns (bytes[] results)
 ```
 
-Chainlink Keeper Registry address.
 
 
-
-
-#### Returns
-
-| Name | Type | Description |
-|---|---|---|
-| _0 | address | undefined
-
-### manageBalanceOverflow
-
-```solidity
-function manageBalanceOverflow(address tokenAddress) external nonpayable
-```
-
-Manages the balance overflow.When the bank overflow threshold amount is reached on a token balance, the bank sends a percentage to the treasury and team, and the new token&#39;s balance reference is set.
-
-
+*Receives and executes a batch of function calls on this contract.*
 
 #### Parameters
 
 | Name | Type | Description |
 |---|---|---|
-| tokenAddress | address | Address of the token.
+| data | bytes[] | undefined
+
+#### Returns
+
+| Name | Type | Description |
+|---|---|---|
+| results | bytes[] | undefined
 
 ### payout
 
@@ -384,23 +484,6 @@ Executed by Chainlink Keepers when `upkeepNeeded` is true.
 |---|---|---|
 | performData | bytes | Data which was passed back from `checkUpkeep`.
 
-### referralProgram
-
-```solidity
-function referralProgram() external view returns (contract IReferral)
-```
-
-Referral program contract.
-
-
-
-
-#### Returns
-
-| Name | Type | Description |
-|---|---|---|
-| _0 | contract IReferral | undefined
-
 ### renounceRole
 
 ```solidity
@@ -409,7 +492,7 @@ function renounceRole(bytes32 role, address account) external nonpayable
 
 
 
-*Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function&#39;s purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`.*
+*Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function&#39;s purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event.*
 
 #### Parameters
 
@@ -426,7 +509,7 @@ function revokeRole(bytes32 role, address account) external nonpayable
 
 
 
-*Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``&#39;s admin role.*
+*Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``&#39;s admin role. May emit a {RoleRevoked} event.*
 
 #### Parameters
 
@@ -441,7 +524,7 @@ function revokeRole(bytes32 role, address account) external nonpayable
 function setAllowedToken(address token, bool allowed) external nonpayable
 ```
 
-Changes the token&#39;s bet permission on an already added token.
+Changes the token&#39;s bet permission.
 
 
 
@@ -451,25 +534,6 @@ Changes the token&#39;s bet permission on an already added token.
 |---|---|---|
 | token | address | Address of the token.
 | allowed | bool | Whether the token is enabled for bets.
-
-### setBalanceOverflow
-
-```solidity
-function setBalanceOverflow(address token, uint16 thresholdRate, uint16 toTreasury, uint16 toTeam) external nonpayable
-```
-
-Sets the token&#39;s balance overflow management configuration. The threshold shouldn&#39;t exceed 100% to be able to calculate the overflowed amount. The treasury and team rates sum shouldn&#39;t exceed 100% to allow the bank balance to grow organically.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| token | address | Address of the token.
-| thresholdRate | uint16 | Threshold rate for the token&#39;s balance reference.
-| toTreasury | uint16 | Rate to be allocated to the treasury.
-| toTeam | uint16 | Rate to be allocated to the team.
 
 ### setBalanceRisk
 
@@ -491,39 +555,23 @@ Sets the new token balance risk.
 ### setHouseEdgeSplit
 
 ```solidity
-function setHouseEdgeSplit(address token, uint16 dividend, uint16 referral, uint16 partner, uint16 _treasury, uint16 team) external nonpayable
+function setHouseEdgeSplit(address token, uint16 bank, uint16 dividend, uint16 partner, uint16 _treasury, uint16 team) external nonpayable
 ```
 
 Sets the token&#39;s house edge allocations for bet payout.
 
-*`dividend`, `referral`, `_treasury` and `team` rates sum must equals 10000.*
+*`bank`, `dividend`, `_treasury` and `team` rates sum must equals 10000.*
 
 #### Parameters
 
 | Name | Type | Description |
 |---|---|---|
 | token | address | Address of the token.
+| bank | uint16 | Rate to be allocated to the bank, on bet payout.
 | dividend | uint16 | Rate to be allocated as staking rewards, on bet payout.
-| referral | uint16 | Rate to be allocated to the referrers, on bet payout.
-| partner | uint16 | undefined
+| partner | uint16 | Rate to be allocated to the partner, on bet payout.
 | _treasury | uint16 | Rate to be allocated to the treasury, on bet payout.
 | team | uint16 | Rate to be allocated to the team, on bet payout.
-
-### setKeeperRegistry
-
-```solidity
-function setKeeperRegistry(address keeperRegistryAddress) external nonpayable
-```
-
-Sets the keeper registry address
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| keeperRegistryAddress | address | Chainlink Keeper Registry.
 
 ### setMinPartnerTransferAmount
 
@@ -542,13 +590,13 @@ Changes the token&#39;s Upkeep min transfer amount.
 | token | address | Address of the token.
 | minPartnerTransferAmount | uint256 | Minimum amount of token to allow transfer.
 
-### setReferralProgram
+### setPausedToken
 
 ```solidity
-function setReferralProgram(contract IReferral _referralProgram) external nonpayable
+function setPausedToken(address token, bool paused) external nonpayable
 ```
 
-Sets the new referral program.
+Changes the token&#39;s paused status.
 
 
 
@@ -556,12 +604,13 @@ Sets the new referral program.
 
 | Name | Type | Description |
 |---|---|---|
-| _referralProgram | contract IReferral | The referral program address.
+| token | address | Address of the token.
+| paused | bool | Whether the token is paused.
 
 ### setTeamWallet
 
 ```solidity
-function setTeamWallet(address payable _teamWallet) external nonpayable
+function setTeamWallet(address _teamWallet) external nonpayable
 ```
 
 Sets the new team wallet.
@@ -572,7 +621,24 @@ Sets the new team wallet.
 
 | Name | Type | Description |
 |---|---|---|
-| _teamWallet | address payable | The team wallet address.
+| _teamWallet | address | The team wallet address.
+
+### setTokenMinBetAmount
+
+```solidity
+function setTokenMinBetAmount(address token, uint256 tokenMinBetAmount) external nonpayable
+```
+
+Sets the minimum bet amount for a specific token.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| token | address | Address of the token.
+| tokenMinBetAmount | uint256 | Minimum bet amount.
 
 ### setTokenPartner
 
@@ -580,7 +646,7 @@ Sets the new team wallet.
 function setTokenPartner(address token, address partner) external nonpayable
 ```
 
-Changes the token&#39;s partner address.
+Changes the token&#39;s partner address. It withdraw the available balance, the partner allocation, and the games&#39; VRF fees.
 
 
 
@@ -590,6 +656,23 @@ Changes the token&#39;s partner address.
 |---|---|---|
 | token | address | Address of the token.
 | partner | address | Address of the partner.
+
+### setTokenVRFSubId
+
+```solidity
+function setTokenVRFSubId(address token, uint64 subId) external nonpayable
+```
+
+Sets the Chainlink VRF subscription ID for a specific token.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| token | address | Address of the token.
+| subId | uint64 | Subscription ID.
 
 ### supportsInterface
 
@@ -616,7 +699,7 @@ function supportsInterface(bytes4 interfaceId) external view returns (bool)
 ### teamWallet
 
 ```solidity
-function teamWallet() external view returns (address payable)
+function teamWallet() external view returns (address)
 ```
 
 Team wallet.
@@ -628,12 +711,12 @@ Team wallet.
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | address payable | undefined
+| _0 | address | undefined
 
 ### tokens
 
 ```solidity
-function tokens(address) external view returns (bool allowed, uint16 balanceRisk, address partner, struct Bank.HouseEdgeSplit houseEdgeSplit, uint256 balanceReference, struct Bank.BalanceOverflow balanceOverflow)
+function tokens(address) external view returns (bool allowed, bool paused, uint16 balanceRisk, uint64 VRFSubId, address partner, uint256 minBetAmount, uint256 minPartnerTransferAmount, struct Bank.HouseEdgeSplit houseEdgeSplit)
 ```
 
 Maps tokens addresses to token configuration.
@@ -651,55 +734,18 @@ Maps tokens addresses to token configuration.
 | Name | Type | Description |
 |---|---|---|
 | allowed | bool | undefined
+| paused | bool | undefined
 | balanceRisk | uint16 | undefined
+| VRFSubId | uint64 | undefined
 | partner | address | undefined
+| minBetAmount | uint256 | undefined
+| minPartnerTransferAmount | uint256 | undefined
 | houseEdgeSplit | Bank.HouseEdgeSplit | undefined
-| balanceReference | uint256 | undefined
-| balanceOverflow | Bank.BalanceOverflow | undefined
-
-### tokensCount
-
-```solidity
-function tokensCount() external view returns (uint16)
-```
-
-Number of tokens added.
-
-
-
-
-#### Returns
-
-| Name | Type | Description |
-|---|---|---|
-| _0 | uint16 | undefined
-
-### tokensList
-
-```solidity
-function tokensList(uint16) external view returns (address)
-```
-
-Maps tokens indexes to token address.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| _0 | uint16 | undefined
-
-#### Returns
-
-| Name | Type | Description |
-|---|---|---|
-| _0 | address | undefined
 
 ### treasury
 
 ```solidity
-function treasury() external view returns (address payable)
+function treasury() external view returns (address)
 ```
 
 Treasury multi-sig wallet.
@@ -711,7 +757,7 @@ Treasury multi-sig wallet.
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | address payable | undefined
+| _0 | address | undefined
 
 ### withdraw
 
@@ -719,7 +765,7 @@ Treasury multi-sig wallet.
 function withdraw(address token, uint256 amount) external nonpayable
 ```
 
-Withdraw funds from the bank to migrate. It is also setting the new balance reference, used to manage the bank overflow.
+Withdraw funds from the bank. Token has to be paused and no pending bet resolution on games.
 
 
 
@@ -762,22 +808,6 @@ Distributes the token&#39;s partner amount.
 |---|---|---|
 | tokenAddress | address | Address of the token.
 
-### withdrawReferralAmount
-
-```solidity
-function withdrawReferralAmount(address tokenAddress) external nonpayable
-```
-
-Distributes the token&#39;s referral amount.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| tokenAddress | address | Address of the token.
-
 
 
 ## Events
@@ -801,7 +831,7 @@ Emitted after a token is added.
 ### AllocateHouseEdgeAmount
 
 ```solidity
-event AllocateHouseEdgeAmount(address indexed token, uint256 dividend, uint256 referral, uint256 partner, uint256 treasury, uint256 team)
+event AllocateHouseEdgeAmount(address indexed token, uint256 bank, uint256 dividend, uint256 partner, uint256 treasury, uint256 team)
 ```
 
 Emitted after the token&#39;s house edge is allocated.
@@ -813,29 +843,11 @@ Emitted after the token&#39;s house edge is allocated.
 | Name | Type | Description |
 |---|---|---|
 | token `indexed` | address | Address of the token. |
+| bank  | uint256 | The number of tokens allocated to bank. |
 | dividend  | uint256 | The number of tokens allocated as staking rewards. |
-| referral  | uint256 | The number of tokens allocated to the referrers. |
 | partner  | uint256 | The number of tokens allocated to the partner. |
 | treasury  | uint256 | The number of tokens allocated to the treasury. |
 | team  | uint256 | The number of tokens allocated to the team. |
-
-### BankOverflowTransfer
-
-```solidity
-event BankOverflowTransfer(address indexed token, uint256 amountToTreasury, uint256 amountToTeam)
-```
-
-Emitted after the token&#39;s bank overflow amount is distributed to the treasury and team.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| token `indexed` | address | Address of the token. |
-| amountToTreasury  | uint256 | The number of tokens sent to the treasury. |
-| amountToTeam  | uint256 | The number of tokens sent to the team. |
 
 ### CashIn
 
@@ -871,24 +883,6 @@ Emitted after a token deposit.
 |---|---|---|
 | token `indexed` | address | Address of the token. |
 | amount  | uint256 | The number of token deposited. |
-
-### DistributeReferralAmount
-
-```solidity
-event DistributeReferralAmount(address indexed token, address referralProgram, uint256 referralAmount)
-```
-
-Emitted after the token&#39;s referral allocation is distributed.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| token `indexed` | address | Address of the token. |
-| referralProgram  | address | The address of the Referral Program contract. |
-| referralAmount  | uint256 | The number of tokens sent. |
 
 ### HarvestDividend
 
@@ -1031,42 +1025,6 @@ Emitted after a token is allowed.
 | token `indexed` | address | Address of the token. |
 | allowed  | bool | Whether the token is allowed for betting. |
 
-### SetBalanceOverflow
-
-```solidity
-event SetBalanceOverflow(address indexed token, uint16 thresholdRate, uint16 toTreasury, uint16 toTeam)
-```
-
-Emitted after the token&#39;s balance overflow management configuration is set.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| token `indexed` | address | Address of the token. |
-| thresholdRate  | uint16 | Threshold rate for the token&#39;s balance reference. |
-| toTreasury  | uint16 | Rate to be allocated to the treasury. |
-| toTeam  | uint16 | Rate to be allocated to the team. |
-
-### SetBalanceReference
-
-```solidity
-event SetBalanceReference(address indexed token, uint256 balanceReference)
-```
-
-Emitted after the token&#39;s balance reference is set. This happends on deposit, withdraw and when the bank overflow threashold is reached.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| token `indexed` | address | Address of the token. |
-| balanceReference  | uint256 | New balance reference used to determine the bank overflow. |
-
 ### SetBalanceRisk
 
 ```solidity
@@ -1083,22 +1041,6 @@ Emitted after the balance risk is set.
 |---|---|---|
 | token `indexed` | address | undefined |
 | balanceRisk  | uint16 | Rate defining the balance risk. |
-
-### SetKeeperRegistry
-
-```solidity
-event SetKeeperRegistry(address keeperRegistry)
-```
-
-Emitted after the Chainlink Keeper Registry is set.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| keeperRegistry  | address | Address of the Keeper Registry. |
 
 ### SetMinPartnerTransferAmount
 
@@ -1117,13 +1059,13 @@ Emitted after the Upkeep minimum transfer amount is set.
 | token `indexed` | address | Address of the token. |
 | minPartnerTransferAmount  | uint256 | Minimum amount of token to allow transfer. |
 
-### SetReferralProgram
+### SetPausedToken
 
 ```solidity
-event SetReferralProgram(address referralProgram)
+event SetPausedToken(address indexed token, bool paused)
 ```
 
-Emitted after the referral program is set.
+Emitted after a token is paused.
 
 
 
@@ -1131,7 +1073,8 @@ Emitted after the referral program is set.
 
 | Name | Type | Description |
 |---|---|---|
-| referralProgram  | address | The referral program address. |
+| token `indexed` | address | Address of the token. |
+| paused  | bool | Whether the token is paused for betting. |
 
 ### SetTeamWallet
 
@@ -1152,7 +1095,7 @@ Emitted after the team wallet is set.
 ### SetTokenHouseEdgeSplit
 
 ```solidity
-event SetTokenHouseEdgeSplit(address indexed token, uint16 dividend, uint16 referral, uint16 partner, uint16 treasury, uint16 team)
+event SetTokenHouseEdgeSplit(address indexed token, uint16 bank, uint16 dividend, uint16 partner, uint16 treasury, uint16 team)
 ```
 
 Emitted after the token&#39;s house edge allocations for bet payout is set.
@@ -1164,11 +1107,28 @@ Emitted after the token&#39;s house edge allocations for bet payout is set.
 | Name | Type | Description |
 |---|---|---|
 | token `indexed` | address | Address of the token. |
+| bank  | uint16 | Rate to be allocated to the bank, on bet payout. |
 | dividend  | uint16 | Rate to be allocated as staking rewards, on bet payout. |
-| referral  | uint16 | Rate to be allocated to the referrers, on bet payout. |
 | partner  | uint16 | Rate to be allocated to the partner, on bet payout. |
 | treasury  | uint16 | Rate to be allocated to the treasury, on bet payout. |
 | team  | uint16 | Rate to be allocated to the team, on bet payout. |
+
+### SetTokenMinBetAmount
+
+```solidity
+event SetTokenMinBetAmount(address indexed token, uint256 minBetAmount)
+```
+
+Emitted after the minimum bet amount is set for a token.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| token `indexed` | address | Address of the token. |
+| minBetAmount  | uint256 | Minimum bet amount. |
 
 ### SetTokenPartner
 
@@ -1186,6 +1146,23 @@ Emitted after a token partner is set.
 |---|---|---|
 | token `indexed` | address | Address of the token. |
 | partner  | address | Address of the partner. |
+
+### SetTokenVRFSubId
+
+```solidity
+event SetTokenVRFSubId(address indexed token, uint64 subId)
+```
+
+Emitted after the token&#39;s VRF subscription ID is set.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| token `indexed` | address | Address of the token. |
+| subId  | uint64 | Subscription ID. |
 
 ### Withdraw
 
@@ -1222,18 +1199,35 @@ Reverting error when sender isn&#39;t allowed.
 ### TokenExists
 
 ```solidity
-error TokenExists(address token)
+error TokenExists()
 ```
 
 Reverting error when trying to add an existing token.
 
 
 
-#### Parameters
 
-| Name | Type | Description |
-|---|---|---|
-| token | address | Address of the token. |
+### TokenHasPendingBets
+
+```solidity
+error TokenHasPendingBets()
+```
+
+Reverting error when token has pending bets on a game.
+
+
+
+
+### TokenNotPaused
+
+```solidity
+error TokenNotPaused()
+```
+
+Reverting error when withdrawing a non paused token.
+
+
+
 
 ### WrongAddress
 
@@ -1241,18 +1235,7 @@ Reverting error when trying to add an existing token.
 error WrongAddress()
 ```
 
-Reverting error when referral program or team wallet is the zero address.
-
-
-
-
-### WrongBalanceOverflow
-
-```solidity
-error WrongBalanceOverflow()
-```
-
-Reverting error when setting wrong balance overflow management configuration.
+Reverting error when team wallet or treasury is the zero address.
 
 
 

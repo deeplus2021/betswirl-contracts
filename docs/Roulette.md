@@ -10,30 +10,13 @@
 
 ## Methods
 
-### LINK_ETH_feed
-
-```solidity
-function LINK_ETH_feed() external view returns (contract AggregatorV3Interface)
-```
-
-Chainlink price feed.
-
-
-
-
-#### Returns
-
-| Name | Type | Description |
-|---|---|---|
-| _0 | contract AggregatorV3Interface | undefined
-
 ### bank
 
 ```solidity
 function bank() external view returns (contract IBank)
 ```
 
-The bank that manage to payout a won bet and collect a loss bet, and to interact with Referral program.
+The bank that manage to payout a won bet and collect a loss bet.
 
 
 
@@ -73,53 +56,21 @@ Maps bets IDs to Bet information.
 | payout | uint256 | undefined
 | vrfCost | uint256 | undefined
 
-### chainlinkConfig
-
-```solidity
-function chainlinkConfig() external view returns (uint64 subId, uint32 callbackGasLimit, uint16 requestConfirmations, bytes32 keyHash)
-```
-
-Chainlink VRF configuration state.
-
-
-
-
-#### Returns
-
-| Name | Type | Description |
-|---|---|---|
-| subId | uint64 | undefined
-| callbackGasLimit | uint32 | undefined
-| requestConfirmations | uint16 | undefined
-| keyHash | bytes32 | undefined
-
-### chainlinkCoordinator
-
-```solidity
-function chainlinkCoordinator() external view returns (contract IVRFCoordinatorV2)
-```
-
-Reference to the VRFCoordinatorV2 deployed contract.
-
-
-
-
-#### Returns
-
-| Name | Type | Description |
-|---|---|---|
-| _0 | contract IVRFCoordinatorV2 | undefined
-
 ### getChainlinkVRFCost
 
 ```solidity
-function getChainlinkVRFCost() external view returns (uint256)
+function getChainlinkVRFCost(address token) external view returns (uint256)
 ```
 
 Returns the amount of ETH that should be passed to the wager transaction to cover Chainlink VRF fee.
 
 
 
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| token | address | undefined
 
 #### Returns
 
@@ -150,13 +101,13 @@ Gets the list of the last user bets.
 |---|---|---|
 | _0 | Roulette.FullRouletteBet[] | A list of Dice bet.
 
-### getPayout
+### hasPendingBets
 
 ```solidity
-function getPayout(uint256 betAmount, uint40 numbers) external pure returns (uint256)
+function hasPendingBets(address token) external view returns (bool)
 ```
 
-Calculates the target payout amount.
+Returns whether the token has pending bets.
 
 
 
@@ -164,14 +115,13 @@ Calculates the target payout amount.
 
 | Name | Type | Description |
 |---|---|---|
-| betAmount | uint256 | Bet amount.
-| numbers | uint40 | The chosen numbers.
+| token | address | undefined
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | uint256 | The target payout amount.
+| _0 | bool | Whether the token has pending bets.
 
 ### multicall
 
@@ -257,23 +207,6 @@ function rawFulfillRandomWords(uint256 requestId, uint256[] randomWords) externa
 | requestId | uint256 | undefined
 | randomWords | uint256[] | undefined
 
-### referralProgram
-
-```solidity
-function referralProgram() external view returns (contract IReferral)
-```
-
-Referral program contract.
-
-
-
-
-#### Returns
-
-| Name | Type | Description |
-|---|---|---|
-| _0 | contract IReferral | undefined
-
 ### refundBet
 
 ```solidity
@@ -343,7 +276,7 @@ Sets the Bank contract.
 ### setChainlinkConfig
 
 ```solidity
-function setChainlinkConfig(uint64 subId, uint32 callbackGasLimit, uint16 requestConfirmations, bytes32 keyHash) external nonpayable
+function setChainlinkConfig(uint16 requestConfirmations, bytes32 keyHash) external nonpayable
 ```
 
 Sets the Chainlink VRF V2 configuration.
@@ -354,68 +287,33 @@ Sets the Chainlink VRF V2 configuration.
 
 | Name | Type | Description |
 |---|---|---|
-| subId | uint64 | Subscription ID.
-| callbackGasLimit | uint32 | How much gas you would like in your callback to do work with the random words provided.
 | requestConfirmations | uint16 | How many confirmations the Chainlink node should wait before responding.
 | keyHash | bytes32 | Hash of the public key used to verify the VRF proof.
 
 ### setHouseEdge
 
 ```solidity
-function setHouseEdge(address token, uint16 _houseEdge) external nonpayable
+function setHouseEdge(address token, uint16 houseEdge) external nonpayable
 ```
 
 Sets the game house edge rate for a specific token.
 
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| token | address | Address of the token.
-| _houseEdge | uint16 | House edge rate.
-
-### setReferralProgram
-
-```solidity
-function setReferralProgram(contract IReferral _referralProgram) external nonpayable
-```
-
-Sets the new referral program.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| _referralProgram | contract IReferral | The referral program address.
-
-### setTokenMinBetAmount
-
-```solidity
-function setTokenMinBetAmount(address token, uint256 tokenMinBetAmount) external nonpayable
-```
-
-Sets the minimum bet amount for a specific token.
-
-
+*The house edge rate couldn&#39;t exceed 4%.*
 
 #### Parameters
 
 | Name | Type | Description |
 |---|---|---|
 | token | address | Address of the token.
-| tokenMinBetAmount | uint256 | Minimum bet amount.
+| houseEdge | uint16 | House edge rate.
 
-### setTokenPartner
+### setVRFCallbackGasLimit
 
 ```solidity
-function setTokenPartner(address token, address partner) external nonpayable
+function setVRFCallbackGasLimit(address token, uint32 callbackGasLimit) external nonpayable
 ```
 
-Changes the token&#39;s partner address.
+Sets the Chainlink VRF V2 configuration.
 
 
 
@@ -423,30 +321,13 @@ Changes the token&#39;s partner address.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
-| partner | address | Address of the partner.
-
-### setTokenVRFSubId
-
-```solidity
-function setTokenVRFSubId(address token, uint64 subId) external nonpayable
-```
-
-Sets the Chainlink VRF subscription ID for a specific token.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| token | address | Address of the token.
-| subId | uint64 | Subscription ID.
+| token | address | undefined
+| callbackGasLimit | uint32 | How much gas is needed in the Chainlink VRF callback.
 
 ### tokens
 
 ```solidity
-function tokens(address) external view returns (uint16 houseEdge, uint64 VRFSubId, address partner, uint256 minBetAmount, uint256 VRFFees)
+function tokens(address) external view returns (uint16 houseEdge, uint64 pendingCount, uint32 VRFCallbackGasLimit, uint256 VRFFees)
 ```
 
 Maps tokens addresses to token configuration.
@@ -464,9 +345,8 @@ Maps tokens addresses to token configuration.
 | Name | Type | Description |
 |---|---|---|
 | houseEdge | uint16 | undefined
-| VRFSubId | uint64 | undefined
-| partner | address | undefined
-| minBetAmount | uint256 | undefined
+| pendingCount | uint64 | undefined
+| VRFCallbackGasLimit | uint32 | undefined
 | VRFFees | uint256 | undefined
 
 ### transferOwnership
@@ -488,7 +368,7 @@ function transferOwnership(address newOwner) external nonpayable
 ### wager
 
 ```solidity
-function wager(uint40 numbers, address token, uint256 tokenAmount, address referrer) external payable
+function wager(uint40 numbers, address token, uint256 tokenAmount) external payable
 ```
 
 Creates a new bet and stores the chosen bet mask.
@@ -502,7 +382,6 @@ Creates a new bet and stores the chosen bet mask.
 | numbers | uint40 | The chosen numbers.
 | token | address | Address of the token.
 | tokenAmount | uint256 | The number of tokens bet.
-| referrer | address | Address of the referrer.
 
 ### withdrawTokensVRFFees
 
@@ -757,6 +636,23 @@ Emitted after the bank is set.
 |---|---|---|
 | bank  | address | undefined |
 
+### SetChainlinkConfig
+
+```solidity
+event SetChainlinkConfig(uint16 requestConfirmations, bytes32 keyHash)
+```
+
+Emitted after the Chainlink config is set.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| requestConfirmations  | uint16 | undefined |
+| keyHash  | bytes32 | undefined |
+
 ### SetHouseEdge
 
 ```solidity
@@ -774,29 +670,13 @@ Emitted after the house edge is set for a token.
 | token `indexed` | address | undefined |
 | houseEdge  | uint16 | undefined |
 
-### SetReferralProgram
+### SetVRFCallbackGasLimit
 
 ```solidity
-event SetReferralProgram(address referralProgram)
+event SetVRFCallbackGasLimit(address indexed token, uint32 callbackGasLimit)
 ```
 
-Emitted after the referral program is set.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| referralProgram  | address | undefined |
-
-### SetTokenMinBetAmount
-
-```solidity
-event SetTokenMinBetAmount(address indexed token, uint256 minBetAmount)
-```
-
-Emitted after the minimum bet amount is set for a token.
+Emitted after the Chainlink callback gas limit is set for a token.
 
 
 
@@ -805,41 +685,7 @@ Emitted after the minimum bet amount is set for a token.
 | Name | Type | Description |
 |---|---|---|
 | token `indexed` | address | undefined |
-| minBetAmount  | uint256 | undefined |
-
-### SetTokenPartner
-
-```solidity
-event SetTokenPartner(address indexed token, address partner)
-```
-
-Emitted after a token partner is set.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| token `indexed` | address | undefined |
-| partner  | address | undefined |
-
-### SetTokenVRFSubId
-
-```solidity
-event SetTokenVRFSubId(address indexed token, uint64 subId)
-```
-
-Emitted after the token&#39;s VRF subscription ID is set.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| token `indexed` | address | undefined |
-| subId  | uint64 | undefined |
+| callbackGasLimit  | uint32 | undefined |
 
 ### Unpaused
 
@@ -875,34 +721,24 @@ Reverting error when sender isn&#39;t allowed.
 ### ExcessiveHouseEdge
 
 ```solidity
-error ExcessiveHouseEdge(uint16 houseEdge)
+error ExcessiveHouseEdge()
 ```
 
 House edge is capped at 4%.
 
 
 
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| houseEdge | uint16 | House edge rate. |
 
 ### ForbiddenToken
 
 ```solidity
-error ForbiddenToken(address token)
+error ForbiddenToken()
 ```
 
 Token is not allowed.
 
 
 
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| token | address | Bet&#39;s token address. |
 
 ### InvalidAddress
 
@@ -934,50 +770,35 @@ Chainlink price feed not working
 ### NotFulfilled
 
 ```solidity
-error NotFulfilled(uint256 id)
+error NotFulfilled()
 ```
 
 Bet isn&#39;t resolved yet.
 
 
 
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| id | uint256 | Bet ID. |
 
 ### NotPendingBet
 
 ```solidity
-error NotPendingBet(uint256 id)
+error NotPendingBet()
 ```
 
 Bet provided doesn&#39;t exist or was already resolved.
 
 
 
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| id | uint256 | Bet ID. |
 
 ### NumbersNotInRange
 
 ```solidity
-error NumbersNotInRange(uint40 numbers)
+error NumbersNotInRange()
 ```
 
 Provided cap is under the minimum.
 
 
 
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| numbers | uint40 | The numbers chosen by user. |
 
 ### OnlyCoordinatorCanFulfill
 
@@ -999,7 +820,7 @@ error OnlyCoordinatorCanFulfill(address have, address want)
 ### UnderMinBetAmount
 
 ```solidity
-error UnderMinBetAmount(address token, uint256 value)
+error UnderMinBetAmount(uint256 minBetAmount)
 ```
 
 Insufficient bet amount.
@@ -1010,8 +831,7 @@ Insufficient bet amount.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Bet&#39;s token address. |
-| value | uint256 | Bet amount. |
+| minBetAmount | uint256 | Bet amount. |
 
 ### WrongGasValueToCoverFee
 

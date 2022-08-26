@@ -1,5 +1,5 @@
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
-// OpenZeppelin Contracts (last updated v4.5.0) (utils/Address.sol)
+// OpenZeppelin Contracts (last updated v4.7.0) (utils/Address.sol)
 
 pragma solidity ^0.8.1;
 
@@ -58,16 +58,10 @@ library Address {
      * https://solidity.readthedocs.io/en/v0.5.11/security-considerations.html#use-the-checks-effects-interactions-pattern[checks-effects-interactions pattern].
      */
     function sendValue(address payable recipient, uint256 amount) internal {
-        require(
-            address(this).balance >= amount,
-            "Address: insufficient balance"
-        );
+        require(address(this).balance >= amount, "Address: insufficient balance");
 
         (bool success, ) = recipient.call{value: amount}("");
-        require(
-            success,
-            "Address: unable to send value, recipient may have reverted"
-        );
+        require(success, "Address: unable to send value, recipient may have reverted");
     }
 
     /**
@@ -88,10 +82,7 @@ library Address {
      *
      * _Available since v3.1._
      */
-    function functionCall(address target, bytes memory data)
-        internal
-        returns (bytes memory)
-    {
+    function functionCall(address target, bytes memory data) internal returns (bytes memory) {
         return functionCall(target, data, "Address: low-level call failed");
     }
 
@@ -125,13 +116,7 @@ library Address {
         bytes memory data,
         uint256 value
     ) internal returns (bytes memory) {
-        return
-            functionCallWithValue(
-                target,
-                data,
-                value,
-                "Address: low-level call with value failed"
-            );
+        return functionCallWithValue(target, data, value, "Address: low-level call with value failed");
     }
 
     /**
@@ -146,15 +131,10 @@ library Address {
         uint256 value,
         string memory errorMessage
     ) internal returns (bytes memory) {
-        require(
-            address(this).balance >= value,
-            "Address: insufficient balance for call"
-        );
+        require(address(this).balance >= value, "Address: insufficient balance for call");
         require(isContract(target), "Address: call to non-contract");
 
-        (bool success, bytes memory returndata) = target.call{value: value}(
-            data
-        );
+        (bool success, bytes memory returndata) = target.call{value: value}(data);
         return verifyCallResult(success, returndata, errorMessage);
     }
 
@@ -164,17 +144,8 @@ library Address {
      *
      * _Available since v3.3._
      */
-    function functionStaticCall(address target, bytes memory data)
-        internal
-        view
-        returns (bytes memory)
-    {
-        return
-            functionStaticCall(
-                target,
-                data,
-                "Address: low-level static call failed"
-            );
+    function functionStaticCall(address target, bytes memory data) internal view returns (bytes memory) {
+        return functionStaticCall(target, data, "Address: low-level static call failed");
     }
 
     /**
@@ -200,16 +171,8 @@ library Address {
      *
      * _Available since v3.4._
      */
-    function functionDelegateCall(address target, bytes memory data)
-        internal
-        returns (bytes memory)
-    {
-        return
-            functionDelegateCall(
-                target,
-                data,
-                "Address: low-level delegate call failed"
-            );
+    function functionDelegateCall(address target, bytes memory data) internal returns (bytes memory) {
+        return functionDelegateCall(target, data, "Address: low-level delegate call failed");
     }
 
     /**
@@ -246,7 +209,7 @@ library Address {
             // Look for revert reason and bubble it up if present
             if (returndata.length > 0) {
                 // The easiest way to bubble the revert reason is using memory via assembly
-
+                /// @solidity memory-safe-assembly
                 assembly {
                     let returndata_size := mload(returndata)
                     revert(add(32, returndata), returndata_size)
@@ -258,8 +221,77 @@ library Address {
     }
 }
 
+
+
+
+            
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
-// OpenZeppelin Contracts (last updated v4.5.0) (token/ERC20/IERC20.sol)
+// OpenZeppelin Contracts v4.4.1 (token/ERC20/extensions/draft-IERC20Permit.sol)
+
+pragma solidity ^0.8.0;
+
+/**
+ * @dev Interface of the ERC20 Permit extension allowing approvals to be made via signatures, as defined in
+ * https://eips.ethereum.org/EIPS/eip-2612[EIP-2612].
+ *
+ * Adds the {permit} method, which can be used to change an account's ERC20 allowance (see {IERC20-allowance}) by
+ * presenting a message signed by the account. By not relying on {IERC20-approve}, the token holder account doesn't
+ * need to send a transaction, and thus is not required to hold Ether at all.
+ */
+interface IERC20Permit {
+    /**
+     * @dev Sets `value` as the allowance of `spender` over ``owner``'s tokens,
+     * given ``owner``'s signed approval.
+     *
+     * ////IMPORTANT: The same issues {IERC20-approve} has related to transaction
+     * ordering also apply here.
+     *
+     * Emits an {Approval} event.
+     *
+     * Requirements:
+     *
+     * - `spender` cannot be the zero address.
+     * - `deadline` must be a timestamp in the future.
+     * - `v`, `r` and `s` must be a valid `secp256k1` signature from `owner`
+     * over the EIP712-formatted function arguments.
+     * - the signature must use ``owner``'s current nonce (see {nonces}).
+     *
+     * For more information on the signature format, see the
+     * https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP
+     * section].
+     */
+    function permit(
+        address owner,
+        address spender,
+        uint256 value,
+        uint256 deadline,
+        uint8 v,
+        bytes32 r,
+        bytes32 s
+    ) external;
+
+    /**
+     * @dev Returns the current nonce for `owner`. This value must be
+     * included whenever a signature is generated for {permit}.
+     *
+     * Every successful call to {permit} increases ``owner``'s nonce by one. This
+     * prevents a signature from being used multiple times.
+     */
+    function nonces(address owner) external view returns (uint256);
+
+    /**
+     * @dev Returns the domain separator used in the encoding of the signature for {permit}, as defined by {EIP712}.
+     */
+    // solhint-disable-next-line func-name-mixedcase
+    function DOMAIN_SEPARATOR() external view returns (bytes32);
+}
+
+
+
+
+            
+////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
+// OpenZeppelin Contracts (last updated v4.6.0) (token/ERC20/IERC20.sol)
 
 pragma solidity ^0.8.0;
 
@@ -267,6 +299,20 @@ pragma solidity ^0.8.0;
  * @dev Interface of the ERC20 standard as defined in the EIP.
  */
 interface IERC20 {
+    /**
+     * @dev Emitted when `value` tokens are moved from one account (`from`) to
+     * another (`to`).
+     *
+     * Note that `value` may be zero.
+     */
+    event Transfer(address indexed from, address indexed to, uint256 value);
+
+    /**
+     * @dev Emitted when the allowance of a `spender` for an `owner` is set by
+     * a call to {approve}. `value` is the new allowance.
+     */
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+
     /**
      * @dev Returns the amount of tokens in existence.
      */
@@ -293,10 +339,7 @@ interface IERC20 {
      *
      * This value changes when {approve} or {transferFrom} are called.
      */
-    function allowance(address owner, address spender)
-        external
-        view
-        returns (uint256);
+    function allowance(address owner, address spender) external view returns (uint256);
 
     /**
      * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.
@@ -328,26 +371,12 @@ interface IERC20 {
         address to,
         uint256 amount
     ) external returns (bool);
-
-    /**
-     * @dev Emitted when `value` tokens are moved from one account (`from`) to
-     * another (`to`).
-     *
-     * Note that `value` may be zero.
-     */
-    event Transfer(address indexed from, address indexed to, uint256 value);
-
-    /**
-     * @dev Emitted when the allowance of a `spender` for an `owner` is set by
-     * a call to {approve}. `value` is the new allowance.
-     */
-    event Approval(
-        address indexed owner,
-        address indexed spender,
-        uint256 value
-    );
 }
 
+
+
+
+            
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts v4.4.1 (utils/Context.sol)
 
@@ -373,41 +402,13 @@ abstract contract Context {
     }
 }
 
+
+
+
+            
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 
-pragma solidity ^0.8.10;
-
-/// @notice Referral interface
-/// @author Romuald Hog.
-interface IReferral {
-    /// @notice Adds an address as referrer.
-    /// @param user The address of the user.
-    /// @param referrer The address would set as referrer of user.
-    function addReferrer(address user, address referrer) external;
-
-    /// @notice Updates referrer's last active timestamp.
-    /// @param user The address would like to update active time.
-    function updateReferrerActivity(address user) external;
-
-    /// @notice Calculates and allocate referrer(s) credits to uplines.
-    /// @param user Address of the gamer to find referrer(s).
-    /// @param token The token to allocate.
-    /// @param amount The number of tokens allocated for referrer(s).
-    function payReferral(
-        address user,
-        address token,
-        uint256 amount
-    ) external returns (uint256);
-
-    /// @notice Utils function for check whether an address has the referrer.
-    /// @param user The address of the user.
-    /// @return Whether user has a referrer.
-    function hasReferrer(address user) external view returns (bool);
-}
-
-////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
-
-pragma solidity ^0.8.10;
+pragma solidity 0.8.16;
 
 /// @notice Minimal interface for Bank.
 /// @author Romuald Hog.
@@ -460,164 +461,187 @@ interface IBank {
         external
         view
         returns (address[] memory tokens, uint256[] memory amounts);
+
+    function getVRFSubId(address token) external view returns (uint64);
+
+    function getTokenOwner(address token) external view returns (address);
+
+    function getMinBetAmount(address token) external view returns (uint256);
 }
 
+
+
+
+            
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 pragma solidity ^0.8.0;
 
 interface AggregatorV3Interface {
-    function decimals() external view returns (uint8);
+  function decimals() external view returns (uint8);
 
-    function description() external view returns (string memory);
+  function description() external view returns (string memory);
 
-    function version() external view returns (uint256);
+  function version() external view returns (uint256);
 
-    // getRoundData and latestRoundData should both raise "No data present"
-    // if they do not have data to report, instead of returning unset values
-    // which could be misinterpreted as actual reported values.
-    function getRoundData(uint80 _roundId)
-        external
-        view
-        returns (
-            uint80 roundId,
-            int256 answer,
-            uint256 startedAt,
-            uint256 updatedAt,
-            uint80 answeredInRound
-        );
+  function getRoundData(uint80 _roundId)
+    external
+    view
+    returns (
+      uint80 roundId,
+      int256 answer,
+      uint256 startedAt,
+      uint256 updatedAt,
+      uint80 answeredInRound
+    );
 
-    function latestRoundData()
-        external
-        view
-        returns (
-            uint80 roundId,
-            int256 answer,
-            uint256 startedAt,
-            uint256 updatedAt,
-            uint80 answeredInRound
-        );
+  function latestRoundData()
+    external
+    view
+    returns (
+      uint80 roundId,
+      int256 answer,
+      uint256 startedAt,
+      uint256 updatedAt,
+      uint80 answeredInRound
+    );
 }
 
+
+
+
+            
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 pragma solidity ^0.8.0;
 
 interface VRFCoordinatorV2Interface {
-    /**
-     * @notice Get configuration relevant for making requests
-     * @return minimumRequestConfirmations global min for request confirmations
-     * @return maxGasLimit global max for request gas limit
-     * @return s_provingKeyHashes list of registered key hashes
-     */
-    function getRequestConfig()
-        external
-        view
-        returns (
-            uint16,
-            uint32,
-            bytes32[] memory
-        );
+  /**
+   * @notice Get configuration relevant for making requests
+   * @return minimumRequestConfirmations global min for request confirmations
+   * @return maxGasLimit global max for request gas limit
+   * @return s_provingKeyHashes list of registered key hashes
+   */
+  function getRequestConfig()
+    external
+    view
+    returns (
+      uint16,
+      uint32,
+      bytes32[] memory
+    );
 
-    /**
-     * @notice Request a set of random words.
-     * @param keyHash - Corresponds to a particular oracle job which uses
-     * that key for generating the VRF proof. Different keyHash's have different gas price
-     * ceilings, so you can select a specific one to bound your maximum per request cost.
-     * @param subId  - The ID of the VRF subscription. Must be funded
-     * with the minimum subscription balance required for the selected keyHash.
-     * @param minimumRequestConfirmations - How many blocks you'd like the
-     * oracle to wait before responding to the request. See SECURITY CONSIDERATIONS
-     * for why you may want to request more. The acceptable range is
-     * [minimumRequestBlockConfirmations, 200].
-     * @param callbackGasLimit - How much gas you'd like to receive in your
-     * fulfillRandomWords callback. Note that gasleft() inside fulfillRandomWords
-     * may be slightly less than this amount because of gas used calling the function
-     * (argument decoding etc.), so you may need to request slightly more than you expect
-     * to have inside fulfillRandomWords. The acceptable range is
-     * [0, maxGasLimit]
-     * @param numWords - The number of uint256 random values you'd like to receive
-     * in your fulfillRandomWords callback. Note these numbers are expanded in a
-     * secure way by the VRFCoordinator from a single random value supplied by the oracle.
-     * @return requestId - A unique identifier of the request. Can be used to match
-     * a request to a response in fulfillRandomWords.
-     */
-    function requestRandomWords(
-        bytes32 keyHash,
-        uint64 subId,
-        uint16 minimumRequestConfirmations,
-        uint32 callbackGasLimit,
-        uint32 numWords
-    ) external returns (uint256 requestId);
+  /**
+   * @notice Request a set of random words.
+   * @param keyHash - Corresponds to a particular oracle job which uses
+   * that key for generating the VRF proof. Different keyHash's have different gas price
+   * ceilings, so you can select a specific one to bound your maximum per request cost.
+   * @param subId  - The ID of the VRF subscription. Must be funded
+   * with the minimum subscription balance required for the selected keyHash.
+   * @param minimumRequestConfirmations - How many blocks you'd like the
+   * oracle to wait before responding to the request. See SECURITY CONSIDERATIONS
+   * for why you may want to request more. The acceptable range is
+   * [minimumRequestBlockConfirmations, 200].
+   * @param callbackGasLimit - How much gas you'd like to receive in your
+   * fulfillRandomWords callback. Note that gasleft() inside fulfillRandomWords
+   * may be slightly less than this amount because of gas used calling the function
+   * (argument decoding etc.), so you may need to request slightly more than you expect
+   * to have inside fulfillRandomWords. The acceptable range is
+   * [0, maxGasLimit]
+   * @param numWords - The number of uint256 random values you'd like to receive
+   * in your fulfillRandomWords callback. Note these numbers are expanded in a
+   * secure way by the VRFCoordinator from a single random value supplied by the oracle.
+   * @return requestId - A unique identifier of the request. Can be used to match
+   * a request to a response in fulfillRandomWords.
+   */
+  function requestRandomWords(
+    bytes32 keyHash,
+    uint64 subId,
+    uint16 minimumRequestConfirmations,
+    uint32 callbackGasLimit,
+    uint32 numWords
+  ) external returns (uint256 requestId);
 
-    /**
-     * @notice Create a VRF subscription.
-     * @return subId - A unique subscription id.
-     * @dev You can manage the consumer set dynamically with addConsumer/removeConsumer.
-     * @dev Note to fund the subscription, use transferAndCall. For example
-     * @dev  LINKTOKEN.transferAndCall(
-     * @dev    address(COORDINATOR),
-     * @dev    amount,
-     * @dev    abi.encode(subId));
-     */
-    function createSubscription() external returns (uint64 subId);
+  /**
+   * @notice Create a VRF subscription.
+   * @return subId - A unique subscription id.
+   * @dev You can manage the consumer set dynamically with addConsumer/removeConsumer.
+   * @dev Note to fund the subscription, use transferAndCall. For example
+   * @dev  LINKTOKEN.transferAndCall(
+   * @dev    address(COORDINATOR),
+   * @dev    amount,
+   * @dev    abi.encode(subId));
+   */
+  function createSubscription() external returns (uint64 subId);
 
-    /**
-     * @notice Get a VRF subscription.
-     * @param subId - ID of the subscription
-     * @return balance - LINK balance of the subscription in juels.
-     * @return reqCount - number of requests for this subscription, determines fee tier.
-     * @return owner - owner of the subscription.
-     * @return consumers - list of consumer address which are able to use this subscription.
-     */
-    function getSubscription(uint64 subId)
-        external
-        view
-        returns (
-            uint96 balance,
-            uint64 reqCount,
-            address owner,
-            address[] memory consumers
-        );
+  /**
+   * @notice Get a VRF subscription.
+   * @param subId - ID of the subscription
+   * @return balance - LINK balance of the subscription in juels.
+   * @return reqCount - number of requests for this subscription, determines fee tier.
+   * @return owner - owner of the subscription.
+   * @return consumers - list of consumer address which are able to use this subscription.
+   */
+  function getSubscription(uint64 subId)
+    external
+    view
+    returns (
+      uint96 balance,
+      uint64 reqCount,
+      address owner,
+      address[] memory consumers
+    );
 
-    /**
-     * @notice Request subscription owner transfer.
-     * @param subId - ID of the subscription
-     * @param newOwner - proposed new owner of the subscription
-     */
-    function requestSubscriptionOwnerTransfer(uint64 subId, address newOwner)
-        external;
+  /**
+   * @notice Request subscription owner transfer.
+   * @param subId - ID of the subscription
+   * @param newOwner - proposed new owner of the subscription
+   */
+  function requestSubscriptionOwnerTransfer(uint64 subId, address newOwner) external;
 
-    /**
-     * @notice Request subscription owner transfer.
-     * @param subId - ID of the subscription
-     * @dev will revert if original owner of subId has
-     * not requested that msg.sender become the new owner.
-     */
-    function acceptSubscriptionOwnerTransfer(uint64 subId) external;
+  /**
+   * @notice Request subscription owner transfer.
+   * @param subId - ID of the subscription
+   * @dev will revert if original owner of subId has
+   * not requested that msg.sender become the new owner.
+   */
+  function acceptSubscriptionOwnerTransfer(uint64 subId) external;
 
-    /**
-     * @notice Add a consumer to a VRF subscription.
-     * @param subId - ID of the subscription
-     * @param consumer - New consumer which can use the subscription
-     */
-    function addConsumer(uint64 subId, address consumer) external;
+  /**
+   * @notice Add a consumer to a VRF subscription.
+   * @param subId - ID of the subscription
+   * @param consumer - New consumer which can use the subscription
+   */
+  function addConsumer(uint64 subId, address consumer) external;
 
-    /**
-     * @notice Remove a consumer from a VRF subscription.
-     * @param subId - ID of the subscription
-     * @param consumer - Consumer to remove from the subscription
-     */
-    function removeConsumer(uint64 subId, address consumer) external;
+  /**
+   * @notice Remove a consumer from a VRF subscription.
+   * @param subId - ID of the subscription
+   * @param consumer - Consumer to remove from the subscription
+   */
+  function removeConsumer(uint64 subId, address consumer) external;
 
-    /**
-     * @notice Cancel a subscription
-     * @param subId - ID of the subscription
-     * @param to - Where to send the remaining LINK to
-     */
-    function cancelSubscription(uint64 subId, address to) external;
+  /**
+   * @notice Cancel a subscription
+   * @param subId - ID of the subscription
+   * @param to - Where to send the remaining LINK to
+   */
+  function cancelSubscription(uint64 subId, address to) external;
+
+  /*
+   * @notice Check to see if there exists a request commitment consumers
+   * for all consumers and keyhashes for a given sub.
+   * @param subId - ID of the subscription
+   * @return true if there exists at least one unfulfilled request for the subscription, false
+   * otherwise.
+   */
+  function pendingRequestExists(uint64 subId) external view returns (bool);
 }
 
+
+
+
+            
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.4;
 
 /** ****************************************************************************
  * @notice Interface for contracts using VRF randomness
@@ -713,48 +737,47 @@ pragma solidity ^0.8.0;
  * @dev and so remains effective only in the case of unmodified oracle software).
  */
 abstract contract VRFConsumerBaseV2 {
-    error OnlyCoordinatorCanFulfill(address have, address want);
-    address private immutable vrfCoordinator;
+  error OnlyCoordinatorCanFulfill(address have, address want);
+  address private immutable vrfCoordinator;
 
-    /**
-     * @param _vrfCoordinator address of VRFCoordinator contract
-     */
-    constructor(address _vrfCoordinator) {
-        vrfCoordinator = _vrfCoordinator;
+  /**
+   * @param _vrfCoordinator address of VRFCoordinator contract
+   */
+  constructor(address _vrfCoordinator) {
+    vrfCoordinator = _vrfCoordinator;
+  }
+
+  /**
+   * @notice fulfillRandomness handles the VRF response. Your contract must
+   * @notice implement it. See "SECURITY CONSIDERATIONS" above for ////important
+   * @notice principles to keep in mind when implementing your fulfillRandomness
+   * @notice method.
+   *
+   * @dev VRFConsumerBaseV2 expects its subcontracts to have a method with this
+   * @dev signature, and will call it once it has verified the proof
+   * @dev associated with the randomness. (It is triggered via a call to
+   * @dev rawFulfillRandomness, below.)
+   *
+   * @param requestId The Id initially returned by requestRandomness
+   * @param randomWords the VRF output expanded to the requested number of words
+   */
+  function fulfillRandomWords(uint256 requestId, uint256[] memory randomWords) internal virtual;
+
+  // rawFulfillRandomness is called by VRFCoordinator when it receives a valid VRF
+  // proof. rawFulfillRandomness then calls fulfillRandomness, after validating
+  // the origin of the call
+  function rawFulfillRandomWords(uint256 requestId, uint256[] memory randomWords) external {
+    if (msg.sender != vrfCoordinator) {
+      revert OnlyCoordinatorCanFulfill(msg.sender, vrfCoordinator);
     }
-
-    /**
-     * @notice fulfillRandomness handles the VRF response. Your contract must
-     * @notice implement it. See "SECURITY CONSIDERATIONS" above for ////important
-     * @notice principles to keep in mind when implementing your fulfillRandomness
-     * @notice method.
-     *
-     * @dev VRFConsumerBaseV2 expects its subcontracts to have a method with this
-     * @dev signature, and will call it once it has verified the proof
-     * @dev associated with the randomness. (It is triggered via a call to
-     * @dev rawFulfillRandomness, below.)
-     *
-     * @param requestId The Id initially returned by requestRandomness
-     * @param randomWords the VRF output expanded to the requested number of words
-     */
-    function fulfillRandomWords(uint256 requestId, uint256[] memory randomWords)
-        internal
-        virtual;
-
-    // rawFulfillRandomness is called by VRFCoordinator when it receives a valid VRF
-    // proof. rawFulfillRandomness then calls fulfillRandomness, after validating
-    // the origin of the call
-    function rawFulfillRandomWords(
-        uint256 requestId,
-        uint256[] memory randomWords
-    ) external {
-        if (msg.sender != vrfCoordinator) {
-            revert OnlyCoordinatorCanFulfill(msg.sender, vrfCoordinator);
-        }
-        fulfillRandomWords(requestId, randomWords);
-    }
+    fulfillRandomWords(requestId, randomWords);
+  }
 }
 
+
+
+
+            
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts v4.4.1 (security/ReentrancyGuard.sol)
 
@@ -819,12 +842,17 @@ abstract contract ReentrancyGuard {
     }
 }
 
+
+
+
+            
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
-// OpenZeppelin Contracts v4.4.1 (token/ERC20/utils/SafeERC20.sol)
+// OpenZeppelin Contracts (last updated v4.7.0) (token/ERC20/utils/SafeERC20.sol)
 
 pragma solidity ^0.8.0;
 
 ////import "../IERC20.sol";
+////import "../extensions/draft-IERC20Permit.sol";
 ////import "../../../utils/Address.sol";
 
 /**
@@ -844,10 +872,7 @@ library SafeERC20 {
         address to,
         uint256 value
     ) internal {
-        _callOptionalReturn(
-            token,
-            abi.encodeWithSelector(token.transfer.selector, to, value)
-        );
+        _callOptionalReturn(token, abi.encodeWithSelector(token.transfer.selector, to, value));
     }
 
     function safeTransferFrom(
@@ -856,10 +881,7 @@ library SafeERC20 {
         address to,
         uint256 value
     ) internal {
-        _callOptionalReturn(
-            token,
-            abi.encodeWithSelector(token.transferFrom.selector, from, to, value)
-        );
+        _callOptionalReturn(token, abi.encodeWithSelector(token.transferFrom.selector, from, to, value));
     }
 
     /**
@@ -881,10 +903,7 @@ library SafeERC20 {
             (value == 0) || (token.allowance(address(this), spender) == 0),
             "SafeERC20: approve from non-zero to non-zero allowance"
         );
-        _callOptionalReturn(
-            token,
-            abi.encodeWithSelector(token.approve.selector, spender, value)
-        );
+        _callOptionalReturn(token, abi.encodeWithSelector(token.approve.selector, spender, value));
     }
 
     function safeIncreaseAllowance(
@@ -893,14 +912,7 @@ library SafeERC20 {
         uint256 value
     ) internal {
         uint256 newAllowance = token.allowance(address(this), spender) + value;
-        _callOptionalReturn(
-            token,
-            abi.encodeWithSelector(
-                token.approve.selector,
-                spender,
-                newAllowance
-            )
-        );
+        _callOptionalReturn(token, abi.encodeWithSelector(token.approve.selector, spender, newAllowance));
     }
 
     function safeDecreaseAllowance(
@@ -910,20 +922,26 @@ library SafeERC20 {
     ) internal {
         unchecked {
             uint256 oldAllowance = token.allowance(address(this), spender);
-            require(
-                oldAllowance >= value,
-                "SafeERC20: decreased allowance below zero"
-            );
+            require(oldAllowance >= value, "SafeERC20: decreased allowance below zero");
             uint256 newAllowance = oldAllowance - value;
-            _callOptionalReturn(
-                token,
-                abi.encodeWithSelector(
-                    token.approve.selector,
-                    spender,
-                    newAllowance
-                )
-            );
+            _callOptionalReturn(token, abi.encodeWithSelector(token.approve.selector, spender, newAllowance));
         }
+    }
+
+    function safePermit(
+        IERC20Permit token,
+        address owner,
+        address spender,
+        uint256 value,
+        uint256 deadline,
+        uint8 v,
+        bytes32 r,
+        bytes32 s
+    ) internal {
+        uint256 nonceBefore = token.nonces(owner);
+        token.permit(owner, spender, value, deadline, v, r, s);
+        uint256 nonceAfter = token.nonces(owner);
+        require(nonceAfter == nonceBefore + 1, "SafeERC20: permit did not succeed");
     }
 
     /**
@@ -937,22 +955,20 @@ library SafeERC20 {
         // we're implementing it ourselves. We use {Address.functionCall} to perform this call, which verifies that
         // the target address contains contract code and also asserts for success in the low-level call.
 
-        bytes memory returndata = address(token).functionCall(
-            data,
-            "SafeERC20: low-level call failed"
-        );
+        bytes memory returndata = address(token).functionCall(data, "SafeERC20: low-level call failed");
         if (returndata.length > 0) {
             // Return data is optional
-            require(
-                abi.decode(returndata, (bool)),
-                "SafeERC20: ERC20 operation did not succeed"
-            );
+            require(abi.decode(returndata, (bool)), "SafeERC20: ERC20 operation did not succeed");
         }
     }
 }
 
+
+
+
+            
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
-// OpenZeppelin Contracts v4.4.1 (security/Pausable.sol)
+// OpenZeppelin Contracts (last updated v4.7.0) (security/Pausable.sol)
 
 pragma solidity ^0.8.0;
 
@@ -988,13 +1004,6 @@ abstract contract Pausable is Context {
     }
 
     /**
-     * @dev Returns true if the contract is paused, and false otherwise.
-     */
-    function paused() public view virtual returns (bool) {
-        return _paused;
-    }
-
-    /**
      * @dev Modifier to make a function callable only when the contract is not paused.
      *
      * Requirements:
@@ -1002,7 +1011,7 @@ abstract contract Pausable is Context {
      * - The contract must not be paused.
      */
     modifier whenNotPaused() {
-        require(!paused(), "Pausable: paused");
+        _requireNotPaused();
         _;
     }
 
@@ -1014,8 +1023,29 @@ abstract contract Pausable is Context {
      * - The contract must be paused.
      */
     modifier whenPaused() {
-        require(paused(), "Pausable: not paused");
+        _requirePaused();
         _;
+    }
+
+    /**
+     * @dev Returns true if the contract is paused, and false otherwise.
+     */
+    function paused() public view virtual returns (bool) {
+        return _paused;
+    }
+
+    /**
+     * @dev Throws if the contract is paused.
+     */
+    function _requireNotPaused() internal view virtual {
+        require(!paused(), "Pausable: paused");
+    }
+
+    /**
+     * @dev Throws if the contract is not paused.
+     */
+    function _requirePaused() internal view virtual {
+        require(paused(), "Pausable: not paused");
     }
 
     /**
@@ -1043,6 +1073,10 @@ abstract contract Pausable is Context {
     }
 }
 
+
+
+
+            
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts (last updated v4.5.0) (utils/Multicall.sol)
 
@@ -1059,11 +1093,7 @@ abstract contract Multicall {
     /**
      * @dev Receives and executes a batch of function calls on this contract.
      */
-    function multicall(bytes[] calldata data)
-        external
-        virtual
-        returns (bytes[] memory results)
-    {
+    function multicall(bytes[] calldata data) external virtual returns (bytes[] memory results) {
         results = new bytes[](data.length);
         for (uint256 i = 0; i < data.length; i++) {
             results[i] = Address.functionDelegateCall(address(this), data[i]);
@@ -1072,8 +1102,12 @@ abstract contract Multicall {
     }
 }
 
+
+
+
+            
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
-// OpenZeppelin Contracts v4.4.1 (access/Ownable.sol)
+// OpenZeppelin Contracts (last updated v4.7.0) (access/Ownable.sol)
 
 pragma solidity ^0.8.0;
 
@@ -1094,16 +1128,21 @@ pragma solidity ^0.8.0;
 abstract contract Ownable is Context {
     address private _owner;
 
-    event OwnershipTransferred(
-        address indexed previousOwner,
-        address indexed newOwner
-    );
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
 
     /**
      * @dev Initializes the contract setting the deployer as the initial owner.
      */
     constructor() {
         _transferOwnership(_msgSender());
+    }
+
+    /**
+     * @dev Throws if called by any account other than the owner.
+     */
+    modifier onlyOwner() {
+        _checkOwner();
+        _;
     }
 
     /**
@@ -1114,11 +1153,10 @@ abstract contract Ownable is Context {
     }
 
     /**
-     * @dev Throws if called by any account other than the owner.
+     * @dev Throws if the sender is not the owner.
      */
-    modifier onlyOwner() {
+    function _checkOwner() internal view virtual {
         require(owner() == _msgSender(), "Ownable: caller is not the owner");
-        _;
     }
 
     /**
@@ -1137,10 +1175,7 @@ abstract contract Ownable is Context {
      * Can only be called by the current owner.
      */
     function transferOwnership(address newOwner) public virtual onlyOwner {
-        require(
-            newOwner != address(0),
-            "Ownable: new owner is the zero address"
-        );
+        require(newOwner != address(0), "Ownable: new owner is the zero address");
         _transferOwnership(newOwner);
     }
 
@@ -1155,21 +1190,25 @@ abstract contract Ownable is Context {
     }
 }
 
+
+
+
+            
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 
-pragma solidity ^0.8.10;
+pragma solidity 0.8.16;
 
-////import "@openzeppelin/contracts/access/Ownable.sol";
-////import "@openzeppelin/contracts/utils/Multicall.sol";
-////import "@openzeppelin/contracts/security/Pausable.sol";
-////import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
-////import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
-////import "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol";
-////import "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol";
-////import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+////import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
+////import {Multicall} from "@openzeppelin/contracts/utils/Multicall.sol";
+////import {Pausable} from "@openzeppelin/contracts/security/Pausable.sol";
+////import {IERC20, SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+////import {ReentrancyGuard} from "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+
+////import {VRFConsumerBaseV2} from "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol";
+////import {VRFCoordinatorV2Interface} from "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol";
+////import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 
 ////import {IBank} from "../bank/IBank.sol";
-////import {IReferral} from "../bank/IReferral.sol";
 
 // ////import "hardhat/console.sol";
 
@@ -1224,29 +1263,35 @@ abstract contract Game is
         uint256 vrfCost;
     }
 
+    /// @notice Token struct.
+    /// @param houseEdge House edge rate.
+    /// @param pendingCount Number of pending bets.
+    /// @param VRFCallbackGasLimit How much gas is needed in the Chainlink VRF callback.
+    /// @param VRFFees Chainlink's VRF collected fees amount.
+    struct Token {
+        uint16 houseEdge;
+        uint64 pendingCount;
+        uint32 VRFCallbackGasLimit;
+        uint256 VRFFees;
+    }
+
     /// @notice Chainlink VRF configuration struct.
-    /// @param subId Default subscription ID.
-    /// @param callbackGasLimit How much gas you would like in your callback to do work with the random words provided.
     /// @param requestConfirmations How many confirmations the Chainlink node should wait before responding.
+    /// @param numRandomWords How many random words is needed to resolve a game's bet.
     /// @param keyHash Hash of the public key used to verify the VRF proof.
+    /// @param chainlinkCoordinator Reference to the VRFCoordinatorV2 deployed contract.
     struct ChainlinkConfig {
-        uint64 subId;
-        uint32 callbackGasLimit;
         uint16 requestConfirmations;
+        uint16 numRandomWords;
         bytes32 keyHash;
+        IVRFCoordinatorV2 chainlinkCoordinator;
     }
 
     /// @notice Chainlink VRF configuration state.
-    ChainlinkConfig public chainlinkConfig;
-
-    /// @notice Reference to the VRFCoordinatorV2 deployed contract.
-    IVRFCoordinatorV2 public chainlinkCoordinator;
-
-    /// @notice How many random words is needed to resolve a game's bet.
-    uint16 private immutable _numRandomWords;
+    ChainlinkConfig private _chainlinkConfig;
 
     /// @notice Chainlink price feed.
-    AggregatorV3Interface public immutable LINK_ETH_feed;
+    AggregatorV3Interface private immutable _LINK_ETH_feed;
 
     /// @notice Maps bets IDs to Bet information.
     mapping(uint256 => Bet) public bets;
@@ -1254,45 +1299,33 @@ abstract contract Game is
     /// @notice Maps users addresses to bets IDs
     mapping(address => uint256[]) internal _userBets;
 
-    /// @notice Token struct.
-    /// @param houseEdge House edge rate.
-    /// @param VRFSubId Chainlink's VRF subscription ID.
-    /// @param partner Address of the partner to manage the token.
-    /// @param minBetAmount Minimum bet amount.
-    /// @param VRFFees Chainlink's VRF collected fees amount.
-    struct Token {
-        uint16 houseEdge;
-        uint64 VRFSubId;
-        address partner;
-        uint256 minBetAmount;
-        uint256 VRFFees;
-    }
     /// @notice Maps tokens addresses to token configuration.
     mapping(address => Token) public tokens;
 
-    /// @notice The bank that manage to payout a won bet and collect a loss bet, and to interact with Referral program.
+    /// @notice The bank that manage to payout a won bet and collect a loss bet.
     IBank public bank;
-
-    /// @notice Referral program contract.
-    IReferral public referralProgram;
 
     /// @notice Emitted after the bank is set.
     /// @param bank Address of the bank contract.
     event SetBank(address bank);
-
-    /// @notice Emitted after the referral program is set.
-    /// @param referralProgram The referral program address.
-    event SetReferralProgram(address referralProgram);
 
     /// @notice Emitted after the house edge is set for a token.
     /// @param token Address of the token.
     /// @param houseEdge House edge rate.
     event SetHouseEdge(address indexed token, uint16 houseEdge);
 
-    /// @notice Emitted after the minimum bet amount is set for a token.
+    /// @notice Emitted after the Chainlink callback gas limit is set for a token.
     /// @param token Address of the token.
-    /// @param minBetAmount Minimum bet amount.
-    event SetTokenMinBetAmount(address indexed token, uint256 minBetAmount);
+    /// @param callbackGasLimit New Chainlink VRF callback gas limit.
+    event SetVRFCallbackGasLimit(
+        address indexed token,
+        uint32 callbackGasLimit
+    );
+
+    /// @notice Emitted after the Chainlink config is set.
+    /// @param requestConfirmations How many confirmations the Chainlink node should wait before responding.
+    /// @param keyHash Hash of the public key used to verify the VRF proof.
+    event SetChainlinkConfig(uint16 requestConfirmations, bytes32 keyHash);
 
     /// @notice Emitted after the bet amount transfer to the user failed.
     /// @param id The bet ID.
@@ -1341,36 +1374,21 @@ abstract contract Game is
     /// @param amount Number of tokens refunded.
     event DistributeTokenVRFFees(address indexed token, uint256 amount);
 
-    /// @notice Emitted after the token's VRF subscription ID is set.
-    /// @param token Address of the token.
-    /// @param subId Subscription ID.
-    event SetTokenVRFSubId(address indexed token, uint64 subId);
-
-    /// @notice Emitted after a token partner is set.
-    /// @param token Address of the token.
-    /// @param partner Address of the partner.
-    event SetTokenPartner(address indexed token, address partner);
-
     /// @notice Insufficient bet amount.
-    /// @param token Bet's token address.
-    /// @param value Bet amount.
-    error UnderMinBetAmount(address token, uint256 value);
+    /// @param minBetAmount Bet amount.
+    error UnderMinBetAmount(uint256 minBetAmount);
 
     /// @notice Bet provided doesn't exist or was already resolved.
-    /// @param id Bet ID.
-    error NotPendingBet(uint256 id);
+    error NotPendingBet();
 
     /// @notice Bet isn't resolved yet.
-    /// @param id Bet ID.
-    error NotFulfilled(uint256 id);
+    error NotFulfilled();
 
     /// @notice House edge is capped at 4%.
-    /// @param houseEdge House edge rate.
-    error ExcessiveHouseEdge(uint16 houseEdge);
+    error ExcessiveHouseEdge();
 
     /// @notice Token is not allowed.
-    /// @param token Bet's token address.
-    error ForbiddenToken(address token);
+    error ForbiddenToken();
 
     /// @notice Chainlink price feed not working
     /// @param linkWei LINK/ETH price returned.
@@ -1385,27 +1403,12 @@ abstract contract Game is
     /// @notice Reverting error when provided address isn't valid.
     error InvalidAddress();
 
-    /// @notice Modifier that checks that an account is allowed to interact.
-    /// @param token The token address.
-    modifier onlyTokenOwner(address token) {
-        address partner = tokens[token].partner;
-        if (
-            partner == address(0)
-                ? owner() != msg.sender
-                : msg.sender != partner
-        ) {
-            revert AccessDenied();
-        }
-        _;
-    }
-
     /// @notice Initialize contract's state variables and VRF Consumer.
     /// @param bankAddress The address of the bank.
     /// @param chainlinkCoordinatorAddress Address of the Chainlink VRF Coordinator.
     /// @param numRandomWords How many random words is needed to resolve a game's bet.
     constructor(
         address bankAddress,
-        address referralProgramAddress,
         address chainlinkCoordinatorAddress,
         uint16 numRandomWords,
         address LINK_ETH_feedAddress
@@ -1417,70 +1420,72 @@ abstract contract Game is
             revert InvalidAddress();
         }
         require(
-            numRandomWords > 0 && numRandomWords <= 500,
+            numRandomWords != 0 && numRandomWords <= 500,
             "Wrong Chainlink NumRandomWords"
         );
 
         setBank(IBank(bankAddress));
-        setReferralProgram(IReferral(referralProgramAddress));
-        chainlinkCoordinator = IVRFCoordinatorV2(chainlinkCoordinatorAddress);
-        _numRandomWords = numRandomWords;
-        LINK_ETH_feed = AggregatorV3Interface(LINK_ETH_feedAddress);
+        _chainlinkConfig.chainlinkCoordinator = IVRFCoordinatorV2(
+            chainlinkCoordinatorAddress
+        );
+        _chainlinkConfig.numRandomWords = numRandomWords;
+        _LINK_ETH_feed = AggregatorV3Interface(LINK_ETH_feedAddress);
     }
 
-    /// @notice Sets the game house edge rate for a specific token.
+    /// @notice Calculates the amount's fee based on the house edge.
     /// @param token Address of the token.
-    /// @param houseEdge House edge rate.
-    /// @dev The house edge rate couldn't exceed 4%.
-    function _setHouseEdge(address token, uint16 houseEdge) internal onlyOwner {
-        if (houseEdge > 400) {
-            revert ExcessiveHouseEdge(houseEdge);
-        }
-        tokens[token].houseEdge = houseEdge;
-        emit SetHouseEdge(token, houseEdge);
+    /// @param amount From which the fee amount will be calculated.
+    /// @return The fee amount.
+    function _getFees(address token, uint256 amount)
+        private
+        view
+        returns (uint256)
+    {
+        return (tokens[token].houseEdge * amount) / 10000;
     }
 
-    /// @notice Creates a new bet, request randomness to Chainlink, add the referrer,
+    /// @notice Creates a new bet and request randomness to Chainlink,
     /// transfer the ERC20 tokens to the contract or refund the bet amount overflow if the bet amount exceed the maxBetAmount.
-    /// @param token Address of the token.
+    /// @param tokenAddress Address of the token.
     /// @param tokenAmount The number of tokens bet.
     /// @param multiplier The bet amount leverage determines the user's profit amount. 10000 = 100% = no profit.
-    /// @param referrer Address of the referrer.
     /// @return A new Bet struct information.
     function _newBet(
-        address token,
+        address tokenAddress,
         uint256 tokenAmount,
-        uint256 multiplier,
-        address referrer
+        uint256 multiplier
     ) internal whenNotPaused nonReentrant returns (Bet memory) {
-        if (bank.isAllowedToken(token) == false) {
-            revert ForbiddenToken(token);
+        if (bank.isAllowedToken(tokenAddress) == false) {
+            revert ForbiddenToken();
         }
 
         address user = msg.sender;
-        bool isGasToken = token == address(0);
+        bool isGasToken = tokenAddress == address(0);
         uint256 fee = isGasToken ? (msg.value - tokenAmount) : msg.value;
         uint256 betAmount = isGasToken ? msg.value - fee : tokenAmount;
+        Token storage token = tokens[tokenAddress];
 
         // Charge user for Chainlink VRF fee.
         {
-            uint256 chainlinkVRFCost = getChainlinkVRFCost();
+            uint256 chainlinkVRFCost = getChainlinkVRFCost(tokenAddress);
             if (fee < (chainlinkVRFCost - ((10 * chainlinkVRFCost) / 100))) {
                 // 5% slippage.
                 revert WrongGasValueToCoverFee();
             }
-            tokens[token].VRFFees += fee;
+            token.VRFFees += fee;
         }
 
         // Bet amount is capped.
         {
-            if (
-                betAmount < 10000 wei || betAmount < tokens[token].minBetAmount
-            ) {
-                revert UnderMinBetAmount(token, betAmount);
+            uint256 minBetAmount = bank.getMinBetAmount(tokenAddress);
+            if (betAmount < minBetAmount) {
+                revert UnderMinBetAmount(minBetAmount);
             }
 
-            uint256 maxBetAmount = bank.getMaxBetAmount(token, multiplier);
+            uint256 maxBetAmount = bank.getMaxBetAmount(
+                tokenAddress,
+                multiplier
+            );
             if (betAmount > maxBetAmount) {
                 if (isGasToken) {
                     payable(user).transfer(betAmount - maxBetAmount);
@@ -1490,19 +1495,17 @@ abstract contract Game is
         }
 
         // Create bet
-        uint256 id = chainlinkCoordinator.requestRandomWords(
-            chainlinkConfig.keyHash,
-            tokens[token].VRFSubId == 0
-                ? chainlinkConfig.subId
-                : tokens[token].VRFSubId,
-            chainlinkConfig.requestConfirmations,
-            chainlinkConfig.callbackGasLimit,
-            _numRandomWords
+        uint256 id = _chainlinkConfig.chainlinkCoordinator.requestRandomWords(
+            _chainlinkConfig.keyHash,
+            bank.getVRFSubId(tokenAddress),
+            _chainlinkConfig.requestConfirmations,
+            token.VRFCallbackGasLimit,
+            _chainlinkConfig.numRandomWords
         );
         Bet memory newBet = Bet(
             false,
             payable(user),
-            token,
+            tokenAddress,
             id,
             betAmount,
             block.number,
@@ -1511,23 +1514,15 @@ abstract contract Game is
         );
         _userBets[user].push(id);
         bets[id] = newBet;
-
-        // Add referrer
-        if (address(referralProgram) != address(0)) {
-            if (
-                referrer != address(0) &&
-                _userBets[user].length == 1 &&
-                !referralProgram.hasReferrer(user)
-            ) {
-                referralProgram.addReferrer(user, referrer);
-            } else {
-                referralProgram.updateReferrerActivity(user);
-            }
-        }
+        token.pendingCount++;
 
         // If ERC20, transfer the tokens
         if (!isGasToken) {
-            IERC20(token).safeTransferFrom(user, address(this), betAmount);
+            IERC20(tokenAddress).safeTransferFrom(
+                user,
+                address(this),
+                betAmount
+            );
         }
 
         return newBet;
@@ -1546,18 +1541,20 @@ abstract contract Game is
         bool wins,
         uint256 payout
     ) internal returns (uint256) {
-        address payable user = bet.user;
-        if (bet.resolved == true || user == address(0)) {
-            revert NotPendingBet(bet.id);
+        if (bet.resolved == true || bet.user == address(0)) {
+            revert NotPendingBet();
         }
-        address token = bet.token;
-        uint256 betAmount = bet.amount;
-        bool isGasToken = bet.token == address(0);
-
         bet.resolved = true;
 
+        address token = bet.token;
+        tokens[token].pendingCount--;
+
+        uint256 betAmount = bet.amount;
+        bool isGasToken = bet.token == address(0);
         // Check for the result
         if (wins) {
+            address payable user = bet.user;
+
             uint256 profit = payout - betAmount;
             uint256 betAmountFee = _getFees(token, betAmount);
             uint256 profitFee = _getFees(token, profit);
@@ -1572,7 +1569,7 @@ abstract contract Game is
                 if (!user.send(betAmountPayout)) {
                     emit BetAmountTransferFail(
                         bet.id,
-                        betAmount,
+                        betAmountPayout,
                         "Gas token send failed"
                     );
                 }
@@ -1589,7 +1586,7 @@ abstract contract Game is
                 }
             }
 
-            // Transfer the payout from the bank
+            // Transfer the payout from the bank, transfer the bet amount fee to the bank, and account fees.
             try
                 bank.payout{value: isGasToken ? betAmountFee : 0}(
                     user,
@@ -1637,8 +1634,8 @@ abstract contract Game is
         }
 
         Bet[] memory userBets = new Bet[](dataLength);
-        if (dataLength > 0) {
-            uint256 userBetsIndex = 0;
+        if (dataLength != 0) {
+            uint256 userBetsIndex;
             for (uint256 i = betsLength; i > betsLength - dataLength; i--) {
                 userBets[userBetsIndex] = bets[userBetsIds[i - 1]];
                 userBetsIndex++;
@@ -1648,33 +1645,16 @@ abstract contract Game is
         return userBets;
     }
 
-    /// @notice Calculates the amount's fee based on the house edge.
+    /// @notice Sets the game house edge rate for a specific token.
     /// @param token Address of the token.
-    /// @param amount From which the fee amount will be calculated.
-    /// @return The fee amount.
-    function _getFees(address token, uint256 amount)
-        internal
-        view
-        returns (uint256)
-    {
-        return (tokens[token].houseEdge * amount) / 10000;
-    }
-
-    /// @notice Sets the Bank contract.
-    /// @param _bank Address of the Bank contract.
-    function setBank(IBank _bank) public onlyOwner {
-        if (address(_bank) == address(0)) {
-            revert InvalidAddress();
+    /// @param houseEdge House edge rate.
+    /// @dev The house edge rate couldn't exceed 4%.
+    function setHouseEdge(address token, uint16 houseEdge) external onlyOwner {
+        if (houseEdge > 400) {
+            revert ExcessiveHouseEdge();
         }
-        bank = _bank;
-        emit SetBank(address(_bank));
-    }
-
-    /// @notice Sets the new referral program.
-    /// @param _referralProgram The referral program address.
-    function setReferralProgram(IReferral _referralProgram) public onlyOwner {
-        referralProgram = _referralProgram;
-        emit SetReferralProgram(address(referralProgram));
+        tokens[token].houseEdge = houseEdge;
+        emit SetHouseEdge(token, houseEdge);
     }
 
     /// @notice Pauses the contract to disable new bets.
@@ -1687,76 +1667,50 @@ abstract contract Game is
     }
 
     /// @notice Sets the Chainlink VRF V2 configuration.
-    /// @param subId Subscription ID.
-    /// @param callbackGasLimit How much gas you would like in your callback to do work with the random words provided.
     /// @param requestConfirmations How many confirmations the Chainlink node should wait before responding.
     /// @param keyHash Hash of the public key used to verify the VRF proof.
-    function setChainlinkConfig(
-        uint64 subId,
-        uint32 callbackGasLimit,
-        uint16 requestConfirmations,
-        bytes32 keyHash
-    ) external onlyOwner {
-        chainlinkConfig.subId = subId;
-        chainlinkConfig.callbackGasLimit = callbackGasLimit;
-        chainlinkConfig.requestConfirmations = requestConfirmations;
-        chainlinkConfig.keyHash = keyHash;
+    function setChainlinkConfig(uint16 requestConfirmations, bytes32 keyHash)
+        external
+        onlyOwner
+    {
+        _chainlinkConfig.requestConfirmations = requestConfirmations;
+        _chainlinkConfig.keyHash = keyHash;
+        emit SetChainlinkConfig(requestConfirmations, keyHash);
     }
 
-    /// @notice Changes the token's partner address.
-    /// @param token Address of the token.
-    /// @param partner Address of the partner.
-    function setTokenPartner(address token, address partner)
+    /// @notice Sets the Chainlink VRF V2 configuration.
+    /// @param callbackGasLimit How much gas is needed in the Chainlink VRF callback.
+    function setVRFCallbackGasLimit(address token, uint32 callbackGasLimit)
         external
-        onlyTokenOwner(token)
+        onlyOwner
     {
-        withdrawTokensVRFFees(token);
-        tokens[token].partner = partner;
-        emit SetTokenPartner(token, partner);
-    }
-
-    /// @notice Sets the minimum bet amount for a specific token.
-    /// @param token Address of the token.
-    /// @param tokenMinBetAmount Minimum bet amount.
-    function setTokenMinBetAmount(address token, uint256 tokenMinBetAmount)
-        external
-        onlyTokenOwner(token)
-    {
-        tokens[token].minBetAmount = tokenMinBetAmount;
-        emit SetTokenMinBetAmount(token, tokenMinBetAmount);
-    }
-
-    /// @notice Sets the Chainlink VRF subscription ID for a specific token.
-    /// @param token Address of the token.
-    /// @param subId Subscription ID.
-    function setTokenVRFSubId(address token, uint64 subId)
-        external
-        onlyTokenOwner(token)
-    {
-        tokens[token].VRFSubId = subId;
-        emit SetTokenVRFSubId(token, subId);
+        tokens[token].VRFCallbackGasLimit = callbackGasLimit;
+        emit SetVRFCallbackGasLimit(token, callbackGasLimit);
     }
 
     /// @notice Distributes the token's collected Chainlink fees.
     /// @param token Address of the token.
-    function withdrawTokensVRFFees(address token) public onlyTokenOwner(token) {
+    function withdrawTokensVRFFees(address token) external {
         uint256 tokenChainlinkFees = tokens[token].VRFFees;
         if (tokenChainlinkFees != 0) {
-            tokens[token].VRFFees = 0;
-            payable(msg.sender).transfer(tokenChainlinkFees);
+            delete tokens[token].VRFFees;
+            payable(bank.getTokenOwner(token)).transfer(tokenChainlinkFees);
             emit DistributeTokenVRFFees(token, tokenChainlinkFees);
         }
     }
 
     /// @notice Refunds the bet to the user if the Chainlink VRF callback failed.
     /// @param id The Bet ID.
-    function refundBet(uint256 id) external {
+    function refundBet(uint256 id) external nonReentrant {
         Bet storage bet = bets[id];
         if (bet.resolved == true) {
-            revert NotPendingBet(id);
+            revert NotPendingBet();
         } else if (block.number < bet.blockNumber + 30) {
-            revert NotFulfilled(id);
+            revert NotFulfilled();
         }
+
+        Token storage token = tokens[bet.token];
+        token.pendingCount--;
 
         bet.resolved = true;
         bet.payout = bet.amount;
@@ -1770,21 +1724,37 @@ abstract contract Game is
 
         uint256 chainlinkVRFCost = bet.vrfCost;
         if (
-            tokens[bet.token].VRFFees >= chainlinkVRFCost &&
+            token.VRFFees >= chainlinkVRFCost &&
             address(this).balance >= chainlinkVRFCost
         ) {
-            tokens[bet.token].VRFFees -= chainlinkVRFCost;
+            token.VRFFees -= chainlinkVRFCost;
             payable(bet.user).transfer(chainlinkVRFCost);
         } else {
             emit BetCostRefundFail(id, bet.user, chainlinkVRFCost);
         }
     }
 
+    /// @notice Returns whether the token has pending bets.
+    /// @return Whether the token has pending bets.
+    function hasPendingBets(address token) external view returns (bool) {
+        return tokens[token].pendingCount != 0;
+    }
+
+    /// @notice Sets the Bank contract.
+    /// @param _bank Address of the Bank contract.
+    function setBank(IBank _bank) public onlyOwner {
+        if (address(_bank) == address(0)) {
+            revert InvalidAddress();
+        }
+        bank = _bank;
+        emit SetBank(address(_bank));
+    }
+
     /// @notice Returns the amount of ETH that should be passed to the wager transaction
     /// to cover Chainlink VRF fee.
     /// @return The bet resolution cost amount.
-    function getChainlinkVRFCost() public view returns (uint256) {
-        (, int256 weiPerUnitLink, , , ) = LINK_ETH_feed.latestRoundData();
+    function getChainlinkVRFCost(address token) public view returns (uint256) {
+        (, int256 weiPerUnitLink, , , ) = _LINK_ETH_feed.latestRoundData();
         if (weiPerUnitLink <= 0) {
             revert InvalidLinkWeiPrice(weiPerUnitLink);
         }
@@ -1799,19 +1769,21 @@ abstract contract Game is
             ,
             ,
 
-        ) = chainlinkCoordinator.getFeeConfig();
+        ) = _chainlinkConfig.chainlinkCoordinator.getFeeConfig();
         // 115000 gas is the average Verification gas of Chainlink VRF.
         return
-            (tx.gasprice * (115000 + chainlinkConfig.callbackGasLimit)) +
+            (tx.gasprice * (115000 + tokens[token].VRFCallbackGasLimit)) +
             ((1e12 *
                 uint256(fulfillmentFlatFeeLinkPPMTier1) *
                 uint256(weiPerUnitLink)) / 1e18);
     }
 }
 
+
+
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 
-pragma solidity ^0.8.10;
+pragma solidity 0.8.16;
 
 ////import {Game} from "./Game.sol";
 
@@ -1877,56 +1849,56 @@ contract Roulette is Game {
     );
 
     /// @notice Provided cap is under the minimum.
-    /// @param numbers The numbers chosen by user.
-    error NumbersNotInRange(uint40 numbers);
+    error NumbersNotInRange();
 
     /// @notice Initialize the game base contract.
     /// @param bankAddress The address of the bank.
-    /// @param referralProgramAddress The address of the Referral program.
     /// @param chainlinkCoordinatorAddress Address of the Chainlink VRF Coordinator.
     /// @param LINK_ETH_feedAddress Address of the Chainlink LINK/ETH price feed.
     constructor(
         address bankAddress,
-        address referralProgramAddress,
         address chainlinkCoordinatorAddress,
         address LINK_ETH_feedAddress
     )
         Game(
             bankAddress,
-            referralProgramAddress,
             chainlinkCoordinatorAddress,
             1,
             LINK_ETH_feedAddress
         )
     {}
 
-    /// @notice Sets the game house edge rate for a specific token.
-    /// @param token Address of the token.
-    /// @param _houseEdge House edge rate.
-    function setHouseEdge(address token, uint16 _houseEdge) external onlyOwner {
-        _setHouseEdge(token, _houseEdge);
+    /// @notice Calculates the target payout amount.
+    /// @param betAmount Bet amount.
+    /// @param numbers The chosen numbers.
+    /// @return The target payout amount.
+    function _getPayout(uint256 betAmount, uint40 numbers)
+        private
+        pure
+        returns (uint256)
+    {
+        return
+            (betAmount * MODULO) /
+            (((numbers * POPCNT_MULT) & POPCNT_MASK) % POPCNT_MODULO);
     }
 
     /// @notice Creates a new bet and stores the chosen bet mask.
     /// @param numbers The chosen numbers.
     /// @param token Address of the token.
     /// @param tokenAmount The number of tokens bet.
-    /// @param referrer Address of the referrer.
     function wager(
         uint40 numbers,
         address token,
-        uint256 tokenAmount,
-        address referrer
+        uint256 tokenAmount
     ) external payable whenNotPaused {
         if (numbers == 0 || numbers >= 2**MODULO - 1) {
-            revert NumbersNotInRange(numbers);
+            revert NumbersNotInRange();
         }
 
         Bet memory bet = _newBet(
             token,
             tokenAmount,
-            getPayout(10000, numbers),
-            referrer
+            _getPayout(10000, numbers)
         );
 
         rouletteBets[bet.id].numbers = numbers;
@@ -1950,7 +1922,7 @@ contract Roulette is Game {
         uint256 payout = _resolveBet(
             bet,
             (2**rolled) & rouletteBet.numbers != 0,
-            getPayout(bet.amount, rouletteBet.numbers)
+            _getPayout(bet.amount, rouletteBet.numbers)
         );
 
         emit Roll(
@@ -1985,18 +1957,5 @@ contract Roulette is Game {
         }
         return lastRouletteBets;
     }
-
-    /// @notice Calculates the target payout amount.
-    /// @param betAmount Bet amount.
-    /// @param numbers The chosen numbers.
-    /// @return The target payout amount.
-    function getPayout(uint256 betAmount, uint40 numbers)
-        public
-        pure
-        returns (uint256)
-    {
-        return
-            (betAmount * MODULO) /
-            (((numbers * POPCNT_MULT) & POPCNT_MASK) % POPCNT_MODULO);
-    }
 }
+

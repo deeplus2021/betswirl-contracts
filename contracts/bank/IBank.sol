@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.10;
+pragma solidity 0.8.16;
 
 /// @notice Minimal interface for Bank.
 /// @author Romuald Hog.
@@ -22,7 +22,7 @@ interface IBank {
         uint256 fees
     ) external payable;
 
-    /// @notice Accounts a loss bet, and manage the balance overflow.
+    /// @notice Accounts a loss bet.
     /// @dev In case of an ERC20, the bet amount should be transfered prior to this tx.
     /// @dev In case of the gas token, the bet amount is sent along with this tx.
     /// @param tokenAddress Address of the token.
@@ -53,4 +53,10 @@ interface IBank {
         external
         view
         returns (address[] memory tokens, uint256[] memory amounts);
+
+    function getVRFSubId(address token) external view returns (uint64);
+
+    function getTokenOwner(address token) external view returns (address);
+
+    function getMinBetAmount(address token) external view returns (uint256);
 }
