@@ -61,6 +61,23 @@ Role associated to SwirlMaster smart contract.
 |---|---|---|
 | _0 | bytes32 | undefined
 
+### accountFees
+
+```solidity
+function accountFees(address token, uint256 fees) external payable
+```
+
+Receive game&#39;s fees.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| token | address | Address of the token.
+| fees | uint256 | Bet amount and bet profit fees amount.
+
 ### addToken
 
 ```solidity
@@ -811,6 +828,24 @@ Distributes the token&#39;s partner amount.
 
 
 ## Events
+
+### AccountFees
+
+```solidity
+event AccountFees(address indexed token, uint256 newBalance, uint256 fees)
+```
+
+Emitted after the game&#39;s fees are sent to the bank.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| token `indexed` | address | Address of the token. |
+| newBalance  | uint256 | New token balance. |
+| fees  | uint256 | Fees received from game. |
 
 ### AddToken
 

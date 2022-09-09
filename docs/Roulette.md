@@ -56,13 +56,32 @@ Maps bets IDs to Bet information.
 | payout | uint256 | undefined
 | vrfCost | uint256 | undefined
 
+### getChainlinkConfig
+
+```solidity
+function getChainlinkConfig() external view returns (uint16 requestConfirmations, bytes32 keyHash, contract IVRFCoordinatorV2 chainlinkCoordinator)
+```
+
+Returns the Chainlink VRF config.
+
+
+
+
+#### Returns
+
+| Name | Type | Description |
+|---|---|---|
+| requestConfirmations | uint16 | undefined
+| keyHash | bytes32 | undefined
+| chainlinkCoordinator | contract IVRFCoordinatorV2 | undefined
+
 ### getChainlinkVRFCost
 
 ```solidity
 function getChainlinkVRFCost(address token) external view returns (uint256)
 ```
 
-Returns the amount of ETH that should be passed to the wager transaction to cover Chainlink VRF fee.
+Returns the amount of ETH that should be passed to the wager transaction. to cover Chainlink VRF fee.
 
 
 
@@ -403,118 +422,10 @@ Distributes the token&#39;s collected Chainlink fees.
 
 ## Events
 
-### BankCashInFail
-
-```solidity
-event BankCashInFail(uint256 id, uint256 amount, string reason)
-```
-
-Emitted after the bet amount transfer to the bank failed.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| id  | uint256 | undefined |
-| amount  | uint256 | undefined |
-| reason  | string | undefined |
-
-### BankTransferFail
-
-```solidity
-event BankTransferFail(uint256 id, uint256 amount, string reason)
-```
-
-Emitted after the bet amount ERC20 transfer to the bank failed.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| id  | uint256 | undefined |
-| amount  | uint256 | undefined |
-| reason  | string | undefined |
-
-### BetAmountFeeTransferFail
-
-```solidity
-event BetAmountFeeTransferFail(uint256 id, uint256 amount, string reason)
-```
-
-Emitted after the bet amount fee transfer to the bank failed.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| id  | uint256 | undefined |
-| amount  | uint256 | undefined |
-| reason  | string | undefined |
-
-### BetAmountTransferFail
-
-```solidity
-event BetAmountTransferFail(uint256 id, uint256 amount, string reason)
-```
-
-Emitted after the bet amount transfer to the user failed.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| id  | uint256 | undefined |
-| amount  | uint256 | undefined |
-| reason  | string | undefined |
-
-### BetCostRefundFail
-
-```solidity
-event BetCostRefundFail(uint256 id, address user, uint256 chainlinkVRFCost)
-```
-
-Emitted after the bet resolution cost refund to user failed.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| id  | uint256 | undefined |
-| user  | address | undefined |
-| chainlinkVRFCost  | uint256 | undefined |
-
-### BetProfitTransferFail
-
-```solidity
-event BetProfitTransferFail(uint256 id, uint256 amount, string reason)
-```
-
-Emitted after the bet profit transfer to the user failed.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| id  | uint256 | undefined |
-| amount  | uint256 | undefined |
-| reason  | string | undefined |
-
 ### BetRefunded
 
 ```solidity
-event BetRefunded(uint256 id, address user, uint256 amount)
+event BetRefunded(uint256 id, address user, uint256 amount, uint256 chainlinkVRFCost)
 ```
 
 Emitted after the bet amount is transfered to the user.
@@ -528,6 +439,7 @@ Emitted after the bet amount is transfered to the user.
 | id  | uint256 | undefined |
 | user  | address | undefined |
 | amount  | uint256 | undefined |
+| chainlinkVRFCost  | uint256 | undefined |
 
 ### DistributeTokenVRFFees
 
@@ -582,7 +494,7 @@ event Paused(address account)
 ### PlaceBet
 
 ```solidity
-event PlaceBet(uint256 id, address indexed user, address indexed token, uint40 numbers)
+event PlaceBet(uint256 id, address indexed user, address indexed token, uint256 amount, uint256 vrfCost, uint40 numbers)
 ```
 
 Emitted after a bet is placed.
@@ -596,6 +508,8 @@ Emitted after a bet is placed.
 | id  | uint256 | The bet ID. |
 | user `indexed` | address | Address of the gamer. |
 | token `indexed` | address | Address of the token. |
+| amount  | uint256 | The bet amount. |
+| vrfCost  | uint256 | The Chainlink VRF cost paid by player. |
 | numbers  | uint40 | The chosen numbers. |
 
 ### Roll
@@ -718,6 +632,17 @@ Reverting error when sender isn&#39;t allowed.
 
 
 
+### BetVRFCostRefundFailed
+
+```solidity
+error BetVRFCostRefundFailed()
+```
+
+Reverting error when bet resolution cost refund to user failed.
+
+
+
+
 ### ExcessiveHouseEdge
 
 ```solidity
@@ -816,6 +741,17 @@ error OnlyCoordinatorCanFulfill(address have, address want)
 |---|---|---|
 | have | address | undefined |
 | want | address | undefined |
+
+### TokenHasPendingBets
+
+```solidity
+error TokenHasPendingBets()
+```
+
+Reverting error when token has pending bets.
+
+
+
 
 ### UnderMinBetAmount
 

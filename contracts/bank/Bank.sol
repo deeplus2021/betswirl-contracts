@@ -39,10 +39,6 @@ interface KeeperCompatibleInterface {
    */
   function performUpkeep(bytes calldata performData) external;
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 pragma solidity ^0.8.0;
@@ -69,10 +65,6 @@ contract KeeperBase {
     _;
   }
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts (last updated v4.7.0) (utils/Address.sol)
@@ -296,10 +288,6 @@ library Address {
         }
     }
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts v4.4.1 (token/ERC20/extensions/draft-IERC20Permit.sol)
@@ -361,10 +349,6 @@ interface IERC20Permit {
     // solhint-disable-next-line func-name-mixedcase
     function DOMAIN_SEPARATOR() external view returns (bytes32);
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts (last updated v4.6.0) (token/ERC20/IERC20.sol)
@@ -448,10 +432,6 @@ interface IERC20 {
         uint256 amount
     ) external returns (bool);
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts v4.4.1 (utils/introspection/IERC165.sol)
@@ -478,10 +458,6 @@ interface IERC165 {
      */
     function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts v4.4.1 (utils/introspection/ERC165.sol)
@@ -512,10 +488,6 @@ abstract contract ERC165 is IERC165 {
         return interfaceId == type(IERC165).interfaceId;
     }
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts (last updated v4.7.0) (utils/Strings.sol)
@@ -592,10 +564,6 @@ library Strings {
         return toHexString(uint256(uint160(addr)), _ADDRESS_LENGTH);
     }
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts v4.4.1 (utils/Context.sol)
@@ -621,10 +589,6 @@ abstract contract Context {
         return msg.data;
     }
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts v4.4.1 (access/IAccessControl.sol)
@@ -714,10 +678,6 @@ interface IAccessControl {
      */
     function renounceRole(bytes32 role, address account) external;
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts (last updated v4.7.0) (utils/structs/EnumerableSet.sol)
@@ -1086,10 +1046,6 @@ library EnumerableSet {
         return result;
     }
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts (last updated v4.7.0) (access/AccessControl.sol)
@@ -1338,10 +1294,6 @@ abstract contract AccessControl is Context, IAccessControl, ERC165 {
         }
     }
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts v4.4.1 (access/IAccessControlEnumerable.sol)
@@ -1374,10 +1326,6 @@ interface IAccessControlEnumerable is IAccessControl {
      */
     function getRoleMemberCount(bytes32 role) external view returns (uint256);
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 pragma solidity ^0.8.0;
@@ -1386,9 +1334,6 @@ pragma solidity ^0.8.0;
 ////import "./interfaces/KeeperCompatibleInterface.sol";
 
 abstract contract KeeperCompatible is KeeperBase, KeeperCompatibleInterface {}
-
-
-
 
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
@@ -1415,10 +1360,6 @@ abstract contract Multicall {
         return results;
     }
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts (last updated v4.7.0) (token/ERC20/utils/SafeERC20.sol)
@@ -1536,10 +1477,6 @@ library SafeERC20 {
         }
     }
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts v4.4.1 (token/ERC20/extensions/IERC20Metadata.sol)
@@ -1569,10 +1506,6 @@ interface IERC20Metadata is IERC20 {
      */
     function decimals() external view returns (uint8);
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts (last updated v4.5.0) (access/AccessControlEnumerable.sol)
@@ -1638,8 +1571,6 @@ abstract contract AccessControlEnumerable is IAccessControlEnumerable, AccessCon
         _roleMembers[role].remove(account);
     }
 }
-
-
 
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 
@@ -1867,6 +1798,12 @@ contract Bank is AccessControlEnumerable, KeeperCompatibleInterface, Multicall {
         uint256 treasury,
         uint256 team
     );
+
+    /// @notice Emitted after the game's fees are sent to the bank.
+    /// @param token Address of the token.
+    /// @param newBalance New token balance.
+    /// @param fees Fees received from game.
+    event AccountFees(address indexed token, uint256 newBalance, uint256 fees);
 
     /// @notice Emitted after the bet profit amount is sent to the user.
     /// @param token Address of the token.
@@ -2182,6 +2119,57 @@ contract Bank is AccessControlEnumerable, KeeperCompatibleInterface, Multicall {
         return (_tokens, _amounts);
     }
 
+    /// @notice Splits the house edge fees and allocates them as dividends, to the partner, the bank, the treasury, and team.
+    /// @param token Address of the token.
+    /// @param fees Bet amount and bet profit fees amount.
+    function _allocateHouseEdge(address token, uint256 fees) private {
+        HouseEdgeSplit storage tokenHouseEdge = tokens[token].houseEdgeSplit;
+
+        uint256 partnerAmount;
+        if (tokenHouseEdge.partner != 0) {
+            partnerAmount = ((fees * tokenHouseEdge.partner) / 10000);
+            tokenHouseEdge.partnerAmount += partnerAmount;
+        }
+
+        uint256 dividendAmount = (fees * tokenHouseEdge.dividend) / 10000;
+        tokenHouseEdge.dividendAmount += dividendAmount;
+
+        // The bank also get allocated a share of the house edge.
+        uint256 bankAmount = (fees * tokenHouseEdge.bank) / 10000;
+
+        uint256 treasuryAmount = (fees * tokenHouseEdge.treasury) / 10000;
+        tokenHouseEdge.treasuryAmount += treasuryAmount;
+
+        uint256 teamAmount = (fees * tokenHouseEdge.team) / 10000;
+        tokenHouseEdge.teamAmount += teamAmount;
+
+        emit AllocateHouseEdgeAmount(
+            token,
+            bankAmount,
+            dividendAmount,
+            partnerAmount,
+            treasuryAmount,
+            teamAmount
+        );
+    }
+
+    /// @notice Receive game's fees.
+    /// @param token Address of the token.
+    /// @param fees Bet amount and bet profit fees amount.
+    function accountFees(address token, uint256 fees)
+        external
+        payable
+        onlyRole(GAME_ROLE)
+    {
+        _allocateHouseEdge(token, fees);
+
+        emit AccountFees(
+            token,
+            getBalance(token),
+            _isGasToken(token) ? msg.value : fees
+        );
+    }
+
     /// @notice Payouts a winning bet, and allocate the house edge fee.
     /// @param user Address of the gamer.
     /// @param token Address of the token.
@@ -2193,38 +2181,7 @@ contract Bank is AccessControlEnumerable, KeeperCompatibleInterface, Multicall {
         uint256 profit,
         uint256 fees
     ) external payable onlyRole(GAME_ROLE) {
-        // Splits the house edge fees and allocates them as dividends, to the partner, the bank, the treasury, and team.
-        {
-            HouseEdgeSplit storage tokenHouseEdge = tokens[token]
-                .houseEdgeSplit;
-
-            uint256 partnerAmount;
-            if (tokenHouseEdge.partner != 0) {
-                partnerAmount = ((fees * tokenHouseEdge.partner) / 10000);
-                tokenHouseEdge.partnerAmount += partnerAmount;
-            }
-
-            uint256 dividendAmount = (fees * tokenHouseEdge.dividend) / 10000;
-            tokenHouseEdge.dividendAmount += dividendAmount;
-
-            // The bank also get allocated a share of the house edge.
-            uint256 bankAmount = (fees * tokenHouseEdge.bank) / 10000;
-
-            uint256 treasuryAmount = (fees * tokenHouseEdge.treasury) / 10000;
-            tokenHouseEdge.treasuryAmount += treasuryAmount;
-
-            uint256 teamAmount = (fees * tokenHouseEdge.team) / 10000;
-            tokenHouseEdge.teamAmount += teamAmount;
-
-            emit AllocateHouseEdgeAmount(
-                token,
-                bankAmount,
-                dividendAmount,
-                partnerAmount,
-                treasuryAmount,
-                teamAmount
-            );
-        }
+        _allocateHouseEdge(token, fees);
 
         // Pay the user
         _safeTransfer(user, token, profit);

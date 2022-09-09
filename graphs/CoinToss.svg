@@ -2,7 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="418pt" height="400pt" viewBox="0.00 0.00 418.38 400.00">
 <g id="graph0" class="graph" transform="translate(4,396) scale(1)" data-name="G">
 
-<polygon fill="#2e3e56" stroke="transparent" points="-4,4 -4,-396 414.38,-396 414.38,4 -4,4" style=""/>
+<polygon fill="#2e3e56" stroke="none" points="-4,4 -4,-396 414.38,-396 414.38,4 -4,4" style=""/>
 <g id="clust1" class="cluster" data-name="clusterCoinToss">
 
 <path fill="#445773" stroke="#445773" d="M20,-8C20,-8 390.38,-8 390.38,-8 396.38,-8 402.38,-14 402.38,-20 402.38,-20 402.38,-235 402.38,-235 402.38,-241 396.38,-247 390.38,-247 390.38,-247 20,-247 20,-247 14,-247 8,-241 8,-235 8,-235 8,-20 8,-20 8,-14 14,-8 20,-8" style=""/>
@@ -94,7 +94,7 @@
 <!-- key -->
 <g id="node9" class="node" pointer-events="visible" data-name="key">
 
-<polygon fill="#edad56" stroke="transparent" stroke-width="3" points="172.5,-351 42.5,-351 42.5,-263 172.5,-263 172.5,-351" style=""/>
+<polygon fill="#edad56" stroke="none" stroke-width="3" points="172.5,-351 42.5,-351 42.5,-263 172.5,-263 172.5,-351" style=""/>
 <text text-anchor="start" x="92.14" y="-332.4" font-family="Times,serif" font-size="14.00" style="">Internal Call</text>
 <text text-anchor="start" x="88.25" y="-312.4" font-family="Times,serif" font-size="14.00" style="">External Call</text>
 <text text-anchor="start" x="65.7" y="-292.4" font-family="Times,serif" font-size="14.00" style="">Defined Contract</text>
@@ -103,10 +103,10 @@
 <!-- key2 -->
 <g id="node10" class="node" pointer-events="visible" data-name="key2">
 
-<polygon fill="#edad56" stroke="transparent" stroke-width="3" points="341.69,-351 287.69,-351 287.69,-263 341.69,-263 341.69,-351" style=""/>
+<polygon fill="#edad56" stroke="none" stroke-width="3" points="341.69,-351 287.69,-351 287.69,-263 341.69,-263 341.69,-351" style=""/>
 <text text-anchor="start" x="304.69" y="-332.4" font-family="Times,serif" font-size="14.00" style="">   </text>
 <text text-anchor="start" x="304.69" y="-312.4" font-family="Times,serif" font-size="14.00" style="">   </text>
-<polygon fill="#445773" stroke="transparent" points="302.69,-287 302.69,-307 327.69,-307 327.69,-287 302.69,-287" style=""/>
+<polygon fill="#445773" stroke="none" points="302.69,-287 302.69,-307 327.69,-307 327.69,-287 302.69,-287" style=""/>
 <text text-anchor="start" x="304.69" y="-292.4" font-family="Times,serif" font-size="14.00" style="">   </text>
 <polygon fill="none" stroke="#e8726d" points="304.69,-269 304.69,-285 325.69,-285 325.69,-269 304.69,-269" style=""/>
 </g>

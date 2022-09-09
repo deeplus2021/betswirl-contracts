@@ -220,10 +220,6 @@ library Address {
         }
     }
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts v4.4.1 (token/ERC20/extensions/draft-IERC20Permit.sol)
@@ -285,10 +281,6 @@ interface IERC20Permit {
     // solhint-disable-next-line func-name-mixedcase
     function DOMAIN_SEPARATOR() external view returns (bytes32);
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts (last updated v4.6.0) (token/ERC20/IERC20.sol)
@@ -372,10 +364,6 @@ interface IERC20 {
         uint256 amount
     ) external returns (bool);
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts v4.4.1 (utils/Context.sol)
@@ -401,10 +389,6 @@ abstract contract Context {
         return msg.data;
     }
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 
@@ -468,10 +452,6 @@ interface IBank {
 
     function getMinBetAmount(address token) external view returns (uint256);
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 pragma solidity ^0.8.0;
@@ -483,6 +463,9 @@ interface AggregatorV3Interface {
 
   function version() external view returns (uint256);
 
+  // getRoundData and latestRoundData should both raise "No data present"
+  // if they do not have data to report, instead of returning unset values
+  // which could be misinterpreted as actual reported values.
   function getRoundData(uint80 _roundId)
     external
     view
@@ -505,10 +488,6 @@ interface AggregatorV3Interface {
       uint80 answeredInRound
     );
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 pragma solidity ^0.8.0;
@@ -625,20 +604,7 @@ interface VRFCoordinatorV2Interface {
    * @param to - Where to send the remaining LINK to
    */
   function cancelSubscription(uint64 subId, address to) external;
-
-  /*
-   * @notice Check to see if there exists a request commitment consumers
-   * for all consumers and keyhashes for a given sub.
-   * @param subId - ID of the subscription
-   * @return true if there exists at least one unfulfilled request for the subscription, false
-   * otherwise.
-   */
-  function pendingRequestExists(uint64 subId) external view returns (bool);
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 pragma solidity ^0.8.4;
@@ -773,10 +739,6 @@ abstract contract VRFConsumerBaseV2 {
     fulfillRandomWords(requestId, randomWords);
   }
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts v4.4.1 (security/ReentrancyGuard.sol)
@@ -841,10 +803,6 @@ abstract contract ReentrancyGuard {
         _status = _NOT_ENTERED;
     }
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts (last updated v4.7.0) (token/ERC20/utils/SafeERC20.sol)
@@ -962,10 +920,6 @@ library SafeERC20 {
         }
     }
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts (last updated v4.7.0) (security/Pausable.sol)
@@ -1072,10 +1026,6 @@ abstract contract Pausable is Context {
         emit Unpaused(_msgSender());
     }
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts (last updated v4.5.0) (utils/Multicall.sol)
@@ -1101,10 +1051,6 @@ abstract contract Multicall {
         return results;
     }
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 // OpenZeppelin Contracts (last updated v4.7.0) (access/Ownable.sol)
@@ -1189,10 +1135,6 @@ abstract contract Ownable is Context {
         emit OwnershipTransferred(oldOwner, newOwner);
     }
 }
-
-
-
-
             
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 
@@ -1327,47 +1269,17 @@ abstract contract Game is
     /// @param keyHash Hash of the public key used to verify the VRF proof.
     event SetChainlinkConfig(uint16 requestConfirmations, bytes32 keyHash);
 
-    /// @notice Emitted after the bet amount transfer to the user failed.
-    /// @param id The bet ID.
-    /// @param amount Number of tokens failed to transfer.
-    /// @param reason The reason provided by the external call.
-    event BetAmountTransferFail(uint256 id, uint256 amount, string reason);
-
-    /// @notice Emitted after the bet amount fee transfer to the bank failed.
-    /// @param id The bet ID.
-    /// @param amount Number of tokens failed to transfer.
-    /// @param reason The reason provided by the external call.
-    event BetAmountFeeTransferFail(uint256 id, uint256 amount, string reason);
-
-    /// @notice Emitted after the bet profit transfer to the user failed.
-    /// @param id The bet ID.
-    /// @param amount Number of tokens failed to transfer.
-    /// @param reason The reason provided by the external call.
-    event BetProfitTransferFail(uint256 id, uint256 amount, string reason);
-
-    /// @notice Emitted after the bet amount transfer to the bank failed.
-    /// @param id The bet ID.
-    /// @param amount Number of tokens failed to transfer.
-    /// @param reason The reason provided by the external call.
-    event BankCashInFail(uint256 id, uint256 amount, string reason);
-
-    /// @notice Emitted after the bet amount ERC20 transfer to the bank failed.
-    /// @param id The bet ID.
-    /// @param amount Number of tokens failed to transfer.
-    /// @param reason The reason provided by the external call.
-    event BankTransferFail(uint256 id, uint256 amount, string reason);
-
     /// @notice Emitted after the bet amount is transfered to the user.
     /// @param id The bet ID.
     /// @param user Address of the gamer.
     /// @param amount Number of tokens refunded.
-    event BetRefunded(uint256 id, address user, uint256 amount);
-
-    /// @notice Emitted after the bet resolution cost refund to user failed.
-    /// @param id The bet ID.
-    /// @param user Address of the gamer.
-    /// @param chainlinkVRFCost The bet resolution cost amount.
-    event BetCostRefundFail(uint256 id, address user, uint256 chainlinkVRFCost);
+    /// @param chainlinkVRFCost The Chainlink VRF cost refunded to player.
+    event BetRefunded(
+        uint256 id,
+        address user,
+        uint256 amount,
+        uint256 chainlinkVRFCost
+    );
 
     /// @notice Emitted after the token's VRF fees amount is transfered to the user.
     /// @param token Address of the token.
@@ -1403,10 +1315,17 @@ abstract contract Game is
     /// @notice Reverting error when provided address isn't valid.
     error InvalidAddress();
 
+    /// @notice Reverting error when bet resolution cost refund to user failed.
+    error BetVRFCostRefundFailed();
+
+    /// @notice Reverting error when token has pending bets.
+    error TokenHasPendingBets();
+
     /// @notice Initialize contract's state variables and VRF Consumer.
     /// @param bankAddress The address of the bank.
     /// @param chainlinkCoordinatorAddress Address of the Chainlink VRF Coordinator.
     /// @param numRandomWords How many random words is needed to resolve a game's bet.
+    /// @param LINK_ETH_feedAddress Address of the Chainlink LINK/ETH price feed.
     constructor(
         address bankAddress,
         address chainlinkCoordinatorAddress,
@@ -1455,7 +1374,10 @@ abstract contract Game is
         uint256 tokenAmount,
         uint256 multiplier
     ) internal whenNotPaused nonReentrant returns (Bet memory) {
-        if (bank.isAllowedToken(tokenAddress) == false) {
+        Token storage token = tokens[tokenAddress];
+        if (
+            bank.isAllowedToken(tokenAddress) == false || token.houseEdge == 0
+        ) {
             revert ForbiddenToken();
         }
 
@@ -1463,7 +1385,6 @@ abstract contract Game is
         bool isGasToken = tokenAddress == address(0);
         uint256 fee = isGasToken ? (msg.value - tokenAmount) : msg.value;
         uint256 betAmount = isGasToken ? msg.value - fee : tokenAmount;
-        Token storage token = tokens[tokenAddress];
 
         // Charge user for Chainlink VRF fee.
         {
@@ -1564,53 +1485,28 @@ abstract contract Game is
 
             uint256 betAmountPayout = betAmount - betAmountFee;
             uint256 profitPayout = profit - profitFee;
-            // Transfer the bet amount from the contract
+            // Transfer the bet amount payout to the player
             if (isGasToken) {
-                if (!user.send(betAmountPayout)) {
-                    emit BetAmountTransferFail(
-                        bet.id,
-                        betAmountPayout,
-                        "Gas token send failed"
-                    );
-                }
+                user.transfer(betAmountPayout);
             } else {
-                try
-                    IERC20(token).transfer(user, betAmountPayout)
-                {} catch Error(string memory reason) {
-                    emit BetAmountTransferFail(bet.id, betAmountPayout, reason);
-                }
-                try
-                    IERC20(token).transfer(address(bank), betAmountFee)
-                {} catch Error(string memory reason) {
-                    emit BetAmountFeeTransferFail(bet.id, betAmountFee, reason);
-                }
+                IERC20(token).safeTransfer(user, betAmountPayout);
+                // Transfer the bet amount fee to the bank.
+                IERC20(token).safeTransfer(address(bank), betAmountFee);
             }
 
-            // Transfer the payout from the bank, transfer the bet amount fee to the bank, and account fees.
-            try
-                bank.payout{value: isGasToken ? betAmountFee : 0}(
-                    user,
-                    token,
-                    profitPayout,
-                    fee
-                )
-            {} catch Error(string memory reason) {
-                emit BetProfitTransferFail(bet.id, profitPayout, reason);
-            }
+            // Transfer the payout from the bank, the bet amount fee to the bank, and account fees.
+            bank.payout{value: isGasToken ? betAmountFee : 0}(
+                user,
+                token,
+                profitPayout,
+                fee
+            );
         } else {
             payout = 0;
             if (!isGasToken) {
-                try
-                    IERC20(token).transfer(address(bank), betAmount)
-                {} catch Error(string memory reason) {
-                    emit BankTransferFail(bet.id, betAmount, reason);
-                }
+                IERC20(token).safeTransfer(address(bank), betAmount);
             }
-            try
-                bank.cashIn{value: isGasToken ? betAmount : 0}(token, betAmount)
-            {} catch Error(string memory reason) {
-                emit BankCashInFail(bet.id, betAmount, reason);
-            }
+            bank.cashIn{value: isGasToken ? betAmount : 0}(token, betAmount);
         }
 
         bet.payout = payout;
@@ -1652,6 +1548,9 @@ abstract contract Game is
     function setHouseEdge(address token, uint16 houseEdge) external onlyOwner {
         if (houseEdge > 400) {
             revert ExcessiveHouseEdge();
+        }
+        if (hasPendingBets(token)) {
+            revert TokenHasPendingBets();
         }
         tokens[token].houseEdge = houseEdge;
         emit SetHouseEdge(token, houseEdge);
@@ -1720,7 +1619,6 @@ abstract contract Game is
         } else {
             IERC20(bet.token).safeTransfer(bet.user, bet.amount);
         }
-        emit BetRefunded(id, bet.user, bet.amount);
 
         uint256 chainlinkVRFCost = bet.vrfCost;
         if (
@@ -1729,14 +1627,35 @@ abstract contract Game is
         ) {
             token.VRFFees -= chainlinkVRFCost;
             payable(bet.user).transfer(chainlinkVRFCost);
+            emit BetRefunded(id, bet.user, bet.amount, chainlinkVRFCost);
         } else {
-            emit BetCostRefundFail(id, bet.user, chainlinkVRFCost);
+            revert BetVRFCostRefundFailed();
         }
+    }
+
+    /// @notice Returns the Chainlink VRF config.
+    /// @param requestConfirmations How many confirmations the Chainlink node should wait before responding.
+    /// @param keyHash Hash of the public key used to verify the VRF proof.
+    /// @param chainlinkCoordinator Reference to the VRFCoordinatorV2 deployed contract.
+    function getChainlinkConfig()
+        external
+        view
+        returns (
+            uint16 requestConfirmations,
+            bytes32 keyHash,
+            IVRFCoordinatorV2 chainlinkCoordinator
+        )
+    {
+        return (
+            _chainlinkConfig.requestConfirmations,
+            _chainlinkConfig.keyHash,
+            _chainlinkConfig.chainlinkCoordinator
+        );
     }
 
     /// @notice Returns whether the token has pending bets.
     /// @return Whether the token has pending bets.
-    function hasPendingBets(address token) external view returns (bool) {
+    function hasPendingBets(address token) public view returns (bool) {
         return tokens[token].pendingCount != 0;
     }
 
@@ -1750,7 +1669,7 @@ abstract contract Game is
         emit SetBank(address(_bank));
     }
 
-    /// @notice Returns the amount of ETH that should be passed to the wager transaction
+    /// @notice Returns the amount of ETH that should be passed to the wager transaction.
     /// to cover Chainlink VRF fee.
     /// @return The bet resolution cost amount.
     function getChainlinkVRFCost(address token) public view returns (uint256) {
@@ -1778,8 +1697,6 @@ abstract contract Game is
                 uint256(weiPerUnitLink)) / 1e18);
     }
 }
-
-
 
 ////// SPDX-License-Identifier-FLATTEN-SUPPRESS-WARNING: MIT
 
@@ -1815,11 +1732,15 @@ contract Dice is Game {
     /// @param id The bet ID.
     /// @param user Address of the gamer.
     /// @param token Address of the token.
+    /// @param amount The bet amount.
+    /// @param vrfCost The Chainlink VRF cost paid by player.
     /// @param cap The chosen dice number.
     event PlaceBet(
         uint256 id,
         address indexed user,
         address indexed token,
+        uint256 amount,
+        uint256 vrfCost,
         uint8 cap
     );
 
@@ -1890,7 +1811,7 @@ contract Dice is Game {
         );
         diceBets[bet.id].cap = cap;
 
-        emit PlaceBet(bet.id, bet.user, bet.token, cap);
+        emit PlaceBet(bet.id, bet.user, bet.token, bet.amount, bet.vrfCost, cap);
     }
 
     /// @notice Resolves the bet using the Chainlink randomness.
