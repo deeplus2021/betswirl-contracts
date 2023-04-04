@@ -25,7 +25,7 @@ function DEFAULT_ADMIN_ROLE() external view returns (bytes32)
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | bytes32 | undefined
+| _0 | bytes32 | undefined |
 
 ### GAME_ROLE
 
@@ -42,15 +42,15 @@ Role associated to Games smart contracts.
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | bytes32 | undefined
+| _0 | bytes32 | undefined |
 
-### SWIRLMASTER_ROLE
+### HARVESTER_ROLE
 
 ```solidity
-function SWIRLMASTER_ROLE() external view returns (bytes32)
+function HARVESTER_ROLE() external view returns (bytes32)
 ```
 
-Role associated to SwirlMaster smart contract.
+Role associated to harvester smart contract.
 
 
 
@@ -59,24 +59,7 @@ Role associated to SwirlMaster smart contract.
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | bytes32 | undefined
-
-### accountFees
-
-```solidity
-function accountFees(address token, uint256 fees) external payable
-```
-
-Receive game&#39;s fees.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| token | address | Address of the token.
-| fees | uint256 | Bet amount and bet profit fees amount.
+| _0 | bytes32 | undefined |
 
 ### addToken
 
@@ -92,12 +75,12 @@ Adds a new token that&#39;ll be enabled for the games&#39; betting. Token should
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
+| token | address | Address of the token. |
 
 ### cashIn
 
 ```solidity
-function cashIn(address tokenAddress, uint256 amount) external payable
+function cashIn(address tokenAddress, uint256 amount, uint256 fees) external payable
 ```
 
 Accounts a loss bet.
@@ -108,8 +91,9 @@ Accounts a loss bet.
 
 | Name | Type | Description |
 |---|---|---|
-| tokenAddress | address | Address of the token.
-| amount | uint256 | Loss bet amount.
+| tokenAddress | address | Address of the token. |
+| amount | uint256 | Loss bet amount. |
+| fees | uint256 | Bet amount and bet profit fees amount. |
 
 ### checkUpkeep
 
@@ -125,14 +109,14 @@ Runs by Chainlink Keepers at every block to determine if `performUpkeep` should 
 
 | Name | Type | Description |
 |---|---|---|
-| checkData | bytes | Fixed and specified at Upkeep registration.
+| checkData | bytes | Fixed and specified at Upkeep registration. |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| upkeepNeeded | bool | Boolean that when True will trigger the on-chain performUpkeep call.
-| performData | bytes | Bytes that will be used as input parameter when calling performUpkeep.
+| upkeepNeeded | bool | Boolean that when True will trigger the on-chain performUpkeep call. |
+| performData | bytes | Bytes that will be used as input parameter when calling performUpkeep. |
 
 ### deposit
 
@@ -148,8 +132,8 @@ Deposit funds in the bank to allow gamers to win more. ERC20 token allowance sho
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
-| amount | uint256 | Number of tokens.
+| token | address | Address of the token. |
+| amount | uint256 | Number of tokens. |
 
 ### getBalance
 
@@ -165,31 +149,13 @@ Gets the token&#39;s balance. The token&#39;s house edge allocation amounts are 
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
+| token | address | Address of the token. |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | uint256 | The amount of token available for profits.
-
-### getDividends
-
-```solidity
-function getDividends() external view returns (address[], uint256[])
-```
-
-Get the available tokens dividends amounts.
-
-
-
-
-#### Returns
-
-| Name | Type | Description |
-|---|---|---|
-| _0 | address[] | The list of tokens addresses.
-| _1 | uint256[] | The list of tokens&#39; amounts harvested.
+| _0 | uint256 | The amount of token available for profits. |
 
 ### getMaxBetAmount
 
@@ -205,14 +171,14 @@ Calculates the max bet amount based on the token balance, the balance risk, and 
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
-| multiplier | uint256 | The bet amount leverage determines the user&#39;s profit amount. 10000 = 100% = no profit.
+| token | address | Address of the token. |
+| multiplier | uint256 | The bet amount leverage determines the user&#39;s profit amount. 10000 = 100% = no profit. |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | uint256 | Maximum bet amount for the token.
+| _0 | uint256 | Maximum bet amount for the token. |
 
 ### getMinBetAmount
 
@@ -228,13 +194,13 @@ Gets the token&#39;s min bet amount.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
+| token | address | Address of the token. |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| minBetAmount | uint256 | Min bet amount.
+| minBetAmount | uint256 | Min bet amount. |
 
 ### getRoleAdmin
 
@@ -250,13 +216,13 @@ function getRoleAdmin(bytes32 role) external view returns (bytes32)
 
 | Name | Type | Description |
 |---|---|---|
-| role | bytes32 | undefined
+| role | bytes32 | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | bytes32 | undefined
+| _0 | bytes32 | undefined |
 
 ### getRoleMember
 
@@ -272,14 +238,14 @@ function getRoleMember(bytes32 role, uint256 index) external view returns (addre
 
 | Name | Type | Description |
 |---|---|---|
-| role | bytes32 | undefined
-| index | uint256 | undefined
+| role | bytes32 | undefined |
+| index | uint256 | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | address | undefined
+| _0 | address | undefined |
 
 ### getRoleMemberCount
 
@@ -295,13 +261,13 @@ function getRoleMemberCount(bytes32 role) external view returns (uint256)
 
 | Name | Type | Description |
 |---|---|---|
-| role | bytes32 | undefined
+| role | bytes32 | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | uint256 | undefined
+| _0 | uint256 | undefined |
 
 ### getTokenOwner
 
@@ -317,13 +283,13 @@ Gets the token&#39;s owner.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
+| token | address | Address of the token. |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | address | Address of the owner.
+| _0 | address | Address of the owner. |
 
 ### getTokens
 
@@ -340,7 +306,7 @@ function getTokens() external view returns (struct Bank.TokenMetadata[])
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | Bank.TokenMetadata[] | undefined
+| _0 | Bank.TokenMetadata[] | undefined |
 
 ### getVRFSubId
 
@@ -356,13 +322,13 @@ Gets the token&#39;s Chainlink VRF v2 Subscription ID.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
+| token | address | Address of the token. |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | uint64 | Chainlink VRF v2 Subscription ID.
+| _0 | uint64 | Chainlink VRF v2 Subscription ID. |
 
 ### grantRole
 
@@ -378,26 +344,19 @@ function grantRole(bytes32 role, address account) external nonpayable
 
 | Name | Type | Description |
 |---|---|---|
-| role | bytes32 | undefined
-| account | address | undefined
+| role | bytes32 | undefined |
+| account | address | undefined |
 
 ### harvestDividends
 
 ```solidity
-function harvestDividends() external nonpayable returns (address[], uint256[])
+function harvestDividends() external nonpayable
 ```
 
 Harvests tokens dividends.
 
 
 
-
-#### Returns
-
-| Name | Type | Description |
-|---|---|---|
-| _0 | address[] | The list of tokens addresses.
-| _1 | uint256[] | The list of tokens&#39; amounts harvested.
 
 ### hasRole
 
@@ -413,14 +372,14 @@ function hasRole(bytes32 role, address account) external view returns (bool)
 
 | Name | Type | Description |
 |---|---|---|
-| role | bytes32 | undefined
-| account | address | undefined
+| role | bytes32 | undefined |
+| account | address | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | bool | undefined
+| _0 | bool | undefined |
 
 ### isAllowedToken
 
@@ -436,13 +395,13 @@ Gets the token&#39;s allow status used on the games smart contracts.
 
 | Name | Type | Description |
 |---|---|---|
-| tokenAddress | address | Address of the token.
+| tokenAddress | address | Address of the token. |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | bool | Whether the token is enabled for bets.
+| _0 | bool | Whether the token is enabled for bets. |
 
 ### multicall
 
@@ -458,18 +417,18 @@ function multicall(bytes[] data) external nonpayable returns (bytes[] results)
 
 | Name | Type | Description |
 |---|---|---|
-| data | bytes[] | undefined
+| data | bytes[] | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| results | bytes[] | undefined
+| results | bytes[] | undefined |
 
 ### payout
 
 ```solidity
-function payout(address payable user, address token, uint256 profit, uint256 fees) external payable
+function payout(address user, address token, uint256 profit, uint256 fees) external payable
 ```
 
 Payouts a winning bet, and allocate the house edge fee.
@@ -480,10 +439,10 @@ Payouts a winning bet, and allocate the house edge fee.
 
 | Name | Type | Description |
 |---|---|---|
-| user | address payable | Address of the gamer.
-| token | address | Address of the token.
-| profit | uint256 | Number of tokens to be sent to the gamer.
-| fees | uint256 | Bet amount and bet profit fees amount.
+| user | address | Address of the gamer. |
+| token | address | Address of the token. |
+| profit | uint256 | Number of tokens to be sent to the gamer. |
+| fees | uint256 | Bet amount and bet profit fees amount. |
 
 ### performUpkeep
 
@@ -499,7 +458,7 @@ Executed by Chainlink Keepers when `upkeepNeeded` is true.
 
 | Name | Type | Description |
 |---|---|---|
-| performData | bytes | Data which was passed back from `checkUpkeep`.
+| performData | bytes | Data which was passed back from `checkUpkeep`. |
 
 ### renounceRole
 
@@ -515,8 +474,8 @@ function renounceRole(bytes32 role, address account) external nonpayable
 
 | Name | Type | Description |
 |---|---|---|
-| role | bytes32 | undefined
-| account | address | undefined
+| role | bytes32 | undefined |
+| account | address | undefined |
 
 ### revokeRole
 
@@ -532,8 +491,8 @@ function revokeRole(bytes32 role, address account) external nonpayable
 
 | Name | Type | Description |
 |---|---|---|
-| role | bytes32 | undefined
-| account | address | undefined
+| role | bytes32 | undefined |
+| account | address | undefined |
 
 ### setAllowedToken
 
@@ -549,8 +508,8 @@ Changes the token&#39;s bet permission.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
-| allowed | bool | Whether the token is enabled for bets.
+| token | address | Address of the token. |
+| allowed | bool | Whether the token is enabled for bets. |
 
 ### setBalanceRisk
 
@@ -566,8 +525,8 @@ Sets the new token balance risk.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
-| balanceRisk | uint16 | Risk rate.
+| token | address | Address of the token. |
+| balanceRisk | uint16 | Risk rate. |
 
 ### setHouseEdgeSplit
 
@@ -583,17 +542,17 @@ Sets the token&#39;s house edge allocations for bet payout.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
-| bank | uint16 | Rate to be allocated to the bank, on bet payout.
-| dividend | uint16 | Rate to be allocated as staking rewards, on bet payout.
-| partner | uint16 | Rate to be allocated to the partner, on bet payout.
-| _treasury | uint16 | Rate to be allocated to the treasury, on bet payout.
-| team | uint16 | Rate to be allocated to the team, on bet payout.
+| token | address | Address of the token. |
+| bank | uint16 | Rate to be allocated to the bank, on bet payout. |
+| dividend | uint16 | Rate to be allocated as staking rewards, on bet payout. |
+| partner | uint16 | Rate to be allocated to the partner, on bet payout. |
+| _treasury | uint16 | Rate to be allocated to the treasury, on bet payout. |
+| team | uint16 | Rate to be allocated to the team, on bet payout. |
 
-### setMinPartnerTransferAmount
+### setMinHouseEdgeWithdrawAmount
 
 ```solidity
-function setMinPartnerTransferAmount(address token, uint256 minPartnerTransferAmount) external nonpayable
+function setMinHouseEdgeWithdrawAmount(address token, uint256 minHouseEdgeWithdrawAmount) external nonpayable
 ```
 
 Changes the token&#39;s Upkeep min transfer amount.
@@ -604,8 +563,8 @@ Changes the token&#39;s Upkeep min transfer amount.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
-| minPartnerTransferAmount | uint256 | Minimum amount of token to allow transfer.
+| token | address | Address of the token. |
+| minHouseEdgeWithdrawAmount | uint256 | Minimum amount of token to allow transfer. |
 
 ### setPausedToken
 
@@ -621,8 +580,8 @@ Changes the token&#39;s paused status.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
-| paused | bool | Whether the token is paused.
+| token | address | Address of the token. |
+| paused | bool | Whether the token is paused. |
 
 ### setTeamWallet
 
@@ -638,7 +597,7 @@ Sets the new team wallet.
 
 | Name | Type | Description |
 |---|---|---|
-| _teamWallet | address | The team wallet address.
+| _teamWallet | address | The team wallet address. |
 
 ### setTokenMinBetAmount
 
@@ -654,8 +613,8 @@ Sets the minimum bet amount for a specific token.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
-| tokenMinBetAmount | uint256 | Minimum bet amount.
+| token | address | Address of the token. |
+| tokenMinBetAmount | uint256 | Minimum bet amount. |
 
 ### setTokenPartner
 
@@ -671,8 +630,8 @@ Changes the token&#39;s partner address. It withdraw the available balance, the 
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
-| partner | address | Address of the partner.
+| token | address | Address of the token. |
+| partner | address | Address of the partner. |
 
 ### setTokenVRFSubId
 
@@ -688,8 +647,8 @@ Sets the Chainlink VRF subscription ID for a specific token.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
-| subId | uint64 | Subscription ID.
+| token | address | Address of the token. |
+| subId | uint64 | Subscription ID. |
 
 ### supportsInterface
 
@@ -705,13 +664,13 @@ function supportsInterface(bytes4 interfaceId) external view returns (bool)
 
 | Name | Type | Description |
 |---|---|---|
-| interfaceId | bytes4 | undefined
+| interfaceId | bytes4 | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | bool | undefined
+| _0 | bool | undefined |
 
 ### teamWallet
 
@@ -728,12 +687,12 @@ Team wallet.
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | address | undefined
+| _0 | address | undefined |
 
 ### tokens
 
 ```solidity
-function tokens(address) external view returns (bool allowed, bool paused, uint16 balanceRisk, uint64 VRFSubId, address partner, uint256 minBetAmount, uint256 minPartnerTransferAmount, struct Bank.HouseEdgeSplit houseEdgeSplit)
+function tokens(address) external view returns (bool allowed, bool paused, uint16 balanceRisk, uint64 VRFSubId, address partner, uint256 minBetAmount, uint256 minHouseEdgeWithdrawAmount, struct Bank.HouseEdgeSplit houseEdgeSplit)
 ```
 
 Maps tokens addresses to token configuration.
@@ -744,20 +703,20 @@ Maps tokens addresses to token configuration.
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | address | undefined
+| _0 | address | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| allowed | bool | undefined
-| paused | bool | undefined
-| balanceRisk | uint16 | undefined
-| VRFSubId | uint64 | undefined
-| partner | address | undefined
-| minBetAmount | uint256 | undefined
-| minPartnerTransferAmount | uint256 | undefined
-| houseEdgeSplit | Bank.HouseEdgeSplit | undefined
+| allowed | bool | undefined |
+| paused | bool | undefined |
+| balanceRisk | uint16 | undefined |
+| VRFSubId | uint64 | undefined |
+| partner | address | undefined |
+| minBetAmount | uint256 | undefined |
+| minHouseEdgeWithdrawAmount | uint256 | undefined |
+| houseEdgeSplit | Bank.HouseEdgeSplit | undefined |
 
 ### treasury
 
@@ -774,7 +733,7 @@ Treasury multi-sig wallet.
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | address | undefined
+| _0 | address | undefined |
 
 ### withdraw
 
@@ -790,8 +749,8 @@ Withdraw funds from the bank. Token has to be paused and no pending bet resoluti
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
-| amount | uint256 | Number of tokens.
+| token | address | Address of the token. |
+| amount | uint256 | Number of tokens. |
 
 ### withdrawHouseEdgeAmount
 
@@ -807,7 +766,7 @@ Distributes the token&#39;s treasury and team allocations amounts.
 
 | Name | Type | Description |
 |---|---|---|
-| tokenAddress | address | Address of the token.
+| tokenAddress | address | Address of the token. |
 
 ### withdrawPartnerAmount
 
@@ -823,29 +782,11 @@ Distributes the token&#39;s partner amount.
 
 | Name | Type | Description |
 |---|---|---|
-| tokenAddress | address | Address of the token.
+| tokenAddress | address | Address of the token. |
 
 
 
 ## Events
-
-### AccountFees
-
-```solidity
-event AccountFees(address indexed token, uint256 newBalance, uint256 fees)
-```
-
-Emitted after the game&#39;s fees are sent to the bank.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| token `indexed` | address | Address of the token. |
-| newBalance  | uint256 | New token balance. |
-| fees  | uint256 | Fees received from game. |
 
 ### AddToken
 
@@ -934,7 +875,7 @@ Emitted after the token&#39;s dividend allocation is distributed.
 | Name | Type | Description |
 |---|---|---|
 | token `indexed` | address | Address of the token. |
-| amount  | uint256 | The number of tokens sent to the SwirlMaster. |
+| amount  | uint256 | The number of tokens sent to the Harvester. |
 
 ### HouseEdgeDistribution
 
@@ -1077,10 +1018,10 @@ Emitted after the balance risk is set.
 | token `indexed` | address | undefined |
 | balanceRisk  | uint16 | Rate defining the balance risk. |
 
-### SetMinPartnerTransferAmount
+### SetMinHouseEdgeWithdrawAmount
 
 ```solidity
-event SetMinPartnerTransferAmount(address indexed token, uint256 minPartnerTransferAmount)
+event SetMinHouseEdgeWithdrawAmount(address indexed token, uint256 minHouseEdgeWithdrawAmount)
 ```
 
 Emitted after the Upkeep minimum transfer amount is set.
@@ -1092,7 +1033,7 @@ Emitted after the Upkeep minimum transfer amount is set.
 | Name | Type | Description |
 |---|---|---|
 | token `indexed` | address | Address of the token. |
-| minPartnerTransferAmount  | uint256 | Minimum amount of token to allow transfer. |
+| minHouseEdgeWithdrawAmount  | uint256 | Minimum amount of token to allow transfer. |
 
 ### SetPausedToken
 

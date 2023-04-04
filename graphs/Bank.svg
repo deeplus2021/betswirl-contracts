@@ -1,641 +1,682 @@
 <?xml version="1.0" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1012pt" height="1303pt" viewBox="0.00 0.00 1011.90 1303.00">
-<g id="graph0" class="graph" transform="translate(4,1299) scale(1)" data-name="G">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1317pt" height="1110pt" viewBox="0.00 0.00 1316.66 1110.00">
+<g id="graph0" class="graph" transform="translate(4,1106) scale(1)" data-name="G">
 
-<polygon fill="#2e3e56" stroke="none" points="-4,4 -4,-1299 1007.9,-1299 1007.9,4 -4,4" style=""/>
+<polygon fill="#2e3e56" stroke="none" points="-4,4 -4,-1106 1312.66,-1106 1312.66,4 -4,4" style=""/>
 <g id="clust1" class="cluster" data-name="clusterIGame">
 
-<path fill="#445773" stroke="#445773" d="M37.68,-35C37.68,-35 254.53,-35 254.53,-35 260.53,-35 266.53,-41 266.53,-47 266.53,-47 266.53,-154 266.53,-154 266.53,-160 260.53,-166 254.53,-166 254.53,-166 37.68,-166 37.68,-166 31.68,-166 25.68,-160 25.68,-154 25.68,-154 25.68,-47 25.68,-47 25.68,-41 31.68,-35 37.68,-35" style=""/>
-<text text-anchor="middle" x="146.11" y="-149.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">IGame  (iface)</text>
+<path fill="#445773" stroke="#445773" d="M60.22,-77C60.22,-77 277.07,-77 277.07,-77 283.07,-77 289.07,-83 289.07,-89 289.07,-89 289.07,-196 289.07,-196 289.07,-202 283.07,-208 277.07,-208 277.07,-208 60.22,-208 60.22,-208 54.22,-208 48.22,-202 48.22,-196 48.22,-196 48.22,-89 48.22,-89 48.22,-83 54.22,-77 60.22,-77" style=""/>
+<text text-anchor="middle" x="168.65" y="-191.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">IGame  (iface)</text>
 </g>
 <g id="clust2" class="cluster" data-name="clusterBank">
 
-<path fill="#445773" stroke="#445773" d="M20,-201C20,-201 983.9,-201 983.9,-201 989.9,-201 995.9,-207 995.9,-213 995.9,-213 995.9,-1138 995.9,-1138 995.9,-1144 989.9,-1150 983.9,-1150 983.9,-1150 20,-1150 20,-1150 14,-1150 8,-1144 8,-1138 8,-1138 8,-213 8,-213 8,-207 14,-201 20,-201" style=""/>
-<text text-anchor="middle" x="501.95" y="-1133.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">Bank</text>
+<path fill="#445773" stroke="#445773" d="M20,-286C20,-286 1288.66,-286 1288.66,-286 1294.66,-286 1300.66,-292 1300.66,-298 1300.66,-298 1300.66,-945 1300.66,-945 1300.66,-951 1294.66,-957 1288.66,-957 1288.66,-957 20,-957 20,-957 14,-957 8,-951 8,-945 8,-945 8,-298 8,-298 8,-292 14,-286 20,-286" style=""/>
+<text text-anchor="middle" x="654.33" y="-940.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">Bank</text>
 </g>
-<g id="clust3" class="cluster" data-name="clusterIERC20Metadata">
+<g id="clust3" class="cluster" data-name="clusterAddress">
 
-<path fill="#3b4b63" stroke="#e8726d" stroke-dasharray="5,2" d="M864.93,-8C864.93,-8 954.65,-8 954.65,-8 960.65,-8 966.65,-14 966.65,-20 966.65,-20 966.65,-181 966.65,-181 966.65,-187 960.65,-193 954.65,-193 954.65,-193 864.93,-193 864.93,-193 858.93,-193 852.93,-187 852.93,-181 852.93,-181 852.93,-20 852.93,-20 852.93,-14 858.93,-8 864.93,-8" style=""/>
-<text text-anchor="middle" x="909.79" y="-176.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">IERC20Metadata</text>
+<path fill="#3b4b63" stroke="#e8726d" stroke-dasharray="5,2" d="M948.91,-201C948.91,-201 1044.5,-201 1044.5,-201 1050.5,-201 1056.5,-207 1056.5,-213 1056.5,-213 1056.5,-266 1056.5,-266 1056.5,-272 1050.5,-278 1044.5,-278 1044.5,-278 948.91,-278 948.91,-278 942.91,-278 936.91,-272 936.91,-266 936.91,-266 936.91,-213 936.91,-213 936.91,-207 942.91,-201 948.91,-201" style=""/>
+<text text-anchor="middle" x="996.7" y="-261.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">Address</text>
 </g>
-<g id="clust4" class="cluster" data-name="cluster_01">
+<g id="clust4" class="cluster" data-name="clusterIERC20Metadata">
 
-<polygon fill="#2e3e56" stroke="black" points="73.11,-1158 73.11,-1287 470.9,-1287 470.9,-1158 73.11,-1158" style=""/>
-<text text-anchor="middle" x="272" y="-1270.4" font-family="Times,serif" font-size="14.00" style="">Legend</text>
+<path fill="#3b4b63" stroke="#e8726d" stroke-dasharray="5,2" d="M952.34,-8C952.34,-8 1042.06,-8 1042.06,-8 1048.06,-8 1054.06,-14 1054.06,-20 1054.06,-20 1054.06,-181 1054.06,-181 1054.06,-187 1048.06,-193 1042.06,-193 1042.06,-193 952.34,-193 952.34,-193 946.34,-193 940.34,-187 940.34,-181 940.34,-181 940.34,-20 940.34,-20 940.34,-14 946.34,-8 952.34,-8" style=""/>
+<text text-anchor="middle" x="997.2" y="-176.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">IERC20Metadata</text>
+</g>
+<g id="clust5" class="cluster" data-name="cluster_01">
+
+<polygon fill="#2e3e56" stroke="black" points="95.65,-965 95.65,-1094 515.97,-1094 515.97,-965 95.65,-965" style=""/>
+<text text-anchor="middle" x="305.81" y="-1077.4" font-family="Times,serif" font-size="14.00" style="">Legend</text>
 </g>
 <!-- IGame.hasPendingBets -->
 <g id="node1" class="node" pointer-events="visible" data-name="IGame.hasPendingBets">
 
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="146.11" cy="-115" rx="72.96" ry="18" style=""/>
-<text text-anchor="middle" x="146.11" y="-110.8" font-family="Times,serif" font-size="14.00" style="">hasPendingBets</text>
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="168.65" cy="-157" rx="72.96" ry="18" style=""/>
+<text text-anchor="middle" x="168.65" y="-152.8" font-family="Times,serif" font-size="14.00" style="">hasPendingBets</text>
 </g>
 <!-- IGame.withdrawTokensVRFFees -->
 <g id="node2" class="node" pointer-events="visible" data-name="IGame.withdrawTokensVRFFees">
 
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="146.11" cy="-61" rx="112.35" ry="18" style=""/>
-<text text-anchor="middle" x="146.11" y="-56.8" font-family="Times,serif" font-size="14.00" style="">withdrawTokensVRFFees</text>
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="168.65" cy="-103" rx="112.35" ry="18" style=""/>
+<text text-anchor="middle" x="168.65" y="-98.8" font-family="Times,serif" font-size="14.00" style="">withdrawTokensVRFFees</text>
 </g>
 <!-- Bank.onlyTokenOwner -->
 <g id="node3" class="node" pointer-events="visible" data-name="Bank.onlyTokenOwner">
 
-<polygon fill="#edad56" stroke="#1bc6a6" stroke-width="3" points="231.95,-1087.54 231.95,-1102.46 181.66,-1113 110.55,-1113 60.26,-1102.46 60.26,-1087.54 110.55,-1077 181.66,-1077 231.95,-1087.54" style=""/>
-<polygon fill="none" stroke="#1bc6a6" stroke-width="3" points="235.96,-1084.3 235.96,-1105.7 182.08,-1117 110.13,-1117 56.26,-1105.7 56.26,-1084.3 110.13,-1073 182.08,-1073 235.96,-1084.3" style=""/>
-<text text-anchor="middle" x="146.11" y="-1090.8" font-family="Times,serif" font-size="14.00" style="">onlyTokenOwner</text>
+<polygon fill="#edad56" stroke="#1bc6a6" stroke-width="3" points="1082.55,-840.54 1082.55,-855.46 1032.26,-866 961.15,-866 910.86,-855.46 910.86,-840.54 961.15,-830 1032.26,-830 1082.55,-840.54" style=""/>
+<polygon fill="none" stroke="#1bc6a6" stroke-width="3" points="1086.56,-837.3 1086.56,-858.7 1032.68,-870 960.73,-870 906.85,-858.7 906.85,-837.3 960.73,-826 1032.68,-826 1086.56,-837.3" style=""/>
+<text text-anchor="middle" x="996.7" y="-843.8" font-family="Times,serif" font-size="14.00" style="">onlyTokenOwner</text>
+</g>
+<!-- Bank.address -->
+<g id="node33" class="node" pointer-events="visible" data-name="Bank.address">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1223.16" cy="-639" rx="40" ry="18" style=""/>
+<text text-anchor="middle" x="1223.16" y="-634.8" font-family="Times,serif" font-size="14.00" style="">address</text>
+</g>
+<!-- Bank.onlyTokenOwner&#45;&gt;Bank.address -->
+<g id="edge1" class="edge" data-name="Bank.onlyTokenOwner-&gt;Bank.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M1086.87,-835.89C1098.2,-831.36 1108.88,-825.24 1117.66,-817 1155.17,-781.8 1126.65,-750.78 1153.66,-707 1163.61,-690.86 1178.15,-675.7 1191.28,-663.81" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1193.42,-666.59 1198.66,-657.38 1188.82,-661.31 1193.42,-666.59" style=""/>
 </g>
 <!-- Bank._checkRole -->
-<g id="node36" class="node" pointer-events="visible" data-name="Bank._checkRole">
+<g id="node34" class="node" pointer-events="visible" data-name="Bank._checkRole">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="435.9" cy="-1045" rx="56.74" ry="18" style=""/>
-<text text-anchor="middle" x="435.9" y="-1040.8" font-family="Times,serif" font-size="14.00" style="">_checkRole</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1223.16" cy="-848" rx="56.74" ry="18" style=""/>
+<text text-anchor="middle" x="1223.16" y="-843.8" font-family="Times,serif" font-size="14.00" style="">_checkRole</text>
 </g>
 <!-- Bank.onlyTokenOwner&#45;&gt;Bank._checkRole -->
-<g id="edge1" class="edge" data-name="Bank.onlyTokenOwner-&gt;Bank._checkRole">
+<g id="edge2" class="edge" data-name="Bank.onlyTokenOwner-&gt;Bank._checkRole">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M223.85,-1081.67C271.58,-1073.37 332.03,-1062.87 375.98,-1055.24" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="376.69,-1058.67 385.94,-1053.51 375.49,-1051.77 376.69,-1058.67" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M1088.03,-848C1109.41,-848 1131.9,-848 1152.22,-848" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1152.2,-851.5 1162.2,-848 1152.2,-844.5 1152.2,-851.5" style=""/>
 </g>
 <!-- Bank.AccessDenied -->
-<g id="node37" class="node" pointer-events="visible" data-name="Bank.AccessDenied">
+<g id="node35" class="node" pointer-events="visible" data-name="Bank.AccessDenied">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="435.9" cy="-1099" rx="66.04" ry="18" style=""/>
-<text text-anchor="middle" x="435.9" y="-1094.8" font-family="Times,serif" font-size="14.00" style="">AccessDenied</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1223.16" cy="-904" rx="66.04" ry="18" style=""/>
+<text text-anchor="middle" x="1223.16" y="-899.8" font-family="Times,serif" font-size="14.00" style="">AccessDenied</text>
 </g>
 <!-- Bank.onlyTokenOwner&#45;&gt;Bank.AccessDenied -->
-<g id="edge2" class="edge" data-name="Bank.onlyTokenOwner-&gt;Bank.AccessDenied">
+<g id="edge3" class="edge" data-name="Bank.onlyTokenOwner-&gt;Bank.AccessDenied">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M235.8,-1096.23C275.2,-1096.78 321.11,-1097.42 358.91,-1097.94" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="359.3,-1101.45 369.34,-1098.09 359.39,-1094.45 359.3,-1101.45" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M1064.74,-864.73C1094.81,-872.23 1130.07,-881.02 1159.59,-888.39" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1158.37,-891.69 1168.92,-890.72 1160.07,-884.9 1158.37,-891.69" style=""/>
 </g>
 <!-- Bank.&lt;Constructor&gt; -->
 <g id="node4" class="node" pointer-events="visible" data-name="Bank.&lt;Constructor&gt;">
 
-<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="146.11" cy="-1037" rx="67.55" ry="18" style=""/>
-<text text-anchor="middle" x="146.11" y="-1032.8" font-family="Times,serif" font-size="14.00" style="">&lt;Constructor&gt;</text>
+<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="740.2" cy="-906" rx="67.55" ry="18" style=""/>
+<text text-anchor="middle" x="740.2" y="-901.8" font-family="Times,serif" font-size="14.00" style="">&lt;Constructor&gt;</text>
 </g>
 <!-- Bank.setTeamWallet -->
-<g id="node32" class="node" pointer-events="visible" data-name="Bank.setTeamWallet">
+<g id="node27" class="node" pointer-events="visible" data-name="Bank.setTeamWallet">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="435.9" cy="-917" rx="69.47" ry="18" style=""/>
-<text text-anchor="middle" x="435.9" y="-912.8" font-family="Times,serif" font-size="14.00" style="">setTeamWallet</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="996.7" cy="-716" rx="69.47" ry="18" style=""/>
+<text text-anchor="middle" x="996.7" y="-711.8" font-family="Times,serif" font-size="14.00" style="">setTeamWallet</text>
 </g>
 <!-- Bank.&lt;Constructor&gt;&#45;&gt;Bank.setTeamWallet -->
-<g id="edge5" class="edge" data-name="Bank.&lt;Constructor&gt;-&gt;Bank.setTeamWallet">
+<g id="edge7" class="edge" data-name="Bank.&lt;Constructor&gt;-&gt;Bank.setTeamWallet">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M213.02,-1034.19C234.82,-1030.55 258.11,-1023.45 276.21,-1010 303.04,-990.08 285.49,-964.06 312.21,-944 325.5,-934.02 341.75,-927.59 358.01,-923.48" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="359.12,-926.82 368.11,-921.21 357.59,-919.99 359.12,-926.82" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M800.67,-896.8C815.04,-892.06 829.26,-884.87 839.75,-874 880.19,-832.09 834.21,-788.82 875.75,-748 886.97,-736.97 901.54,-729.63 916.65,-724.78" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="917.21,-728.25 925.9,-722.2 915.33,-721.51 917.21,-728.25" style=""/>
+</g>
+<!-- Bank.&lt;Constructor&gt;&#45;&gt;Bank.address -->
+<g id="edge4" class="edge" data-name="Bank.&lt;Constructor&gt;-&gt;Bank.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M801.83,-897.23C816.02,-892.47 829.85,-885.18 839.75,-874 895.27,-811.27 813.94,-745.53 875.75,-689 915.63,-652.53 1064.38,-673.08 1117.66,-664 1136.45,-660.8 1156.89,-656.17 1174.67,-651.76" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1175.32,-655.21 1184.15,-649.36 1173.6,-648.42 1175.32,-655.21" style=""/>
 </g>
 <!-- Bank.WrongAddress -->
-<g id="node38" class="node" pointer-events="visible" data-name="Bank.WrongAddress">
+<g id="node36" class="node" pointer-events="visible" data-name="Bank.WrongAddress">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="695.12" cy="-962" rx="69.5" ry="18" style=""/>
-<text text-anchor="middle" x="695.12" y="-957.8" font-family="Times,serif" font-size="14.00" style="">WrongAddress</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="1223.16" cy="-734" rx="69.5" ry="18" style=""/>
+<text text-anchor="middle" x="1223.16" y="-729.8" font-family="Times,serif" font-size="14.00" style="">WrongAddress</text>
 </g>
 <!-- Bank.&lt;Constructor&gt;&#45;&gt;Bank.WrongAddress -->
-<g id="edge3" class="edge" data-name="Bank.&lt;Constructor&gt;-&gt;Bank.WrongAddress">
+<g id="edge5" class="edge" data-name="Bank.&lt;Constructor&gt;-&gt;Bank.WrongAddress">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M207.83,-1029.51C239,-1025.8 277.61,-1021.39 312.21,-1018 421.99,-1007.25 450.89,-1016.78 559.58,-998 586.59,-993.33 616.07,-985.74 640.53,-978.73" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="641.71,-982.03 650.33,-975.87 639.75,-975.31 641.71,-982.03" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M800.41,-896.55C814.78,-891.81 829.07,-884.69 839.75,-874 876.42,-837.32 835.09,-795.2 875.75,-763 896.89,-746.26 1090.78,-745.27 1117.66,-743 1125.79,-742.31 1134.28,-741.59 1142.75,-740.87" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1142.86,-744.37 1152.53,-740.03 1142.27,-737.4 1142.86,-744.37" style=""/>
 </g>
 <!-- Bank._setupRole -->
-<g id="node39" class="node" pointer-events="visible" data-name="Bank._setupRole">
+<g id="node37" class="node" pointer-events="visible" data-name="Bank._setupRole">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="435.9" cy="-971" rx="54.48" ry="18" style=""/>
-<text text-anchor="middle" x="435.9" y="-966.8" font-family="Times,serif" font-size="14.00" style="">_setupRole</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="996.7" cy="-790" rx="54.48" ry="18" style=""/>
+<text text-anchor="middle" x="996.7" y="-785.8" font-family="Times,serif" font-size="14.00" style="">_setupRole</text>
 </g>
 <!-- Bank.&lt;Constructor&gt;&#45;&gt;Bank._setupRole -->
-<g id="edge4" class="edge" data-name="Bank.&lt;Constructor&gt;-&gt;Bank._setupRole">
+<g id="edge6" class="edge" data-name="Bank.&lt;Constructor&gt;-&gt;Bank._setupRole">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M200.59,-1026.25C223.86,-1021.46 251.43,-1015.64 276.21,-1010 311.63,-1001.95 351.31,-992.19 382.13,-984.46" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="383.38,-987.75 392.22,-981.92 381.67,-980.96 383.38,-987.75" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M797.19,-895.13C812.05,-890.38 827.39,-883.6 839.75,-874 863.41,-855.61 851.27,-834.27 875.75,-817 891.27,-806.05 910.49,-799.45 928.96,-795.5" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="929.4,-798.98 938.6,-793.72 928.13,-792.09 929.4,-798.98" style=""/>
 </g>
 <!-- Bank._safeTransfer -->
 <g id="node5" class="node" pointer-events="visible" data-name="Bank._safeTransfer">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="695.12" cy="-376" rx="64.23" ry="18" style=""/>
-<text text-anchor="middle" x="695.12" y="-371.8" font-family="Times,serif" font-size="14.00" style="">_safeTransfer</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="740.2" cy="-454" rx="64.23" ry="18" style=""/>
+<text text-anchor="middle" x="740.2" y="-449.8" font-family="Times,serif" font-size="14.00" style="">_safeTransfer</text>
 </g>
 <!-- Bank._isGasToken -->
 <g id="node6" class="node" pointer-events="visible" data-name="Bank._isGasToken">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="909.29" cy="-480" rx="61.99" ry="18" style=""/>
-<text text-anchor="middle" x="909.29" y="-475.8" font-family="Times,serif" font-size="14.00" style="">_isGasToken</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="996.7" cy="-518" rx="61.99" ry="18" style=""/>
+<text text-anchor="middle" x="996.7" y="-513.8" font-family="Times,serif" font-size="14.00" style="">_isGasToken</text>
 </g>
 <!-- Bank._safeTransfer&#45;&gt;Bank._isGasToken -->
-<g id="edge6" class="edge" data-name="Bank._safeTransfer-&gt;Bank._isGasToken">
+<g id="edge8" class="edge" data-name="Bank._safeTransfer-&gt;Bank._isGasToken">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M739.09,-389.13C756.65,-395.04 776.96,-402.59 794.67,-411 823.19,-424.55 853.69,-443.33 875.89,-457.88" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="874,-460.82 884.27,-463.42 877.87,-454.98 874,-460.82" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M790.57,-466.42C831.75,-476.77 890.61,-491.57 934.73,-502.67" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="933.85,-506.05 944.4,-505.1 935.55,-499.26 933.85,-506.05" style=""/>
 </g>
 <!-- Bank.payable -->
-<g id="node40" class="node" pointer-events="visible" data-name="Bank.payable">
+<g id="node38" class="node" pointer-events="visible" data-name="Bank.payable">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="909.29" cy="-376" rx="41.13" ry="18" style=""/>
-<text text-anchor="middle" x="909.29" y="-371.8" font-family="Times,serif" font-size="14.00" style="">payable</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="996.7" cy="-454" rx="41.13" ry="18" style=""/>
+<text text-anchor="middle" x="996.7" y="-449.8" font-family="Times,serif" font-size="14.00" style="">payable</text>
 </g>
 <!-- Bank._safeTransfer&#45;&gt;Bank.payable -->
-<g id="edge7" class="edge" data-name="Bank._safeTransfer-&gt;Bank.payable">
+<g id="edge10" class="edge" data-name="Bank._safeTransfer-&gt;Bank.payable">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M759.49,-376C790.95,-376 828.42,-376 857.89,-376" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="857.96,-379.5 867.96,-376 857.96,-372.5 857.96,-379.5" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M805.75,-454C847.69,-454 901.75,-454 941.47,-454" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="941.32,-457.5 951.32,-454 941.32,-450.5 941.32,-457.5" style=""/>
 </g>
 <!-- Bank.IERC20 -->
-<g id="node41" class="node" pointer-events="visible" data-name="Bank.IERC20">
+<g id="node39" class="node" pointer-events="visible" data-name="Bank.IERC20">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="909.29" cy="-536" rx="42.88" ry="18" style=""/>
-<text text-anchor="middle" x="909.29" y="-531.8" font-family="Times,serif" font-size="14.00" style="">IERC20</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="996.7" cy="-572" rx="42.88" ry="18" style=""/>
+<text text-anchor="middle" x="996.7" y="-567.8" font-family="Times,serif" font-size="14.00" style="">IERC20</text>
 </g>
 <!-- Bank._safeTransfer&#45;&gt;Bank.IERC20 -->
-<g id="edge8" class="edge" data-name="Bank._safeTransfer-&gt;Bank.IERC20">
+<g id="edge11" class="edge" data-name="Bank._safeTransfer-&gt;Bank.IERC20">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M749.18,-385.69C765.45,-390.89 782.3,-398.85 794.67,-411 827.17,-442.94 798.43,-474.8 830.67,-507 838.86,-515.18 849.56,-521.08 860.39,-525.33" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="859.29,-528.65 869.89,-528.65 861.61,-522.04 859.29,-528.65" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M800,-462.06C814.05,-466.06 828.28,-472.05 839.75,-481 865.47,-501.08 849.57,-525.51 875.75,-545 894.06,-558.63 918,-565.58 939.67,-569.06" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="939.08,-572.51 949.45,-570.37 940,-565.57 939.08,-572.51" style=""/>
+</g>
+<!-- Address.sendValue -->
+<g id="node48" class="node" pointer-events="visible" data-name="Address.sendValue">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="996.7" cy="-227" rx="51.59" ry="18" style=""/>
+<text text-anchor="middle" x="996.7" y="-222.8" font-family="Times,serif" font-size="14.00" style="">sendValue</text>
+</g>
+<!-- Bank._safeTransfer&#45;&gt;Address.sendValue -->
+<g id="edge9" class="edge" data-name="Bank._safeTransfer-&gt;Address.sendValue">
+
+<path fill="none" stroke="white" stroke-width="2" d="M758.47,-435.57C778.86,-413.42 813.36,-374.75 839.75,-339 857.54,-314.89 853.2,-301.73 875.75,-282 895.1,-265.07 920.54,-252.42 943,-243.54" style=""/>
+<polygon fill="white" stroke="white" stroke-width="2" points="944.15,-246.85 952.29,-240.06 941.7,-240.29 944.15,-246.85" style=""/>
+</g>
+<!-- Bank._isGasToken&#45;&gt;Bank.address -->
+<g id="edge12" class="edge" data-name="Bank._isGasToken-&gt;Bank.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M1055.92,-524.94C1076.24,-528.94 1098.69,-535.2 1117.66,-545 1149.66,-561.54 1179.5,-590.26 1199.04,-611.61" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1196.23,-613.73 1205.5,-618.87 1201.46,-609.07 1196.23,-613.73" style=""/>
 </g>
 <!-- Bank.deposit -->
 <g id="node7" class="node" pointer-events="visible" data-name="Bank.deposit">
 
-<ellipse fill="#ffbdb9" stroke="brown" stroke-width="3" cx="695.12" cy="-843" rx="38.86" ry="18" style=""/>
-<text text-anchor="middle" x="695.12" y="-838.8" font-family="Times,serif" font-size="14.00" style="">deposit</text>
+<ellipse fill="#ffbdb9" stroke="brown" stroke-width="3" cx="740.2" cy="-832" rx="38.86" ry="18" style=""/>
+<text text-anchor="middle" x="740.2" y="-827.8" font-family="Times,serif" font-size="14.00" style="">deposit</text>
 </g>
 <!-- Bank.deposit&#45;&gt;Bank._isGasToken -->
-<g id="edge9" class="edge" data-name="Bank.deposit-&gt;Bank._isGasToken">
+<g id="edge13" class="edge" data-name="Bank.deposit-&gt;Bank._isGasToken">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M734.3,-842.41C755.23,-839.97 779.87,-833.22 794.67,-816 884.22,-711.82 745.9,-617.11 830.67,-509 835.37,-503.01 841.44,-498.25 848.12,-494.48" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="850.06,-497.43 857.54,-489.92 847.01,-491.13 850.06,-497.43" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M780.22,-831.18C800.9,-828.6 825,-821.8 839.75,-805 916.71,-717.33 796.79,-630.87 875.75,-545 887.55,-532.17 904.03,-524.77 921,-520.66" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="921.29,-524.17 930.42,-518.79 919.93,-517.3 921.29,-524.17" style=""/>
+</g>
+<!-- Bank.deposit&#45;&gt;Bank.address -->
+<g id="edge15" class="edge" data-name="Bank.deposit-&gt;Bank.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M780.1,-830.55C800.48,-827.75 824.33,-820.94 839.75,-805 887.71,-755.41 822.54,-697.92 875.75,-654 919.2,-618.14 1084.32,-626.7 1169.95,-633.9" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1169.45,-637.36 1179.71,-634.75 1170.05,-630.39 1169.45,-637.36" style=""/>
 </g>
 <!-- Bank.deposit&#45;&gt;Bank.IERC20 -->
-<g id="edge10" class="edge" data-name="Bank.deposit-&gt;Bank.IERC20">
+<g id="edge14" class="edge" data-name="Bank.deposit-&gt;Bank.IERC20">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M734.11,-840.59C754.21,-837.51 778.09,-830.73 794.67,-816 871.31,-747.92 897.15,-620.63 905.08,-564.19" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="908.57,-564.57 906.41,-554.2 901.63,-563.65 908.57,-564.57" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M780.26,-830.71C800.69,-827.96 824.55,-821.14 839.75,-805 893,-748.46 828.71,-695.8 875.75,-634 893.24,-611.02 921.67,-595.8 946.47,-586.19" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="947.59,-589.51 955.81,-582.82 945.21,-582.93 947.59,-589.51" style=""/>
 </g>
 <!-- Bank.withdraw -->
 <g id="node8" class="node" pointer-events="visible" data-name="Bank.withdraw">
 
-<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="435.9" cy="-735" rx="47.52" ry="18" style=""/>
-<text text-anchor="middle" x="435.9" y="-730.8" font-family="Times,serif" font-size="14.00" style="">withdraw</text>
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="480.97" cy="-744" rx="47.52" ry="18" style=""/>
+<text text-anchor="middle" x="480.97" y="-739.8" font-family="Times,serif" font-size="14.00" style="">withdraw</text>
 </g>
 <!-- Bank.withdraw&#45;&gt;Bank._safeTransfer -->
-<g id="edge16" class="edge" data-name="Bank.withdraw-&gt;Bank._safeTransfer">
+<g id="edge21" class="edge" data-name="Bank.withdraw-&gt;Bank._safeTransfer">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M474.8,-724.46C502.86,-714.59 539.56,-696.94 559.58,-668 625.18,-573.14 522.66,-500.37 595.58,-411 604.13,-400.52 616.05,-393.17 628.65,-388.03" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="630.17,-391.2 638.38,-384.5 627.79,-384.62 630.17,-391.2" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M529.61,-745.74C555.38,-744.02 585.72,-737.21 604.65,-717 677.19,-639.57 570.11,-560.25 640.65,-481 647.37,-473.45 655.98,-467.93 665.3,-463.9" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="666.32,-467.25 674.55,-460.58 663.96,-460.66 666.32,-467.25" style=""/>
 </g>
 <!-- Bank.getBalance -->
-<g id="node35" class="node" pointer-events="visible" data-name="Bank.getBalance">
+<g id="node30" class="node" pointer-events="visible" data-name="Bank.getBalance">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="695.12" cy="-536" rx="53.86" ry="18" style=""/>
-<text text-anchor="middle" x="695.12" y="-531.8" font-family="Times,serif" font-size="14.00" style="">getBalance</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="740.2" cy="-562" rx="53.86" ry="18" style=""/>
+<text text-anchor="middle" x="740.2" y="-557.8" font-family="Times,serif" font-size="14.00" style="">getBalance</text>
 </g>
 <!-- Bank.withdraw&#45;&gt;Bank.getBalance -->
-<g id="edge11" class="edge" data-name="Bank.withdraw-&gt;Bank.getBalance">
+<g id="edge16" class="edge" data-name="Bank.withdraw-&gt;Bank.getBalance">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M477.48,-726.12C503.76,-718.54 537.15,-705.23 559.58,-683 588.13,-654.69 569.61,-630.7 595.58,-600 611.27,-581.44 633.7,-566.3 653.2,-555.41" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="655.06,-558.38 662.2,-550.56 651.74,-552.22 655.06,-558.38" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M529.9,-744.73C555.12,-742.59 584.83,-735.71 604.65,-717 647.63,-676.43 598.73,-630.65 640.65,-589 649.76,-579.95 661.6,-573.86 673.89,-569.78" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="674.64,-573.2 683.33,-567.15 672.76,-566.46 674.64,-573.2" style=""/>
 </g>
 <!-- Bank.TokenNotPaused -->
-<g id="node42" class="node" pointer-events="visible" data-name="Bank.TokenNotPaused">
+<g id="node40" class="node" pointer-events="visible" data-name="Bank.TokenNotPaused">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="695.12" cy="-735" rx="77.6" ry="18" style=""/>
-<text text-anchor="middle" x="695.12" y="-730.8" font-family="Times,serif" font-size="14.00" style="">TokenNotPaused</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="740.2" cy="-616" rx="77.6" ry="18" style=""/>
+<text text-anchor="middle" x="740.2" y="-611.8" font-family="Times,serif" font-size="14.00" style="">TokenNotPaused</text>
 </g>
 <!-- Bank.withdraw&#45;&gt;Bank.TokenNotPaused -->
-<g id="edge12" class="edge" data-name="Bank.withdraw-&gt;Bank.TokenNotPaused">
+<g id="edge17" class="edge" data-name="Bank.withdraw-&gt;Bank.TokenNotPaused">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M483.48,-735C517.92,-735 565.83,-735 607.26,-735" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="607.36,-738.5 617.36,-735 607.36,-731.5 607.36,-738.5" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M529.84,-743.15C554.44,-740.48 583.58,-733.6 604.65,-717 633.38,-694.36 612.51,-666.36 640.65,-643 646.58,-638.08 653.34,-634.05 660.47,-630.75" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="661.53,-634.1 669.52,-627.13 658.93,-627.6 661.53,-634.1" style=""/>
 </g>
 <!-- Bank.getRoleMemberCount -->
-<g id="node43" class="node" pointer-events="visible" data-name="Bank.getRoleMemberCount">
+<g id="node41" class="node" pointer-events="visible" data-name="Bank.getRoleMemberCount">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="695.12" cy="-627" rx="97.29" ry="18" style=""/>
-<text text-anchor="middle" x="695.12" y="-622.8" font-family="Times,serif" font-size="14.00" style="">getRoleMemberCount</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="740.2" cy="-670" rx="97.29" ry="18" style=""/>
+<text text-anchor="middle" x="740.2" y="-665.8" font-family="Times,serif" font-size="14.00" style="">getRoleMemberCount</text>
 </g>
 <!-- Bank.withdraw&#45;&gt;Bank.getRoleMemberCount -->
-<g id="edge13" class="edge" data-name="Bank.withdraw-&gt;Bank.getRoleMemberCount">
+<g id="edge18" class="edge" data-name="Bank.withdraw-&gt;Bank.getRoleMemberCount">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M482.21,-730.62C506.79,-726.5 536.72,-718.51 559.58,-703 581.94,-687.83 573.31,-669.31 595.58,-654 601.66,-649.82 608.36,-646.29 615.33,-643.3" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="616.91,-646.44 624.96,-639.55 614.37,-639.91 616.91,-646.44" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M526.88,-737.35C550.5,-733.05 579.67,-726.46 604.65,-717 621.77,-710.52 623.71,-703.91 640.65,-697 648.18,-693.93 656.17,-691.09 664.21,-688.51" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="664.98,-691.93 673.52,-685.66 662.93,-685.24 664.98,-691.93" style=""/>
 </g>
 <!-- Bank.getRoleMember -->
-<g id="node44" class="node" pointer-events="visible" data-name="Bank.getRoleMember">
+<g id="node42" class="node" pointer-events="visible" data-name="Bank.getRoleMember">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="695.12" cy="-789" rx="73.58" ry="18" style=""/>
-<text text-anchor="middle" x="695.12" y="-784.8" font-family="Times,serif" font-size="14.00" style="">getRoleMember</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="740.2" cy="-778" rx="73.58" ry="18" style=""/>
+<text text-anchor="middle" x="740.2" y="-773.8" font-family="Times,serif" font-size="14.00" style="">getRoleMember</text>
 </g>
 <!-- Bank.withdraw&#45;&gt;Bank.getRoleMember -->
-<g id="edge14" class="edge" data-name="Bank.withdraw-&gt;Bank.getRoleMember">
+<g id="edge19" class="edge" data-name="Bank.withdraw-&gt;Bank.getRoleMember">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M477.94,-743.62C518.46,-752.12 581.07,-765.27 628.5,-775.22" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="627.87,-778.67 638.37,-777.3 629.31,-771.82 627.87,-778.67" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M527.37,-750C564.26,-754.88 617.15,-761.87 660.85,-767.64" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="660.13,-771.08 670.5,-768.92 661.04,-764.14 660.13,-771.08" style=""/>
 </g>
 <!-- Bank.TokenHasPendingBets -->
-<g id="node45" class="node" pointer-events="visible" data-name="Bank.TokenHasPendingBets">
+<g id="node43" class="node" pointer-events="visible" data-name="Bank.TokenHasPendingBets">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="695.12" cy="-681" rx="99.6" ry="18" style=""/>
-<text text-anchor="middle" x="695.12" y="-676.8" font-family="Times,serif" font-size="14.00" style="">TokenHasPendingBets</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="740.2" cy="-724" rx="99.6" ry="18" style=""/>
+<text text-anchor="middle" x="740.2" y="-719.8" font-family="Times,serif" font-size="14.00" style="">TokenHasPendingBets</text>
 </g>
 <!-- Bank.withdraw&#45;&gt;Bank.TokenHasPendingBets -->
-<g id="edge15" class="edge" data-name="Bank.withdraw-&gt;Bank.TokenHasPendingBets">
+<g id="edge20" class="edge" data-name="Bank.withdraw-&gt;Bank.TokenHasPendingBets">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M477.94,-726.38C515.86,-718.42 573.14,-706.4 619.21,-696.73" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="620.09,-700.12 629.15,-694.64 618.65,-693.27 620.09,-700.12" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M528.85,-740.35C558.21,-738.07 597.28,-735.03 633.77,-732.2" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="633.83,-735.7 643.53,-731.44 633.29,-728.72 633.83,-735.7" style=""/>
 </g>
 <!-- Bank.setBalanceRisk -->
 <g id="node9" class="node" pointer-events="visible" data-name="Bank.setBalanceRisk">
 
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="146.11" cy="-983" rx="70.64" ry="18" style=""/>
-<text text-anchor="middle" x="146.11" y="-978.8" font-family="Times,serif" font-size="14.00" style="">setBalanceRisk</text>
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="168.65" cy="-906" rx="70.64" ry="18" style=""/>
+<text text-anchor="middle" x="168.65" y="-901.8" font-family="Times,serif" font-size="14.00" style="">setBalanceRisk</text>
 </g>
 <!-- Bank.addToken -->
 <g id="node10" class="node" pointer-events="visible" data-name="Bank.addToken">
 
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="146.11" cy="-929" rx="49.8" ry="18" style=""/>
-<text text-anchor="middle" x="146.11" y="-924.8" font-family="Times,serif" font-size="14.00" style="">addToken</text>
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="168.65" cy="-852" rx="49.8" ry="18" style=""/>
+<text text-anchor="middle" x="168.65" y="-847.8" font-family="Times,serif" font-size="14.00" style="">addToken</text>
 </g>
 <!-- Bank.TokenExists -->
-<g id="node46" class="node" pointer-events="visible" data-name="Bank.TokenExists">
+<g id="node44" class="node" pointer-events="visible" data-name="Bank.TokenExists">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="435.9" cy="-863" rx="59.13" ry="18" style=""/>
-<text text-anchor="middle" x="435.9" y="-858.8" font-family="Times,serif" font-size="14.00" style="">TokenExists</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="480.97" cy="-906" rx="59.13" ry="18" style=""/>
+<text text-anchor="middle" x="480.97" y="-901.8" font-family="Times,serif" font-size="14.00" style="">TokenExists</text>
 </g>
 <!-- Bank.addToken&#45;&gt;Bank.TokenExists -->
-<g id="edge17" class="edge" data-name="Bank.addToken-&gt;Bank.TokenExists">
+<g id="edge22" class="edge" data-name="Bank.addToken-&gt;Bank.TokenExists">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M191.03,-921.12C216.15,-916.29 248.14,-909.59 276.21,-902 292.5,-897.6 295.96,-894.49 312.21,-890 332.72,-884.34 355.4,-879.08 375.63,-874.73" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="376.6,-878.1 385.65,-872.6 375.14,-871.25 376.6,-878.1" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M215.44,-859.97C268.13,-869.14 355.08,-884.27 414.82,-894.66" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="414.07,-898.08 424.52,-896.35 415.27,-891.19 414.07,-898.08" style=""/>
 </g>
 <!-- Bank.setAllowedToken -->
 <g id="node11" class="node" pointer-events="visible" data-name="Bank.setAllowedToken">
 
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="146.11" cy="-875" rx="79.88" ry="18" style=""/>
-<text text-anchor="middle" x="146.11" y="-870.8" font-family="Times,serif" font-size="14.00" style="">setAllowedToken</text>
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="168.65" cy="-798" rx="79.88" ry="18" style=""/>
+<text text-anchor="middle" x="168.65" y="-793.8" font-family="Times,serif" font-size="14.00" style="">setAllowedToken</text>
 </g>
 <!-- Bank.setPausedToken -->
 <g id="node12" class="node" pointer-events="visible" data-name="Bank.setPausedToken">
 
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="146.11" cy="-821" rx="73.59" ry="18" style=""/>
-<text text-anchor="middle" x="146.11" y="-816.8" font-family="Times,serif" font-size="14.00" style="">setPausedToken</text>
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="168.65" cy="-744" rx="73.59" ry="18" style=""/>
+<text text-anchor="middle" x="168.65" y="-739.8" font-family="Times,serif" font-size="14.00" style="">setPausedToken</text>
 </g>
-<!-- Bank.setMinPartnerTransferAmount -->
-<g id="node13" class="node" pointer-events="visible" data-name="Bank.setMinPartnerTransferAmount">
+<!-- Bank.setMinHouseEdgeWithdrawAmount -->
+<g id="node13" class="node" pointer-events="visible" data-name="Bank.setMinHouseEdgeWithdrawAmount">
 
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="146.11" cy="-767" rx="130.21" ry="18" style=""/>
-<text text-anchor="middle" x="146.11" y="-762.8" font-family="Times,serif" font-size="14.00" style="">setMinPartnerTransferAmount</text>
-</g>
-<!-- Bank.setTokenPartner -->
-<g id="node14" class="node" pointer-events="visible" data-name="Bank.setTokenPartner">
-
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="146.11" cy="-713" rx="74.14" ry="18" style=""/>
-<text text-anchor="middle" x="146.11" y="-708.8" font-family="Times,serif" font-size="14.00" style="">setTokenPartner</text>
-</g>
-<!-- Bank.setTokenPartner&#45;&gt;Bank.withdraw -->
-<g id="edge21" class="edge" data-name="Bank.setTokenPartner-&gt;Bank.withdraw">
-
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M217.14,-718.35C266.79,-722.15 332.54,-727.18 378.76,-730.71" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="378.65,-734.21 388.89,-731.48 379.19,-727.23 378.65,-734.21" style=""/>
-</g>
-<!-- Bank.withdrawPartnerAmount -->
-<g id="node34" class="node" pointer-events="visible" data-name="Bank.withdrawPartnerAmount">
-
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="435.9" cy="-263" rx="107.1" ry="18" style=""/>
-<text text-anchor="middle" x="435.9" y="-258.8" font-family="Times,serif" font-size="14.00" style="">withdrawPartnerAmount</text>
-</g>
-<!-- Bank.setTokenPartner&#45;&gt;Bank.withdrawPartnerAmount -->
-<g id="edge20" class="edge" data-name="Bank.setTokenPartner-&gt;Bank.withdrawPartnerAmount">
-
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M220.59,-713.38C241.36,-709.73 262.13,-701.82 276.21,-686 334.99,-620.02 253.79,-356.29 312.21,-290 317.49,-284.02 323.76,-279.19 330.63,-275.32" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="332.19,-278.45 339.63,-270.9 329.11,-272.17 332.19,-278.45" style=""/>
-</g>
-<!-- Bank.setTokenPartner&#45;&gt;Bank.getBalance -->
-<g id="edge22" class="edge" data-name="Bank.setTokenPartner-&gt;Bank.getBalance">
-
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M202.65,-701.2C234.56,-694.85 275.48,-687.43 312.21,-683 339.55,-679.7 536.43,-682.91 559.58,-668 588.32,-649.48 572.5,-625.23 595.58,-600 612.1,-581.94 634.78,-566.75 654.22,-555.7" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="656.11,-558.66 663.18,-550.77 652.73,-552.53 656.11,-558.66" style=""/>
-</g>
-<!-- Bank.setTokenPartner&#45;&gt;Bank.getRoleMemberCount -->
-<g id="edge18" class="edge" data-name="Bank.setTokenPartner-&gt;Bank.getRoleMemberCount">
-
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M219.79,-710.07C329.75,-705.28 528.89,-695.09 559.58,-683 578.69,-675.47 577.28,-663.36 595.58,-654 603.38,-650.01 611.84,-646.55 620.42,-643.57" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="621.7,-646.84 630.12,-640.41 619.52,-640.18 621.7,-646.84" style=""/>
-</g>
-<!-- Bank.setTokenPartner&#45;&gt;Bank.getRoleMember -->
-<g id="edge19" class="edge" data-name="Bank.setTokenPartner-&gt;Bank.getRoleMember">
-
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M211.09,-721.9C232.27,-726.02 255.67,-731.86 276.21,-740 293.65,-746.91 294.35,-756.29 312.21,-762 326.28,-766.5 504.96,-777.77 612.86,-784.24" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="612.88,-787.74 623.07,-784.85 613.3,-780.76 612.88,-787.74" style=""/>
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="168.65" cy="-690" rx="152.79" ry="18" style=""/>
+<text text-anchor="middle" x="168.65" y="-685.8" font-family="Times,serif" font-size="14.00" style="">setMinHouseEdgeWithdrawAmount</text>
 </g>
 <!-- Bank.setHouseEdgeSplit -->
-<g id="node15" class="node" pointer-events="visible" data-name="Bank.setHouseEdgeSplit">
+<g id="node14" class="node" pointer-events="visible" data-name="Bank.setHouseEdgeSplit">
 
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="146.11" cy="-659" rx="84.56" ry="18" style=""/>
-<text text-anchor="middle" x="146.11" y="-654.8" font-family="Times,serif" font-size="14.00" style="">setHouseEdgeSplit</text>
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="168.65" cy="-636" rx="84.56" ry="18" style=""/>
+<text text-anchor="middle" x="168.65" y="-631.8" font-family="Times,serif" font-size="14.00" style="">setHouseEdgeSplit</text>
 </g>
 <!-- Bank.WrongHouseEdgeSplit -->
-<g id="node47" class="node" pointer-events="visible" data-name="Bank.WrongHouseEdgeSplit">
+<g id="node45" class="node" pointer-events="visible" data-name="Bank.WrongHouseEdgeSplit">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="435.9" cy="-587" rx="100.74" ry="18" style=""/>
-<text text-anchor="middle" x="435.9" y="-582.8" font-family="Times,serif" font-size="14.00" style="">WrongHouseEdgeSplit</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="480.97" cy="-852" rx="100.74" ry="18" style=""/>
+<text text-anchor="middle" x="480.97" y="-847.8" font-family="Times,serif" font-size="14.00" style="">WrongHouseEdgeSplit</text>
 </g>
 <!-- Bank.setHouseEdgeSplit&#45;&gt;Bank.WrongHouseEdgeSplit -->
 <g id="edge23" class="edge" data-name="Bank.setHouseEdgeSplit-&gt;Bank.WrongHouseEdgeSplit">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M214.34,-648.35C234.53,-644.24 256.53,-638.85 276.21,-632 293.11,-626.12 295.35,-619.97 312.21,-614 325.37,-609.35 339.61,-605.33 353.57,-601.93" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="354.73,-605.25 363.67,-599.56 353.13,-598.44 354.73,-605.25" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M253.96,-633.97C278.42,-637.52 303.34,-645.79 321.29,-663 374.54,-714.03 305.09,-772.9 357.29,-825 362.85,-830.54 369.27,-835.06 376.19,-838.74" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="374.54,-841.83 385.1,-842.75 377.42,-835.45 374.54,-841.83" style=""/>
 </g>
 <!-- Bank.setTokenMinBetAmount -->
-<g id="node16" class="node" pointer-events="visible" data-name="Bank.setTokenMinBetAmount">
+<g id="node15" class="node" pointer-events="visible" data-name="Bank.setTokenMinBetAmount">
 
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="146.11" cy="-605" rx="107.69" ry="18" style=""/>
-<text text-anchor="middle" x="146.11" y="-600.8" font-family="Times,serif" font-size="14.00" style="">setTokenMinBetAmount</text>
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="168.65" cy="-420" rx="107.69" ry="18" style=""/>
+<text text-anchor="middle" x="168.65" y="-415.8" font-family="Times,serif" font-size="14.00" style="">setTokenMinBetAmount</text>
+</g>
+<!-- Bank.UnderMinBetAmountCap -->
+<g id="node46" class="node" pointer-events="visible" data-name="Bank.UnderMinBetAmountCap">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="480.97" cy="-312" rx="111.78" ry="18" style=""/>
+<text text-anchor="middle" x="480.97" y="-307.8" font-family="Times,serif" font-size="14.00" style="">UnderMinBetAmountCap</text>
+</g>
+<!-- Bank.setTokenMinBetAmount&#45;&gt;Bank.UnderMinBetAmountCap -->
+<g id="edge24" class="edge" data-name="Bank.setTokenMinBetAmount-&gt;Bank.UnderMinBetAmountCap">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M271.45,-413.53C289.03,-409.24 306.41,-402.74 321.29,-393 345.43,-377.2 333.48,-355.28 357.29,-339 363.52,-334.74 370.31,-331.14 377.38,-328.1" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="378.59,-331.39 386.69,-324.56 376.1,-324.84 378.59,-331.39" style=""/>
 </g>
 <!-- Bank.setTokenVRFSubId -->
-<g id="node17" class="node" pointer-events="visible" data-name="Bank.setTokenVRFSubId">
+<g id="node16" class="node" pointer-events="visible" data-name="Bank.setTokenVRFSubId">
 
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="146.11" cy="-551" rx="88.08" ry="18" style=""/>
-<text text-anchor="middle" x="146.11" y="-546.8" font-family="Times,serif" font-size="14.00" style="">setTokenVRFSubId</text>
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="168.65" cy="-474" rx="88.08" ry="18" style=""/>
+<text text-anchor="middle" x="168.65" y="-469.8" font-family="Times,serif" font-size="14.00" style="">setTokenVRFSubId</text>
 </g>
 <!-- Bank.harvestDividends -->
-<g id="node18" class="node" pointer-events="visible" data-name="Bank.harvestDividends">
+<g id="node17" class="node" pointer-events="visible" data-name="Bank.harvestDividends">
 
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="435.9" cy="-317" rx="78.74" ry="18" style=""/>
-<text text-anchor="middle" x="435.9" y="-312.8" font-family="Times,serif" font-size="14.00" style="">harvestDividends</text>
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="480.97" cy="-420" rx="78.74" ry="18" style=""/>
+<text text-anchor="middle" x="480.97" y="-415.8" font-family="Times,serif" font-size="14.00" style="">harvestDividends</text>
 </g>
 <!-- Bank.harvestDividends&#45;&gt;Bank._safeTransfer -->
-<g id="edge24" class="edge" data-name="Bank.harvestDividends-&gt;Bank._safeTransfer">
+<g id="edge25" class="edge" data-name="Bank.harvestDividends-&gt;Bank._safeTransfer">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M493.74,-329.3C514.48,-333.84 538.1,-339.08 559.58,-344 584.66,-349.74 612.33,-356.29 636.02,-361.95" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="635.37,-365.4 645.91,-364.32 637,-358.59 635.37,-365.4" style=""/>
-</g>
-<!-- Bank.getDividends -->
-<g id="node19" class="node" pointer-events="visible" data-name="Bank.getDividends">
-
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="146.11" cy="-497" rx="62.56" ry="18" style=""/>
-<text text-anchor="middle" x="146.11" y="-492.8" font-family="Times,serif" font-size="14.00" style="">getDividends</text>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M551.58,-429.2C587.52,-433.95 631.3,-439.74 667.53,-444.53" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="666.63,-447.94 677,-445.78 667.55,-441 666.63,-447.94" style=""/>
 </g>
 <!-- Bank._allocateHouseEdge -->
-<g id="node20" class="node" pointer-events="visible" data-name="Bank._allocateHouseEdge">
+<g id="node18" class="node" pointer-events="visible" data-name="Bank._allocateHouseEdge">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="695.12" cy="-438" rx="90.31" ry="18" style=""/>
-<text text-anchor="middle" x="695.12" y="-433.8" font-family="Times,serif" font-size="14.00" style="">_allocateHouseEdge</text>
-</g>
-<!-- Bank.accountFees -->
-<g id="node21" class="node" pointer-events="visible" data-name="Bank.accountFees">
-
-<ellipse fill="#ffbdb9" stroke="brown" stroke-width="3" cx="435.9" cy="-479" rx="58.53" ry="18" style=""/>
-<text text-anchor="middle" x="435.9" y="-474.8" font-family="Times,serif" font-size="14.00" style="">accountFees</text>
-</g>
-<!-- Bank.accountFees&#45;&gt;Bank._isGasToken -->
-<g id="edge27" class="edge" data-name="Bank.accountFees-&gt;Bank._isGasToken">
-
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M494.7,-479.12C580.95,-479.31 743.2,-479.65 836.79,-479.85" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="837.02,-483.35 847.02,-479.87 837.03,-476.35 837.02,-483.35" style=""/>
-</g>
-<!-- Bank.accountFees&#45;&gt;Bank._allocateHouseEdge -->
-<g id="edge25" class="edge" data-name="Bank.accountFees-&gt;Bank._allocateHouseEdge">
-
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M488.33,-470.8C524.22,-465.08 572.84,-457.33 613.81,-450.8" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="614.45,-454.24 623.78,-449.21 613.35,-447.33 614.45,-454.24" style=""/>
-</g>
-<!-- Bank.accountFees&#45;&gt;Bank.getBalance -->
-<g id="edge26" class="edge" data-name="Bank.accountFees-&gt;Bank.getBalance">
-
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M484.09,-489.36C506.9,-494.37 534.66,-500.48 559.58,-506 586.07,-511.87 615.49,-518.42 640.04,-523.91" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="639.37,-527.34 649.89,-526.11 640.9,-520.51 639.37,-527.34" style=""/>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="740.2" cy="-508" rx="90.31" ry="18" style=""/>
+<text text-anchor="middle" x="740.2" y="-503.8" font-family="Times,serif" font-size="14.00" style="">_allocateHouseEdge</text>
 </g>
 <!-- Bank.payout -->
-<g id="node22" class="node" pointer-events="visible" data-name="Bank.payout">
+<g id="node19" class="node" pointer-events="visible" data-name="Bank.payout">
 
-<ellipse fill="#ffbdb9" stroke="brown" stroke-width="3" cx="435.9" cy="-425" rx="37.14" ry="18" style=""/>
-<text text-anchor="middle" x="435.9" y="-420.8" font-family="Times,serif" font-size="14.00" style="">payout</text>
+<ellipse fill="#ffbdb9" stroke="brown" stroke-width="3" cx="480.97" cy="-528" rx="37.14" ry="18" style=""/>
+<text text-anchor="middle" x="480.97" y="-523.8" font-family="Times,serif" font-size="14.00" style="">payout</text>
 </g>
 <!-- Bank.payout&#45;&gt;Bank._safeTransfer -->
-<g id="edge29" class="edge" data-name="Bank.payout-&gt;Bank._safeTransfer">
+<g id="edge27" class="edge" data-name="Bank.payout-&gt;Bank._safeTransfer">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M470.79,-418.54C511.59,-410.77 580.92,-397.56 631.54,-387.92" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="632.23,-391.35 641.4,-386.04 630.92,-384.48 632.23,-391.35" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M518.2,-522.87C543.06,-518.67 576.51,-511.65 604.65,-501 621.77,-494.52 623.71,-487.91 640.65,-481 651.57,-476.55 663.46,-472.59 675.08,-469.16" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="675.94,-472.56 684.62,-466.48 674.04,-465.82 675.94,-472.56" style=""/>
 </g>
 <!-- Bank.payout&#45;&gt;Bank._allocateHouseEdge -->
-<g id="edge28" class="edge" data-name="Bank.payout-&gt;Bank._allocateHouseEdge">
+<g id="edge26" class="edge" data-name="Bank.payout-&gt;Bank._allocateHouseEdge">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M473.2,-426.84C505.39,-428.46 553.87,-430.91 597.22,-433.1" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="597.09,-436.6 607.25,-433.61 597.44,-429.61 597.09,-436.6" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M519.1,-525.11C551.01,-522.63 598.49,-518.94 641.19,-515.62" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="641.25,-519.13 650.95,-514.86 640.71,-512.15 641.25,-519.13" style=""/>
 </g>
 <!-- Bank.payout&#45;&gt;Bank.getBalance -->
-<g id="edge30" class="edge" data-name="Bank.payout-&gt;Bank.getBalance">
+<g id="edge28" class="edge" data-name="Bank.payout-&gt;Bank.getBalance">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M472.22,-429.5C497.27,-433.47 531.31,-440.47 559.58,-452 598.29,-467.79 638.41,-494.4 664.65,-513.44" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="662.87,-516.47 673,-519.58 667.02,-510.84 662.87,-516.47" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M518.28,-532.8C559.09,-538.19 626.1,-547.05 675.64,-553.6" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="675.09,-557.06 685.47,-554.9 676.01,-550.12 675.09,-557.06" style=""/>
 </g>
 <!-- Bank.cashIn -->
-<g id="node23" class="node" pointer-events="visible" data-name="Bank.cashIn">
+<g id="node20" class="node" pointer-events="visible" data-name="Bank.cashIn">
 
-<ellipse fill="#ffbdb9" stroke="brown" stroke-width="3" cx="435.9" cy="-533" rx="36.48" ry="18" style=""/>
-<text text-anchor="middle" x="435.9" y="-528.8" font-family="Times,serif" font-size="14.00" style="">cashIn</text>
+<ellipse fill="#ffbdb9" stroke="brown" stroke-width="3" cx="480.97" cy="-582" rx="36.48" ry="18" style=""/>
+<text text-anchor="middle" x="480.97" y="-577.8" font-family="Times,serif" font-size="14.00" style="">cashIn</text>
 </g>
-<!-- Bank.cashIn&#45;&gt;Bank._isGasToken -->
-<g id="edge32" class="edge" data-name="Bank.cashIn-&gt;Bank._isGasToken">
+<!-- Bank.cashIn&#45;&gt;Bank._allocateHouseEdge -->
+<g id="edge29" class="edge" data-name="Bank.cashIn-&gt;Bank._allocateHouseEdge">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M470.56,-527.33C502.63,-522.07 552.29,-514.28 595.58,-509 679.01,-498.83 775.37,-490.39 838.82,-485.29" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="839.41,-488.75 849.1,-484.47 838.85,-481.77 839.41,-488.75" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M517.66,-576.96C542.57,-572.77 576.3,-565.73 604.65,-555 621.77,-548.52 623.71,-541.91 640.65,-535 648.6,-531.76 657.06,-528.78 665.56,-526.08" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="666.53,-529.44 675.09,-523.2 664.5,-522.74 666.53,-529.44" style=""/>
 </g>
 <!-- Bank.cashIn&#45;&gt;Bank.getBalance -->
-<g id="edge31" class="edge" data-name="Bank.cashIn-&gt;Bank.getBalance">
+<g id="edge30" class="edge" data-name="Bank.cashIn-&gt;Bank.getBalance">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M472.39,-533.41C513.26,-533.89 581.18,-534.68 631.1,-535.26" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="631.1,-538.77 641.15,-535.38 631.19,-531.77 631.1,-538.77" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M518.55,-579.16C558.79,-576.03 624.26,-570.94 673.45,-567.11" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="673.51,-570.62 683.2,-566.35 672.96,-563.64 673.51,-570.62" style=""/>
 </g>
 <!-- Bank.performUpkeep -->
-<g id="node24" class="node" pointer-events="visible" data-name="Bank.performUpkeep">
+<g id="node21" class="node" pointer-events="visible" data-name="Bank.performUpkeep">
 
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="146.11" cy="-443" rx="72.34" ry="18" style=""/>
-<text text-anchor="middle" x="146.11" y="-438.8" font-family="Times,serif" font-size="14.00" style="">performUpkeep</text>
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="168.65" cy="-528" rx="72.34" ry="18" style=""/>
+<text text-anchor="middle" x="168.65" y="-523.8" font-family="Times,serif" font-size="14.00" style="">performUpkeep</text>
+</g>
+<!-- Bank.withdrawHouseEdgeAmount -->
+<g id="node28" class="node" pointer-events="visible" data-name="Bank.withdrawHouseEdgeAmount">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="480.97" cy="-474" rx="123.86" ry="18" style=""/>
+<text text-anchor="middle" x="480.97" y="-469.8" font-family="Times,serif" font-size="14.00" style="">withdrawHouseEdgeAmount</text>
+</g>
+<!-- Bank.performUpkeep&#45;&gt;Bank.withdrawHouseEdgeAmount -->
+<g id="edge32" class="edge" data-name="Bank.performUpkeep-&gt;Bank.withdrawHouseEdgeAmount">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M230.59,-517.4C274.44,-509.76 334.46,-499.32 384.62,-490.59" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="384.91,-494.09 394.17,-488.93 383.71,-487.2 384.91,-494.09" style=""/>
+</g>
+<!-- Bank.withdrawPartnerAmount -->
+<g id="node29" class="node" pointer-events="visible" data-name="Bank.withdrawPartnerAmount">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="480.97" cy="-366" rx="107.1" ry="18" style=""/>
+<text text-anchor="middle" x="480.97" y="-361.8" font-family="Times,serif" font-size="14.00" style="">withdrawPartnerAmount</text>
 </g>
 <!-- Bank.performUpkeep&#45;&gt;Bank.withdrawPartnerAmount -->
-<g id="edge33" class="edge" data-name="Bank.performUpkeep-&gt;Bank.withdrawPartnerAmount">
+<g id="edge31" class="edge" data-name="Bank.performUpkeep-&gt;Bank.withdrawPartnerAmount">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M218.18,-441.8C239.09,-438.12 260.54,-430.58 276.21,-416 318.86,-376.33 269.78,-329.89 312.21,-290 318.38,-284.2 325.5,-279.54 333.14,-275.81" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="334.53,-279.02 342.31,-271.84 331.75,-272.59 334.53,-279.02" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M241.96,-530.22C269.6,-527.49 299.64,-519.71 321.29,-501 359.58,-467.92 319.69,-426.85 357.29,-393 362.61,-388.21 368.58,-384.21 374.95,-380.87" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="376.35,-384.08 384.03,-376.78 373.47,-377.69 376.35,-384.08" style=""/>
 </g>
 <!-- Bank.getTokens -->
-<g id="node25" class="node" pointer-events="visible" data-name="Bank.getTokens">
+<g id="node22" class="node" pointer-events="visible" data-name="Bank.getTokens">
 
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="695.12" cy="-227" rx="51.03" ry="18" style=""/>
-<text text-anchor="middle" x="695.12" y="-222.8" font-family="Times,serif" font-size="14.00" style="">getTokens</text>
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="740.2" cy="-312" rx="51.03" ry="18" style=""/>
+<text text-anchor="middle" x="740.2" y="-307.8" font-family="Times,serif" font-size="14.00" style="">getTokens</text>
 </g>
 <!-- Bank.getTokens&#45;&gt;Bank._isGasToken -->
-<g id="edge34" class="edge" data-name="Bank.getTokens-&gt;Bank._isGasToken">
+<g id="edge33" class="edge" data-name="Bank.getTokens-&gt;Bank._isGasToken">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M711,-244.38C730.76,-267.69 766.46,-310.6 794.67,-349 811.75,-372.24 812.34,-380.73 830.67,-403 846.18,-421.84 865.69,-441.18 881.27,-455.77" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="879.3,-458.71 889.02,-462.93 884.05,-453.57 879.3,-458.71" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M757.96,-330.15C778.16,-352.35 812.76,-391.37 839.75,-427 857.17,-449.99 852.63,-463.75 875.75,-481 891.01,-492.38 909.82,-500.31 927.98,-505.8" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="926.91,-509.14 937.48,-508.43 928.77,-502.39 926.91,-509.14" style=""/>
 </g>
 <!-- Bank.IERC20Metadata -->
-<g id="node48" class="node" pointer-events="visible" data-name="Bank.IERC20Metadata">
+<g id="node47" class="node" pointer-events="visible" data-name="Bank.IERC20Metadata">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="909.29" cy="-227" rx="78.73" ry="18" style=""/>
-<text text-anchor="middle" x="909.29" y="-222.8" font-family="Times,serif" font-size="14.00" style="">IERC20Metadata</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="996.7" cy="-312" rx="78.73" ry="18" style=""/>
+<text text-anchor="middle" x="996.7" y="-307.8" font-family="Times,serif" font-size="14.00" style="">IERC20Metadata</text>
 </g>
 <!-- Bank.getTokens&#45;&gt;Bank.IERC20Metadata -->
-<g id="edge35" class="edge" data-name="Bank.getTokens-&gt;Bank.IERC20Metadata">
+<g id="edge34" class="edge" data-name="Bank.getTokens-&gt;Bank.IERC20Metadata">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M746.4,-227C768.48,-227 795.07,-227 820.26,-227" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="820.57,-230.5 830.57,-227 820.57,-223.5 820.57,-230.5" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M792.7,-312C824.54,-312 866.31,-312 903.69,-312" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="903.67,-315.5 913.67,-312 903.67,-308.5 903.67,-315.5" style=""/>
 </g>
 <!-- IERC20Metadata.decimals -->
 <g id="node49" class="node" pointer-events="visible" data-name="IERC20Metadata.decimals">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="909.29" cy="-34" rx="45.22" ry="18" style=""/>
-<text text-anchor="middle" x="909.29" y="-29.8" font-family="Times,serif" font-size="14.00" style="">decimals</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="996.7" cy="-142" rx="45.22" ry="18" style=""/>
+<text text-anchor="middle" x="996.7" y="-137.8" font-family="Times,serif" font-size="14.00" style="">decimals</text>
 </g>
 <!-- Bank.getTokens&#45;&gt;IERC20Metadata.decimals -->
-<g id="edge36" class="edge" data-name="Bank.getTokens-&gt;IERC20Metadata.decimals">
+<g id="edge35" class="edge" data-name="Bank.getTokens-&gt;IERC20Metadata.decimals">
 
-<path fill="none" stroke="white" stroke-width="2" d="M705.91,-209.26C725.36,-175.6 772.08,-102.15 830.67,-61 839.43,-54.85 849.72,-49.98 859.89,-46.18" style=""/>
-<polygon fill="white" stroke="white" stroke-width="2" points="861.24,-49.42 869.56,-42.85 858.96,-42.8 861.24,-49.42" style=""/>
+<path fill="none" stroke="white" stroke-width="2" d="M759.06,-293.86C783.67,-269.56 830.18,-226.12 875.75,-197 898.91,-182.2 926.69,-169.2 949.69,-159.56" style=""/>
+<polygon fill="white" stroke="white" stroke-width="2" points="950.85,-162.87 958.77,-155.84 948.19,-156.39 950.85,-162.87" style=""/>
 </g>
 <!-- IERC20Metadata.name -->
 <g id="node50" class="node" pointer-events="visible" data-name="IERC20Metadata.name">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="909.29" cy="-142" rx="31.9" ry="18" style=""/>
-<text text-anchor="middle" x="909.29" y="-137.8" font-family="Times,serif" font-size="14.00" style="">name</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="996.7" cy="-88" rx="31.9" ry="18" style=""/>
+<text text-anchor="middle" x="996.7" y="-83.8" font-family="Times,serif" font-size="14.00" style="">name</text>
 </g>
 <!-- Bank.getTokens&#45;&gt;IERC20Metadata.name -->
-<g id="edge37" class="edge" data-name="Bank.getTokens-&gt;IERC20Metadata.name">
+<g id="edge36" class="edge" data-name="Bank.getTokens-&gt;IERC20Metadata.name">
 
-<path fill="none" stroke="white" stroke-width="2" d="M729.74,-213.53C769.03,-197.79 833.73,-171.87 873.51,-155.93" style=""/>
-<polygon fill="white" stroke="white" stroke-width="2" points="874.84,-159.17 882.82,-152.2 872.23,-152.67 874.84,-159.17" style=""/>
+<path fill="none" stroke="white" stroke-width="2" d="M748.47,-293.04C764.74,-253.25 808.08,-160.95 875.75,-115 897.73,-100.08 926.69,-93.28 950.64,-90.24" style=""/>
+<polygon fill="white" stroke="white" stroke-width="2" points="950.77,-93.75 960.35,-89.22 950.04,-86.78 950.77,-93.75" style=""/>
 </g>
 <!-- IERC20Metadata.symbol -->
 <g id="node51" class="node" pointer-events="visible" data-name="IERC20Metadata.symbol">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="909.29" cy="-88" rx="39.45" ry="18" style=""/>
-<text text-anchor="middle" x="909.29" y="-83.8" font-family="Times,serif" font-size="14.00" style="">symbol</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="996.7" cy="-34" rx="39.45" ry="18" style=""/>
+<text text-anchor="middle" x="996.7" y="-29.8" font-family="Times,serif" font-size="14.00" style="">symbol</text>
 </g>
 <!-- Bank.getTokens&#45;&gt;IERC20Metadata.symbol -->
-<g id="edge38" class="edge" data-name="Bank.getTokens-&gt;IERC20Metadata.symbol">
+<g id="edge37" class="edge" data-name="Bank.getTokens-&gt;IERC20Metadata.symbol">
 
-<path fill="none" stroke="white" stroke-width="2" d="M712.46,-209.96C736.4,-185.86 783.31,-141.77 830.67,-115 841.34,-108.97 853.6,-103.94 865.17,-99.93" style=""/>
-<polygon fill="white" stroke="white" stroke-width="2" points="866.28,-103.25 874.68,-96.79 864.08,-96.6 866.28,-103.25" style=""/>
-</g>
-<!-- Bank.getMinBetAmount -->
-<g id="node26" class="node" pointer-events="visible" data-name="Bank.getMinBetAmount">
-
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="146.11" cy="-389" rx="83.99" ry="18" style=""/>
-<text text-anchor="middle" x="146.11" y="-384.8" font-family="Times,serif" font-size="14.00" style="">getMinBetAmount</text>
+<path fill="none" stroke="white" stroke-width="2" d="M745.66,-292.69C757.69,-245.19 795.46,-122.05 875.75,-61 894.93,-46.42 920.51,-39.45 943.12,-36.21" style=""/>
+<polygon fill="white" stroke="white" stroke-width="2" points="943.48,-39.69 953.01,-35.05 942.67,-32.74 943.48,-39.69" style=""/>
 </g>
 <!-- Bank.getMaxBetAmount -->
-<g id="node27" class="node" pointer-events="visible" data-name="Bank.getMaxBetAmount">
+<g id="node23" class="node" pointer-events="visible" data-name="Bank.getMaxBetAmount">
 
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="435.9" cy="-641" rx="85.7" ry="18" style=""/>
-<text text-anchor="middle" x="435.9" y="-636.8" font-family="Times,serif" font-size="14.00" style="">getMaxBetAmount</text>
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="480.97" cy="-636" rx="85.7" ry="18" style=""/>
+<text text-anchor="middle" x="480.97" y="-631.8" font-family="Times,serif" font-size="14.00" style="">getMaxBetAmount</text>
 </g>
 <!-- Bank.getMaxBetAmount&#45;&gt;Bank.getBalance -->
-<g id="edge39" class="edge" data-name="Bank.getMaxBetAmount-&gt;Bank.getBalance">
+<g id="edge38" class="edge" data-name="Bank.getMaxBetAmount-&gt;Bank.getBalance">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M504.22,-630.09C522.52,-626.08 542.1,-620.8 559.58,-614 596.88,-599.49 636.1,-575.63 662.5,-558.11" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="664.6,-560.92 670.95,-552.44 660.69,-555.11 664.6,-560.92" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M551.14,-624.45C568.88,-620.5 587.73,-615.41 604.65,-609 621.77,-602.52 623.71,-595.91 640.65,-589 653.35,-583.82 667.36,-579.31 680.74,-575.53" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="681.65,-578.91 690.39,-572.93 679.82,-572.16 681.65,-578.91" style=""/>
 </g>
-<!-- Bank.isAllowedToken -->
-<g id="node28" class="node" pointer-events="visible" data-name="Bank.isAllowedToken">
+<!-- Bank.getBetRequirements -->
+<g id="node24" class="node" pointer-events="visible" data-name="Bank.getBetRequirements">
 
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="146.11" cy="-335" rx="75.31" ry="18" style=""/>
-<text text-anchor="middle" x="146.11" y="-330.8" font-family="Times,serif" font-size="14.00" style="">isAllowedToken</text>
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="480.97" cy="-690" rx="89.76" ry="18" style=""/>
+<text text-anchor="middle" x="480.97" y="-685.8" font-family="Times,serif" font-size="14.00" style="">getBetRequirements</text>
+</g>
+<!-- Bank.getBetRequirements&#45;&gt;Bank.getBalance -->
+<g id="edge39" class="edge" data-name="Bank.getBetRequirements-&gt;Bank.getBalance">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M564.76,-682.46C579.1,-678.29 593.09,-672.11 604.65,-663 633.38,-640.36 612.51,-612.36 640.65,-589 650.53,-580.8 662.7,-575.08 675.08,-571.09" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="675.83,-574.51 684.53,-568.46 673.96,-567.77 675.83,-574.51" style=""/>
 </g>
 <!-- Bank.checkUpkeep -->
-<g id="node29" class="node" pointer-events="visible" data-name="Bank.checkUpkeep">
+<g id="node25" class="node" pointer-events="visible" data-name="Bank.checkUpkeep">
 
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="146.11" cy="-281" rx="63.67" ry="18" style=""/>
-<text text-anchor="middle" x="146.11" y="-276.8" font-family="Times,serif" font-size="14.00" style="">checkUpkeep</text>
-</g>
-<!-- Bank.getVRFSubId -->
-<g id="node30" class="node" pointer-events="visible" data-name="Bank.getVRFSubId">
-
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="146.11" cy="-227" rx="64.88" ry="18" style=""/>
-<text text-anchor="middle" x="146.11" y="-222.8" font-family="Times,serif" font-size="14.00" style="">getVRFSubId</text>
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="168.65" cy="-366" rx="63.67" ry="18" style=""/>
+<text text-anchor="middle" x="168.65" y="-361.8" font-family="Times,serif" font-size="14.00" style="">checkUpkeep</text>
 </g>
 <!-- Bank.getTokenOwner -->
-<g id="node31" class="node" pointer-events="visible" data-name="Bank.getTokenOwner">
+<g id="node26" class="node" pointer-events="visible" data-name="Bank.getTokenOwner">
 
-<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="435.9" cy="-809" rx="73.57" ry="18" style=""/>
-<text text-anchor="middle" x="435.9" y="-804.8" font-family="Times,serif" font-size="14.00" style="">getTokenOwner</text>
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="480.97" cy="-798" rx="73.57" ry="18" style=""/>
+<text text-anchor="middle" x="480.97" y="-793.8" font-family="Times,serif" font-size="14.00" style="">getTokenOwner</text>
+</g>
+<!-- Bank.getTokenOwner&#45;&gt;Bank.address -->
+<g id="edge40" class="edge" data-name="Bank.getTokenOwner-&gt;Bank.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M549.22,-806.02C567.89,-810.03 587.69,-816.02 604.65,-825 624.11,-835.29 620.2,-850.87 640.65,-859 681.77,-875.35 805.74,-887.3 839.75,-859 907.49,-802.62 810.08,-722.78 875.75,-664 881.15,-659.17 1073.72,-647.5 1169.36,-641.98" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1169.37,-645.49 1179.16,-641.42 1168.97,-638.5 1169.37,-645.49" style=""/>
 </g>
 <!-- Bank.getTokenOwner&#45;&gt;Bank.getRoleMember -->
-<g id="edge40" class="edge" data-name="Bank.getTokenOwner-&gt;Bank.getRoleMember">
+<g id="edge41" class="edge" data-name="Bank.getTokenOwner-&gt;Bank.getRoleMember">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M506.5,-803.59C539.82,-801 579.87,-797.88 614.41,-795.2" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="614.76,-798.68 624.46,-794.42 614.22,-791.7 614.76,-798.68" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M552.94,-792.48C584.71,-790.01 622.4,-787.08 655.53,-784.51" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="655.75,-788 665.45,-783.73 655.2,-781.02 655.75,-788" style=""/>
+</g>
+<!-- Bank.setTeamWallet&#45;&gt;Bank.address -->
+<g id="edge42" class="edge" data-name="Bank.setTeamWallet-&gt;Bank.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M1051.06,-703.55C1072.02,-698.19 1096.17,-691.45 1117.66,-684 1139.35,-676.48 1162.88,-666.52 1182.11,-657.87" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1183.37,-661.15 1191.02,-653.82 1180.47,-654.78 1183.37,-661.15" style=""/>
 </g>
 <!-- Bank.setTeamWallet&#45;&gt;Bank.WrongAddress -->
-<g id="edge41" class="edge" data-name="Bank.setTeamWallet-&gt;Bank.WrongAddress">
+<g id="edge43" class="edge" data-name="Bank.setTeamWallet-&gt;Bank.WrongAddress">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M493.98,-926.99C533.36,-933.88 585.86,-943.06 627.21,-950.29" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="626.74,-953.77 637.2,-952.04 627.95,-946.87 626.74,-953.77" style=""/>
-</g>
-<!-- Bank.withdrawHouseEdgeAmount -->
-<g id="node33" class="node" pointer-events="visible" data-name="Bank.withdrawHouseEdgeAmount">
-
-<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="435.9" cy="-371" rx="123.86" ry="18" style=""/>
-<text text-anchor="middle" x="435.9" y="-366.8" font-family="Times,serif" font-size="14.00" style="">withdrawHouseEdgeAmount</text>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M1064.74,-721.38C1089.17,-723.33 1117.02,-725.57 1142.43,-727.61" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1141.81,-731.07 1152.06,-728.38 1142.37,-724.09 1141.81,-731.07" style=""/>
 </g>
 <!-- Bank.withdrawHouseEdgeAmount&#45;&gt;Bank._safeTransfer -->
-<g id="edge42" class="edge" data-name="Bank.withdrawHouseEdgeAmount-&gt;Bank._safeTransfer">
+<g id="edge44" class="edge" data-name="Bank.withdrawHouseEdgeAmount-&gt;Bank._safeTransfer">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M556.1,-366.58C579.93,-366.96 604.19,-367.67 625.59,-368.62" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="625.7,-372.13 635.85,-369.11 626.03,-365.14 625.7,-372.13" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M571.58,-460.57C601,-457.84 633.43,-455.39 661.86,-453.76" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="661.8,-457.27 671.6,-453.24 661.42,-450.28 661.8,-457.27" style=""/>
 </g>
 <!-- Bank.withdrawHouseEdgeAmount&#45;&gt;Bank._safeTransfer -->
-<g id="edge43" class="edge" data-name="Bank.withdrawHouseEdgeAmount-&gt;Bank._safeTransfer">
+<g id="edge45" class="edge" data-name="Bank.withdrawHouseEdgeAmount-&gt;Bank._safeTransfer">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M544.12,-379.75C570.66,-380.48 598.44,-380.83 622.79,-380.73" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="623.02,-384.23 633,-380.66 622.97,-377.23 623.02,-384.23" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M604.94,-471.18C627.61,-469.47 650.52,-467.45 670.84,-465.36" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="671.21,-468.84 680.78,-464.3 670.46,-461.88 671.21,-468.84" style=""/>
 </g>
 <!-- Bank.withdrawPartnerAmount&#45;&gt;Bank._safeTransfer -->
-<g id="edge44" class="edge" data-name="Bank.withdrawPartnerAmount-&gt;Bank._safeTransfer">
+<g id="edge47" class="edge" data-name="Bank.withdrawPartnerAmount-&gt;Bank._safeTransfer">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M513.44,-275.48C529.02,-279.23 545.07,-283.99 559.58,-290 598.4,-306.08 638.43,-333.27 664.61,-352.78" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="662.52,-355.59 672.61,-358.82 666.74,-350 662.52,-355.59" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M556.93,-379.89C572.86,-383.56 589.44,-387.94 604.65,-393 636.1,-403.46 670.08,-418.9 696.02,-431.63" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="694.12,-434.59 704.63,-435.91 697.23,-428.32 694.12,-434.59" style=""/>
+</g>
+<!-- Bank.withdrawPartnerAmount&#45;&gt;Bank.address -->
+<g id="edge46" class="edge" data-name="Bank.withdrawPartnerAmount-&gt;Bank.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M588.82,-363.98C747.18,-363 1034.46,-369.56 1117.66,-427 1179.26,-469.53 1206.13,-559.1 1216.49,-607.07" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1213.03,-607.62 1218.44,-616.73 1219.89,-606.24 1213.03,-607.62" style=""/>
 </g>
 <!-- Bank.getBalance&#45;&gt;Bank._isGasToken -->
-<g id="edge45" class="edge" data-name="Bank.getBalance-&gt;Bank._isGasToken">
+<g id="edge48" class="edge" data-name="Bank.getBalance-&gt;Bank._isGasToken">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M738.04,-524.94C770.93,-516.25 817.01,-504.09 852.94,-494.61" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="854.01,-497.95 862.78,-492.01 852.22,-491.18 854.01,-497.95" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M789.97,-553.57C829.3,-546.77 885.03,-537.13 928.57,-529.61" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="929.13,-533.06 938.38,-527.91 927.93,-526.16 929.13,-533.06" style=""/>
+</g>
+<!-- Bank.getBalance&#45;&gt;Bank.address -->
+<g id="edge49" class="edge" data-name="Bank.getBalance-&gt;Bank.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M793.12,-567.56C808.17,-571.31 824.61,-575.82 839.75,-580 855.76,-584.42 859.45,-586.82 875.75,-590 980.33,-610.43 1104.86,-621.68 1172.47,-629.64" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1171.86,-633.09 1182.21,-630.82 1172.7,-626.14 1171.86,-633.09" style=""/>
+</g>
+<!-- Bank.getBalance&#45;&gt;Bank.address -->
+<g id="edge51" class="edge" data-name="Bank.getBalance-&gt;Bank.address">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M771.4,-577.95C790.91,-584.58 816.83,-591.68 839.75,-598 855.76,-602.42 859.45,-604.82 875.75,-608 978.8,-628.13 1101.22,-639.35 1169.46,-641.69" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1169.25,-645.18 1179.34,-641.95 1169.44,-638.18 1169.25,-645.18" style=""/>
 </g>
 <!-- Bank.getBalance&#45;&gt;Bank.IERC20 -->
-<g id="edge46" class="edge" data-name="Bank.getBalance-&gt;Bank.IERC20">
+<g id="edge50" class="edge" data-name="Bank.getBalance-&gt;Bank.IERC20">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M749.11,-536C781.79,-536 823.51,-536 856.04,-536" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="856.26,-539.5 866.26,-536 856.26,-532.5 856.26,-539.5" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M795.17,-564.12C837.75,-565.79 896.94,-568.12 939.97,-569.81" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="939.61,-573.3 949.74,-570.19 939.89,-566.3 939.61,-573.3" style=""/>
+</g>
+<!-- Bank.startTokenPartnerTransfer -->
+<g id="node31" class="node" pointer-events="visible" data-name="Bank.startTokenPartnerTransfer">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="168.65" cy="-312" rx="112.85" ry="18" style=""/>
+<text text-anchor="middle" x="168.65" y="-307.8" font-family="Times,serif" font-size="14.00" style="">startTokenPartnerTransfer</text>
+</g>
+<!-- Bank.acceptTokenPartnerTransfer -->
+<g id="node32" class="node" pointer-events="visible" data-name="Bank.acceptTokenPartnerTransfer">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="996.7" cy="-906" rx="120.91" ry="18" style=""/>
+<text text-anchor="middle" x="996.7" y="-901.8" font-family="Times,serif" font-size="14.00" style="">acceptTokenPartnerTransfer</text>
+</g>
+<!-- Bank.acceptTokenPartnerTransfer&#45;&gt;Bank.AccessDenied -->
+<g id="edge52" class="edge" data-name="Bank.acceptTokenPartnerTransfer-&gt;Bank.AccessDenied">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M1118.8,-904.92C1126.96,-904.85 1135.05,-904.78 1142.91,-904.71" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="1142.89,-908.21 1152.86,-904.62 1142.83,-901.21 1142.89,-908.21" style=""/>
 </g>
 <!-- key -->
 <g id="node52" class="node" pointer-events="visible" data-name="key">
 
-<polygon fill="#edad56" stroke="none" stroke-width="3" points="211.11,-1254 81.11,-1254 81.11,-1166 211.11,-1166 211.11,-1254" style=""/>
-<text text-anchor="start" x="130.75" y="-1235.4" font-family="Times,serif" font-size="14.00" style="">Internal Call</text>
-<text text-anchor="start" x="126.86" y="-1215.4" font-family="Times,serif" font-size="14.00" style="">External Call</text>
-<text text-anchor="start" x="104.31" y="-1195.4" font-family="Times,serif" font-size="14.00" style="">Defined Contract</text>
-<text text-anchor="start" x="90.71" y="-1175.4" font-family="Times,serif" font-size="14.00" style="">Undefined Contract</text>
+<polygon fill="#edad56" stroke="none" stroke-width="3" points="233.65,-1061 103.65,-1061 103.65,-973 233.65,-973 233.65,-1061" style=""/>
+<text text-anchor="start" x="153.28" y="-1042.4" font-family="Times,serif" font-size="14.00" style="">Internal Call</text>
+<text text-anchor="start" x="149.39" y="-1022.4" font-family="Times,serif" font-size="14.00" style="">External Call</text>
+<text text-anchor="start" x="126.85" y="-1002.4" font-family="Times,serif" font-size="14.00" style="">Defined Contract</text>
+<text text-anchor="start" x="113.25" y="-982.4" font-family="Times,serif" font-size="14.00" style="">Undefined Contract</text>
 </g>
 <!-- key2 -->
 <g id="node53" class="node" pointer-events="visible" data-name="key2">
 
-<polygon fill="#edad56" stroke="none" stroke-width="3" points="462.9,-1254 408.9,-1254 408.9,-1166 462.9,-1166 462.9,-1254" style=""/>
-<text text-anchor="start" x="425.9" y="-1235.4" font-family="Times,serif" font-size="14.00" style="">   </text>
-<text text-anchor="start" x="425.9" y="-1215.4" font-family="Times,serif" font-size="14.00" style="">   </text>
-<polygon fill="#445773" stroke="none" points="423.9,-1190 423.9,-1210 448.9,-1210 448.9,-1190 423.9,-1190" style=""/>
-<text text-anchor="start" x="425.9" y="-1195.4" font-family="Times,serif" font-size="14.00" style="">   </text>
-<polygon fill="none" stroke="#e8726d" points="425.9,-1172 425.9,-1188 446.9,-1188 446.9,-1172 425.9,-1172" style=""/>
+<polygon fill="#edad56" stroke="none" stroke-width="3" points="507.97,-1061 453.97,-1061 453.97,-973 507.97,-973 507.97,-1061" style=""/>
+<text text-anchor="start" x="470.97" y="-1042.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<text text-anchor="start" x="470.97" y="-1022.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<polygon fill="#445773" stroke="none" points="468.97,-997 468.97,-1017 493.97,-1017 493.97,-997 468.97,-997" style=""/>
+<text text-anchor="start" x="470.97" y="-1002.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<polygon fill="none" stroke="#e8726d" points="470.97,-979 470.97,-995 491.97,-995 491.97,-979 470.97,-979" style=""/>
 </g>
 <!-- key&#45;&gt;key2 -->
-<g id="edge47" class="edge" data-name="key-&gt;key2">
+<g id="edge53" class="edge" data-name="key-&gt;key2">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M204.11,-1240C297.83,-1240 323.8,-1240 412.63,-1240" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="412.9,-1243.5 422.9,-1240 412.9,-1236.5 412.9,-1243.5" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M226.65,-1047C329.5,-1047 358.38,-1047 455.17,-1047" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="454.95,-1050.5 464.95,-1047 454.95,-1043.5 454.95,-1050.5" style=""/>
 </g>
 <!-- key&#45;&gt;key2 -->
-<g id="edge48" class="edge" data-name="key-&gt;key2">
+<g id="edge54" class="edge" data-name="key-&gt;key2">
 
-<path fill="none" stroke="white" stroke-width="2" d="M204.11,-1220C297.83,-1220 323.8,-1220 412.63,-1220" style=""/>
-<polygon fill="white" stroke="white" stroke-width="2" points="412.9,-1223.5 422.9,-1220 412.9,-1216.5 412.9,-1223.5" style=""/>
+<path fill="none" stroke="white" stroke-width="2" d="M226.65,-1027C329.5,-1027 358.38,-1027 455.17,-1027" style=""/>
+<polygon fill="white" stroke="white" stroke-width="2" points="454.95,-1030.5 464.95,-1027 454.95,-1023.5 454.95,-1030.5" style=""/>
 </g>
 </g>
 </svg>

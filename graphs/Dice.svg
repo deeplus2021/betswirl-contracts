@@ -1,89 +1,101 @@
 <?xml version="1.0" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="418pt" height="454pt" viewBox="0.00 0.00 418.38 454.00">
-<g id="graph0" class="graph" transform="translate(4,450) scale(1)" data-name="G">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="424pt" height="508pt" viewBox="0.00 0.00 423.77 508.00">
+<g id="graph0" class="graph" transform="translate(4,504) scale(1)" data-name="G">
 
-<polygon fill="#2e3e56" stroke="none" points="-4,4 -4,-450 414.38,-450 414.38,4 -4,4" style=""/>
+<polygon fill="#2e3e56" stroke="none" points="-4,4 -4,-504 419.77,-504 419.77,4 -4,4" style=""/>
 <g id="clust1" class="cluster" data-name="clusterDice">
 
-<path fill="#445773" stroke="#445773" d="M20,-8C20,-8 390.38,-8 390.38,-8 396.38,-8 402.38,-14 402.38,-20 402.38,-20 402.38,-289 402.38,-289 402.38,-295 396.38,-301 390.38,-301 390.38,-301 20,-301 20,-301 14,-301 8,-295 8,-289 8,-289 8,-20 8,-20 8,-14 14,-8 20,-8" style=""/>
-<text text-anchor="middle" x="205.19" y="-284.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">Dice</text>
+<path fill="#445773" stroke="#445773" d="M20,-8C20,-8 395.77,-8 395.77,-8 401.77,-8 407.77,-14 407.77,-20 407.77,-20 407.77,-343 407.77,-343 407.77,-349 401.77,-355 395.77,-355 395.77,-355 20,-355 20,-355 14,-355 8,-349 8,-343 8,-343 8,-20 8,-20 8,-14 14,-8 20,-8" style=""/>
+<text text-anchor="middle" x="207.89" y="-338.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">Dice</text>
 </g>
 <g id="clust2" class="cluster" data-name="cluster_01">
 
-<polygon fill="#2e3e56" stroke="black" points="34.5,-309 34.5,-438 349.69,-438 349.69,-309 34.5,-309" style=""/>
-<text text-anchor="middle" x="192.09" y="-421.4" font-family="Times,serif" font-size="14.00" style="">Legend</text>
+<polygon fill="#2e3e56" stroke="black" points="34.5,-363 34.5,-492 352.39,-492 352.39,-363 34.5,-363" style=""/>
+<text text-anchor="middle" x="193.44" y="-475.4" font-family="Times,serif" font-size="14.00" style="">Legend</text>
 </g>
 <!-- Dice.&lt;Constructor&gt; -->
 <g id="node1" class="node" pointer-events="visible" data-name="Dice.&lt;Constructor&gt;">
 
-<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="107.5" cy="-250" rx="67.55" ry="18" style=""/>
-<text text-anchor="middle" x="107.5" y="-245.8" font-family="Times,serif" font-size="14.00" style="">&lt;Constructor&gt;</text>
+<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="107.5" cy="-304" rx="67.55" ry="18" style=""/>
+<text text-anchor="middle" x="107.5" y="-299.8" font-family="Times,serif" font-size="14.00" style="">&lt;Constructor&gt;</text>
 </g>
 <!-- Dice._getPayout -->
 <g id="node2" class="node" pointer-events="visible" data-name="Dice._getPayout">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="314.69" cy="-142" rx="54.48" ry="18" style=""/>
-<text text-anchor="middle" x="314.69" y="-137.8" font-family="Times,serif" font-size="14.00" style="">_getPayout</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="317.39" cy="-196" rx="54.48" ry="18" style=""/>
+<text text-anchor="middle" x="317.39" y="-191.8" font-family="Times,serif" font-size="14.00" style="">_getPayout</text>
 </g>
 <!-- Dice.wager -->
 <g id="node3" class="node" pointer-events="visible" data-name="Dice.wager">
 
-<ellipse fill="#ffbdb9" stroke="brown" stroke-width="3" cx="107.5" cy="-196" rx="34.75" ry="18" style=""/>
-<text text-anchor="middle" x="107.5" y="-191.8" font-family="Times,serif" font-size="14.00" style="">wager</text>
+<ellipse fill="#ffbdb9" stroke="brown" stroke-width="3" cx="107.5" cy="-250" rx="34.75" ry="18" style=""/>
+<text text-anchor="middle" x="107.5" y="-245.8" font-family="Times,serif" font-size="14.00" style="">wager</text>
 </g>
 <!-- Dice.wager&#45;&gt;Dice._getPayout -->
 <g id="edge3" class="edge" data-name="Dice.wager-&gt;Dice._getPayout">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M138.77,-188.03C171.01,-179.55 222.63,-165.97 261.45,-155.75" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="262.75,-159.03 271.53,-153.1 260.96,-152.26 262.75,-159.03" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M140.07,-241.8C171.81,-233.55 221.42,-220.67 259.94,-210.66" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="260.81,-214.05 269.6,-208.15 259.05,-207.28 260.81,-214.05" style=""/>
 </g>
 <!-- Dice.CapNotInRange -->
 <g id="node6" class="node" pointer-events="visible" data-name="Dice.CapNotInRange">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="314.69" cy="-250" rx="73.59" ry="18" style=""/>
-<text text-anchor="middle" x="314.69" y="-245.8" font-family="Times,serif" font-size="14.00" style="">CapNotInRange</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="317.39" cy="-250" rx="73.59" ry="18" style=""/>
+<text text-anchor="middle" x="317.39" y="-245.8" font-family="Times,serif" font-size="14.00" style="">CapNotInRange</text>
 </g>
 <!-- Dice.wager&#45;&gt;Dice.CapNotInRange -->
 <g id="edge1" class="edge" data-name="Dice.wager-&gt;Dice.CapNotInRange">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M138.77,-203.97C168.96,-211.91 216.15,-224.33 253.91,-234.27" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="253.22,-237.71 263.78,-236.87 255,-230.94 253.22,-237.71" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M143.29,-250C166.96,-250 199.38,-250 229.77,-250" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="229.61,-253.5 239.61,-250 229.61,-246.5 229.61,-253.5" style=""/>
 </g>
 <!-- Dice._newBet -->
 <g id="node7" class="node" pointer-events="visible" data-name="Dice._newBet">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="314.69" cy="-196" rx="45.23" ry="18" style=""/>
-<text text-anchor="middle" x="314.69" y="-191.8" font-family="Times,serif" font-size="14.00" style="">_newBet</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="317.39" cy="-304" rx="45.23" ry="18" style=""/>
+<text text-anchor="middle" x="317.39" y="-299.8" font-family="Times,serif" font-size="14.00" style="">_newBet</text>
 </g>
 <!-- Dice.wager&#45;&gt;Dice._newBet -->
 <g id="edge2" class="edge" data-name="Dice.wager-&gt;Dice._newBet">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M142.38,-196C174.01,-196 221.77,-196 258.83,-196" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="258.98,-199.5 268.98,-196 258.98,-192.5 258.98,-199.5" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M140.07,-258.2C173.31,-266.84 226.15,-280.56 265.32,-290.74" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="264.29,-294.08 274.85,-293.21 266.05,-287.31 264.29,-294.08" style=""/>
 </g>
 <!-- Dice.fulfillRandomWords -->
 <g id="node4" class="node" pointer-events="visible" data-name="Dice.fulfillRandomWords">
 
-<ellipse fill="#f2c383" stroke="#f2c383" stroke-width="3" cx="107.5" cy="-115" rx="91.5" ry="18" style=""/>
-<text text-anchor="middle" x="107.5" y="-110.8" font-family="Times,serif" font-size="14.00" style="">fulfillRandomWords</text>
+<ellipse fill="#f2c383" stroke="#f2c383" stroke-width="3" cx="107.5" cy="-142" rx="91.5" ry="18" style=""/>
+<text text-anchor="middle" x="107.5" y="-137.8" font-family="Times,serif" font-size="14.00" style="">fulfillRandomWords</text>
 </g>
 <!-- Dice.fulfillRandomWords&#45;&gt;Dice._getPayout -->
 <g id="edge5" class="edge" data-name="Dice.fulfillRandomWords-&gt;Dice._getPayout">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M184.03,-124.94C207.01,-127.96 231.95,-131.24 253.76,-134.11" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="253.49,-137.61 263.86,-135.44 254.41,-130.67 253.49,-137.61" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M166.41,-157.04C195.61,-164.63 230.88,-173.79 259.88,-181.32" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="258.81,-184.66 269.37,-183.79 260.57,-177.89 258.81,-184.66" style=""/>
 </g>
 <!-- Dice._resolveBet -->
 <g id="node8" class="node" pointer-events="visible" data-name="Dice._resolveBet">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="314.69" cy="-88" rx="57.32" ry="18" style=""/>
-<text text-anchor="middle" x="314.69" y="-83.8" font-family="Times,serif" font-size="14.00" style="">_resolveBet</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="317.39" cy="-142" rx="57.32" ry="18" style=""/>
+<text text-anchor="middle" x="317.39" y="-137.8" font-family="Times,serif" font-size="14.00" style="">_resolveBet</text>
 </g>
 <!-- Dice.fulfillRandomWords&#45;&gt;Dice._resolveBet -->
 <g id="edge4" class="edge" data-name="Dice.fulfillRandomWords-&gt;Dice._resolveBet">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M184.03,-105.06C206.22,-102.14 230.24,-98.98 251.49,-96.18" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="252.23,-99.62 261.69,-94.84 251.32,-92.68 252.23,-99.62" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M200.29,-142C215.68,-142 231.44,-142 246.18,-142" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="245.81,-145.5 255.81,-142 245.81,-138.5 245.81,-145.5" style=""/>
+</g>
+<!-- Dice._accountVRFCost -->
+<g id="node9" class="node" pointer-events="visible" data-name="Dice._accountVRFCost">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="317.39" cy="-88" rx="82.28" ry="18" style=""/>
+<text text-anchor="middle" x="317.39" y="-83.8" font-family="Times,serif" font-size="14.00" style="">_accountVRFCost</text>
+</g>
+<!-- Dice.fulfillRandomWords&#45;&gt;Dice._accountVRFCost -->
+<g id="edge6" class="edge" data-name="Dice.fulfillRandomWords-&gt;Dice._accountVRFCost">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M166.41,-126.96C191.92,-120.33 222.07,-112.5 248.62,-105.6" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="249.21,-109.07 258.01,-103.16 247.45,-102.29 249.21,-109.07" style=""/>
 </g>
 <!-- Dice.getLastUserBets -->
 <g id="node5" class="node" pointer-events="visible" data-name="Dice.getLastUserBets">
@@ -92,47 +104,47 @@
 <text text-anchor="middle" x="107.5" y="-29.8" font-family="Times,serif" font-size="14.00" style="">getLastUserBets</text>
 </g>
 <!-- Dice._getLastUserBets -->
-<g id="node9" class="node" pointer-events="visible" data-name="Dice._getLastUserBets">
+<g id="node10" class="node" pointer-events="visible" data-name="Dice._getLastUserBets">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="314.69" cy="-34" rx="79.88" ry="18" style=""/>
-<text text-anchor="middle" x="314.69" y="-29.8" font-family="Times,serif" font-size="14.00" style="">_getLastUserBets</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="317.39" cy="-34" rx="79.88" ry="18" style=""/>
+<text text-anchor="middle" x="317.39" y="-29.8" font-family="Times,serif" font-size="14.00" style="">_getLastUserBets</text>
 </g>
 <!-- Dice.getLastUserBets&#45;&gt;Dice._getLastUserBets -->
-<g id="edge6" class="edge" data-name="Dice.getLastUserBets-&gt;Dice._getLastUserBets">
+<g id="edge7" class="edge" data-name="Dice.getLastUserBets-&gt;Dice._getLastUserBets">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M182.58,-34C196.25,-34 210.65,-34 224.71,-34" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="224.87,-37.5 234.87,-34 224.87,-30.5 224.87,-37.5" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M183.55,-34C196.51,-34 210.11,-34 223.47,-34" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="223.15,-37.5 233.15,-34 223.15,-30.5 223.15,-37.5" style=""/>
 </g>
 <!-- key -->
-<g id="node10" class="node" pointer-events="visible" data-name="key">
+<g id="node11" class="node" pointer-events="visible" data-name="key">
 
-<polygon fill="#edad56" stroke="none" stroke-width="3" points="172.5,-405 42.5,-405 42.5,-317 172.5,-317 172.5,-405" style=""/>
-<text text-anchor="start" x="92.14" y="-386.4" font-family="Times,serif" font-size="14.00" style="">Internal Call</text>
-<text text-anchor="start" x="88.25" y="-366.4" font-family="Times,serif" font-size="14.00" style="">External Call</text>
-<text text-anchor="start" x="65.7" y="-346.4" font-family="Times,serif" font-size="14.00" style="">Defined Contract</text>
-<text text-anchor="start" x="52.1" y="-326.4" font-family="Times,serif" font-size="14.00" style="">Undefined Contract</text>
+<polygon fill="#edad56" stroke="none" stroke-width="3" points="172.5,-459 42.5,-459 42.5,-371 172.5,-371 172.5,-459" style=""/>
+<text text-anchor="start" x="92.14" y="-440.4" font-family="Times,serif" font-size="14.00" style="">Internal Call</text>
+<text text-anchor="start" x="88.25" y="-420.4" font-family="Times,serif" font-size="14.00" style="">External Call</text>
+<text text-anchor="start" x="65.7" y="-400.4" font-family="Times,serif" font-size="14.00" style="">Defined Contract</text>
+<text text-anchor="start" x="52.1" y="-380.4" font-family="Times,serif" font-size="14.00" style="">Undefined Contract</text>
 </g>
 <!-- key2 -->
-<g id="node11" class="node" pointer-events="visible" data-name="key2">
+<g id="node12" class="node" pointer-events="visible" data-name="key2">
 
-<polygon fill="#edad56" stroke="none" stroke-width="3" points="341.69,-405 287.69,-405 287.69,-317 341.69,-317 341.69,-405" style=""/>
-<text text-anchor="start" x="304.69" y="-386.4" font-family="Times,serif" font-size="14.00" style="">   </text>
-<text text-anchor="start" x="304.69" y="-366.4" font-family="Times,serif" font-size="14.00" style="">   </text>
-<polygon fill="#445773" stroke="none" points="302.69,-341 302.69,-361 327.69,-361 327.69,-341 302.69,-341" style=""/>
-<text text-anchor="start" x="304.69" y="-346.4" font-family="Times,serif" font-size="14.00" style="">   </text>
-<polygon fill="none" stroke="#e8726d" points="304.69,-323 304.69,-339 325.69,-339 325.69,-323 304.69,-323" style=""/>
-</g>
-<!-- key&#45;&gt;key2 -->
-<g id="edge7" class="edge" data-name="key-&gt;key2">
-
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M165.5,-391C222.48,-391 239.23,-391 291.5,-391" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="291.69,-394.5 301.69,-391 291.69,-387.5 291.69,-394.5" style=""/>
+<polygon fill="#edad56" stroke="none" stroke-width="3" points="344.39,-459 290.39,-459 290.39,-371 344.39,-371 344.39,-459" style=""/>
+<text text-anchor="start" x="307.39" y="-440.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<text text-anchor="start" x="307.39" y="-420.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<polygon fill="#445773" stroke="none" points="305.39,-395 305.39,-415 330.39,-415 330.39,-395 305.39,-395" style=""/>
+<text text-anchor="start" x="307.39" y="-400.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<polygon fill="none" stroke="#e8726d" points="307.39,-377 307.39,-393 328.39,-393 328.39,-377 307.39,-377" style=""/>
 </g>
 <!-- key&#45;&gt;key2 -->
 <g id="edge8" class="edge" data-name="key-&gt;key2">
 
-<path fill="none" stroke="white" stroke-width="2" d="M165.5,-371C222.48,-371 239.23,-371 291.5,-371" style=""/>
-<polygon fill="white" stroke="white" stroke-width="2" points="291.69,-374.5 301.69,-371 291.69,-367.5 291.69,-374.5" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M165.5,-445C222.64,-445 240.11,-445 291.37,-445" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="291.36,-448.5 301.36,-445 291.36,-441.5 291.36,-448.5" style=""/>
+</g>
+<!-- key&#45;&gt;key2 -->
+<g id="edge9" class="edge" data-name="key-&gt;key2">
+
+<path fill="none" stroke="white" stroke-width="2" d="M165.5,-425C222.64,-425 240.11,-425 291.37,-425" style=""/>
+<polygon fill="white" stroke="white" stroke-width="2" points="291.36,-428.5 301.36,-425 291.36,-421.5 291.36,-428.5" style=""/>
 </g>
 </g>
 </svg>

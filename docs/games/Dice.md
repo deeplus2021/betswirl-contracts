@@ -1,10 +1,10 @@
-# Roulette
+# Dice
 
+*Romuald Hog (based on Yakitori&#39;s Dice)*
 
+> BetSwirl&#39;s Dice game
 
-> BetSwirl&#39;s Roulette game
-
-@author Romuald Hog
+The game is played with a 100 sided dice. The game&#39;s goal is to guess whether the lucky number will be above your chosen number.
 
 
 
@@ -25,12 +25,12 @@ The bank that manage to payout a won bet and collect a loss bet.
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | contract IBank | undefined
+| _0 | contract IBank | undefined |
 
 ### bets
 
 ```solidity
-function bets(uint256) external view returns (bool resolved, address payable user, address token, uint256 id, uint256 amount, uint256 blockNumber, uint256 payout, uint256 vrfCost)
+function bets(uint256) external view returns (bool resolved, address user, address token, uint256 id, uint256 amount, uint256 blockNumber, uint256 payout, uint256 vrfCost)
 ```
 
 Maps bets IDs to Bet information.
@@ -41,25 +41,48 @@ Maps bets IDs to Bet information.
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | uint256 | undefined
+| _0 | uint256 | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| resolved | bool | undefined
-| user | address payable | undefined
-| token | address | undefined
-| id | uint256 | undefined
-| amount | uint256 | undefined
-| blockNumber | uint256 | undefined
-| payout | uint256 | undefined
-| vrfCost | uint256 | undefined
+| resolved | bool | undefined |
+| user | address | undefined |
+| token | address | undefined |
+| id | uint256 | undefined |
+| amount | uint256 | undefined |
+| blockNumber | uint256 | undefined |
+| payout | uint256 | undefined |
+| vrfCost | uint256 | undefined |
+
+### diceBets
+
+```solidity
+function diceBets(uint256) external view returns (uint8 cap, uint8 rolled)
+```
+
+Maps bets IDs to chosen and rolled dice numbers.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| _0 | uint256 | undefined |
+
+#### Returns
+
+| Name | Type | Description |
+|---|---|---|
+| cap | uint8 | undefined |
+| rolled | uint8 | undefined |
 
 ### getChainlinkConfig
 
 ```solidity
-function getChainlinkConfig() external view returns (uint16 requestConfirmations, bytes32 keyHash, contract IVRFCoordinatorV2 chainlinkCoordinator)
+function getChainlinkConfig() external view returns (uint16 requestConfirmations, bytes32 keyHash, contract IVRFCoordinatorV2 chainlinkCoordinator, uint256 gasAfterCalculation)
 ```
 
 Returns the Chainlink VRF config.
@@ -71,9 +94,10 @@ Returns the Chainlink VRF config.
 
 | Name | Type | Description |
 |---|---|---|
-| requestConfirmations | uint16 | undefined
-| keyHash | bytes32 | undefined
-| chainlinkCoordinator | contract IVRFCoordinatorV2 | undefined
+| requestConfirmations | uint16 | undefined |
+| keyHash | bytes32 | undefined |
+| chainlinkCoordinator | contract IVRFCoordinatorV2 | undefined |
+| gasAfterCalculation | uint256 | undefined |
 
 ### getChainlinkVRFCost
 
@@ -89,18 +113,18 @@ Returns the amount of ETH that should be passed to the wager transaction. to cov
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | undefined
+| token | address | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | uint256 | The bet resolution cost amount.
+| _0 | uint256 | The bet resolution cost amount. |
 
 ### getLastUserBets
 
 ```solidity
-function getLastUserBets(address user, uint256 dataLength) external view returns (struct Roulette.FullRouletteBet[])
+function getLastUserBets(address user, uint256 dataLength) external view returns (struct Dice.FullDiceBet[])
 ```
 
 Gets the list of the last user bets.
@@ -111,14 +135,14 @@ Gets the list of the last user bets.
 
 | Name | Type | Description |
 |---|---|---|
-| user | address | Address of the gamer.
-| dataLength | uint256 | The amount of bets to return.
+| user | address | Address of the gamer. |
+| dataLength | uint256 | The amount of bets to return. |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | Roulette.FullRouletteBet[] | A list of Dice bet.
+| _0 | Dice.FullDiceBet[] | A list of Dice bet. |
 
 ### hasPendingBets
 
@@ -134,13 +158,13 @@ Returns whether the token has pending bets.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | undefined
+| token | address | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | bool | Whether the token has pending bets.
+| _0 | bool | Whether the token has pending bets. |
 
 ### multicall
 
@@ -156,13 +180,13 @@ function multicall(bytes[] data) external nonpayable returns (bytes[] results)
 
 | Name | Type | Description |
 |---|---|---|
-| data | bytes[] | undefined
+| data | bytes[] | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| results | bytes[] | undefined
+| results | bytes[] | undefined |
 
 ### owner
 
@@ -179,7 +203,7 @@ function owner() external view returns (address)
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | address | undefined
+| _0 | address | undefined |
 
 ### pause
 
@@ -207,7 +231,7 @@ function paused() external view returns (bool)
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | bool | undefined
+| _0 | bool | undefined |
 
 ### rawFulfillRandomWords
 
@@ -223,8 +247,8 @@ function rawFulfillRandomWords(uint256 requestId, uint256[] randomWords) externa
 
 | Name | Type | Description |
 |---|---|---|
-| requestId | uint256 | undefined
-| randomWords | uint256[] | undefined
+| requestId | uint256 | undefined |
+| randomWords | uint256[] | undefined |
 
 ### refundBet
 
@@ -240,7 +264,7 @@ Refunds the bet to the user if the Chainlink VRF callback failed.
 
 | Name | Type | Description |
 |---|---|---|
-| id | uint256 | The Bet ID.
+| id | uint256 | The Bet ID. |
 
 ### renounceOwnership
 
@@ -253,49 +277,10 @@ function renounceOwnership() external nonpayable
 *Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.*
 
 
-### rouletteBets
-
-```solidity
-function rouletteBets(uint256) external view returns (uint40 numbers, uint8 rolled)
-```
-
-Maps bets IDs to chosen numbers.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| _0 | uint256 | undefined
-
-#### Returns
-
-| Name | Type | Description |
-|---|---|---|
-| numbers | uint40 | undefined
-| rolled | uint8 | undefined
-
-### setBank
-
-```solidity
-function setBank(contract IBank _bank) external nonpayable
-```
-
-Sets the Bank contract.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| _bank | contract IBank | Address of the Bank contract.
-
 ### setChainlinkConfig
 
 ```solidity
-function setChainlinkConfig(uint16 requestConfirmations, bytes32 keyHash) external nonpayable
+function setChainlinkConfig(uint16 requestConfirmations, bytes32 keyHash, uint256 gasAfterCalculation) external nonpayable
 ```
 
 Sets the Chainlink VRF V2 configuration.
@@ -306,8 +291,9 @@ Sets the Chainlink VRF V2 configuration.
 
 | Name | Type | Description |
 |---|---|---|
-| requestConfirmations | uint16 | How many confirmations the Chainlink node should wait before responding.
-| keyHash | bytes32 | Hash of the public key used to verify the VRF proof.
+| requestConfirmations | uint16 | How many confirmations the Chainlink node should wait before responding. |
+| keyHash | bytes32 | Hash of the public key used to verify the VRF proof. |
+| gasAfterCalculation | uint256 | Gas to be added for VRF cost refund. |
 
 ### setHouseEdge
 
@@ -323,8 +309,8 @@ Sets the game house edge rate for a specific token.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
-| houseEdge | uint16 | House edge rate.
+| token | address | Address of the token. |
+| houseEdge | uint16 | House edge rate. |
 
 ### setVRFCallbackGasLimit
 
@@ -340,8 +326,8 @@ Sets the Chainlink VRF V2 configuration.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | undefined
-| callbackGasLimit | uint32 | How much gas is needed in the Chainlink VRF callback.
+| token | address | undefined |
+| callbackGasLimit | uint32 | How much gas is needed in the Chainlink VRF callback. |
 
 ### tokens
 
@@ -357,16 +343,16 @@ Maps tokens addresses to token configuration.
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | address | undefined
+| _0 | address | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| houseEdge | uint16 | undefined
-| pendingCount | uint64 | undefined
-| VRFCallbackGasLimit | uint32 | undefined
-| VRFFees | uint256 | undefined
+| houseEdge | uint16 | undefined |
+| pendingCount | uint64 | undefined |
+| VRFCallbackGasLimit | uint32 | undefined |
+| VRFFees | uint256 | undefined |
 
 ### transferOwnership
 
@@ -382,15 +368,15 @@ function transferOwnership(address newOwner) external nonpayable
 
 | Name | Type | Description |
 |---|---|---|
-| newOwner | address | undefined
+| newOwner | address | undefined |
 
-### wager
+### userOverchargedVRFCost
 
 ```solidity
-function wager(uint40 numbers, address token, uint256 tokenAmount) external payable
+function userOverchargedVRFCost(address) external view returns (uint256)
 ```
 
-Creates a new bet and stores the chosen bet mask.
+Maps user addresses to VRF overcharged cost.
 
 
 
@@ -398,9 +384,47 @@ Creates a new bet and stores the chosen bet mask.
 
 | Name | Type | Description |
 |---|---|---|
-| numbers | uint40 | The chosen numbers.
-| token | address | Address of the token.
-| tokenAmount | uint256 | The number of tokens bet.
+| _0 | address | undefined |
+
+#### Returns
+
+| Name | Type | Description |
+|---|---|---|
+| _0 | uint256 | undefined |
+
+### wager
+
+```solidity
+function wager(uint8 cap, address token, uint256 tokenAmount) external payable
+```
+
+Creates a new bet and stores the chosen dice number.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| cap | uint8 | The chosen dice number. |
+| token | address | Address of the token. |
+| tokenAmount | uint256 | The number of tokens bet. |
+
+### withdrawOverchargedVRFCost
+
+```solidity
+function withdrawOverchargedVRFCost(address user) external nonpayable
+```
+
+Withdraw user&#39;s overcharged Chainlink fees.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| user | address | undefined |
 
 ### withdrawTokensVRFFees
 
@@ -416,11 +440,28 @@ Distributes the token&#39;s collected Chainlink fees.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
+| token | address | Address of the token. |
 
 
 
 ## Events
+
+### AccountOverchargedVRFCost
+
+```solidity
+event AccountOverchargedVRFCost(address indexed user, uint256 overchargedVRFCost)
+```
+
+Emitted after the overcharged VRF cost amount is accounted.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| user `indexed` | address | undefined |
+| overchargedVRFCost  | uint256 | undefined |
 
 ### BetRefunded
 
@@ -440,6 +481,23 @@ Emitted after the bet amount is transfered to the user.
 | user  | address | undefined |
 | amount  | uint256 | undefined |
 | chainlinkVRFCost  | uint256 | undefined |
+
+### DistributeOverchargedVRFCost
+
+```solidity
+event DistributeOverchargedVRFCost(address indexed user, uint256 overchargedVRFCost)
+```
+
+Emitted after the user&#39;s overcharged VRF cost amount is transfered.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| user `indexed` | address | undefined |
+| overchargedVRFCost  | uint256 | undefined |
 
 ### DistributeTokenVRFFees
 
@@ -494,7 +552,7 @@ event Paused(address account)
 ### PlaceBet
 
 ```solidity
-event PlaceBet(uint256 id, address indexed user, address indexed token, uint256 amount, uint256 vrfCost, uint40 numbers)
+event PlaceBet(uint256 id, address indexed user, address indexed token, uint256 amount, uint256 vrfCost, uint8 cap)
 ```
 
 Emitted after a bet is placed.
@@ -510,12 +568,12 @@ Emitted after a bet is placed.
 | token `indexed` | address | Address of the token. |
 | amount  | uint256 | The bet amount. |
 | vrfCost  | uint256 | The Chainlink VRF cost paid by player. |
-| numbers  | uint40 | The chosen numbers. |
+| cap  | uint8 | The chosen dice number. |
 
 ### Roll
 
 ```solidity
-event Roll(uint256 id, address indexed user, address indexed token, uint256 amount, uint40 numbers, uint8 rolled, uint256 payout)
+event Roll(uint256 id, address indexed user, address indexed token, uint256 amount, uint8 cap, uint8 rolled, uint256 payout)
 ```
 
 Emitted after a bet is rolled.
@@ -530,30 +588,14 @@ Emitted after a bet is rolled.
 | user `indexed` | address | Address of the gamer. |
 | token `indexed` | address | Address of the token. |
 | amount  | uint256 | The bet amount. |
-| numbers  | uint40 | The chosen numbers. |
-| rolled  | uint8 | The rolled number. |
+| cap  | uint8 | The chosen dice number. |
+| rolled  | uint8 | The rolled dice number. |
 | payout  | uint256 | The payout amount. |
-
-### SetBank
-
-```solidity
-event SetBank(address bank)
-```
-
-Emitted after the bank is set.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| bank  | address | undefined |
 
 ### SetChainlinkConfig
 
 ```solidity
-event SetChainlinkConfig(uint16 requestConfirmations, bytes32 keyHash)
+event SetChainlinkConfig(uint16 requestConfirmations, bytes32 keyHash, uint256 gasAfterCalculation)
 ```
 
 Emitted after the Chainlink config is set.
@@ -566,6 +608,7 @@ Emitted after the Chainlink config is set.
 |---|---|---|
 | requestConfirmations  | uint16 | undefined |
 | keyHash  | bytes32 | undefined |
+| gasAfterCalculation  | uint256 | undefined |
 
 ### SetHouseEdge
 
@@ -632,16 +675,22 @@ Reverting error when sender isn&#39;t allowed.
 
 
 
-### BetVRFCostRefundFailed
+### CapNotInRange
 
 ```solidity
-error BetVRFCostRefundFailed()
+error CapNotInRange(uint8 minCap, uint8 maxCap)
 ```
 
-Reverting error when bet resolution cost refund to user failed.
+Provided cap is not within 1 and 99 included.
 
 
 
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| minCap | uint8 | The minimum cap. |
+| maxCap | uint8 | The maximum cap. |
 
 ### ExcessiveHouseEdge
 
@@ -692,6 +741,17 @@ Chainlink price feed not working
 |---|---|---|
 | linkWei | int256 | LINK/ETH price returned. |
 
+### NoOverchargedVRFCost
+
+```solidity
+error NoOverchargedVRFCost()
+```
+
+No user&#39;s overcharged Chainlink fee.
+
+
+
+
 ### NotFulfilled
 
 ```solidity
@@ -710,17 +770,6 @@ error NotPendingBet()
 ```
 
 Bet provided doesn&#39;t exist or was already resolved.
-
-
-
-
-### NumbersNotInRange
-
-```solidity
-error NumbersNotInRange()
-```
-
-Provided cap is under the minimum.
 
 
 

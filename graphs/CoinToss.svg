@@ -1,77 +1,89 @@
 <?xml version="1.0" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="418pt" height="400pt" viewBox="0.00 0.00 418.38 400.00">
-<g id="graph0" class="graph" transform="translate(4,396) scale(1)" data-name="G">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="424pt" height="454pt" viewBox="0.00 0.00 423.77 454.00">
+<g id="graph0" class="graph" transform="translate(4,450) scale(1)" data-name="G">
 
-<polygon fill="#2e3e56" stroke="none" points="-4,4 -4,-396 414.38,-396 414.38,4 -4,4" style=""/>
+<polygon fill="#2e3e56" stroke="none" points="-4,4 -4,-450 419.77,-450 419.77,4 -4,4" style=""/>
 <g id="clust1" class="cluster" data-name="clusterCoinToss">
 
-<path fill="#445773" stroke="#445773" d="M20,-8C20,-8 390.38,-8 390.38,-8 396.38,-8 402.38,-14 402.38,-20 402.38,-20 402.38,-235 402.38,-235 402.38,-241 396.38,-247 390.38,-247 390.38,-247 20,-247 20,-247 14,-247 8,-241 8,-235 8,-235 8,-20 8,-20 8,-14 14,-8 20,-8" style=""/>
-<text text-anchor="middle" x="205.19" y="-230.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">CoinToss</text>
+<path fill="#445773" stroke="#445773" d="M20,-8C20,-8 395.77,-8 395.77,-8 401.77,-8 407.77,-14 407.77,-20 407.77,-20 407.77,-289 407.77,-289 407.77,-295 401.77,-301 395.77,-301 395.77,-301 20,-301 20,-301 14,-301 8,-295 8,-289 8,-289 8,-20 8,-20 8,-14 14,-8 20,-8" style=""/>
+<text text-anchor="middle" x="207.89" y="-284.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">CoinToss</text>
 </g>
 <g id="clust2" class="cluster" data-name="cluster_01">
 
-<polygon fill="#2e3e56" stroke="black" points="34.5,-255 34.5,-384 349.69,-384 349.69,-255 34.5,-255" style=""/>
-<text text-anchor="middle" x="192.09" y="-367.4" font-family="Times,serif" font-size="14.00" style="">Legend</text>
+<polygon fill="#2e3e56" stroke="black" points="34.5,-309 34.5,-438 352.39,-438 352.39,-309 34.5,-309" style=""/>
+<text text-anchor="middle" x="193.44" y="-421.4" font-family="Times,serif" font-size="14.00" style="">Legend</text>
 </g>
 <!-- CoinToss.&lt;Constructor&gt; -->
 <g id="node1" class="node" pointer-events="visible" data-name="CoinToss.&lt;Constructor&gt;">
 
-<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="107.5" cy="-196" rx="67.55" ry="18" style=""/>
-<text text-anchor="middle" x="107.5" y="-191.8" font-family="Times,serif" font-size="14.00" style="">&lt;Constructor&gt;</text>
+<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="107.5" cy="-250" rx="67.55" ry="18" style=""/>
+<text text-anchor="middle" x="107.5" y="-245.8" font-family="Times,serif" font-size="14.00" style="">&lt;Constructor&gt;</text>
 </g>
 <!-- CoinToss._getPayout -->
 <g id="node2" class="node" pointer-events="visible" data-name="CoinToss._getPayout">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="314.69" cy="-142" rx="54.48" ry="18" style=""/>
-<text text-anchor="middle" x="314.69" y="-137.8" font-family="Times,serif" font-size="14.00" style="">_getPayout</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="317.39" cy="-196" rx="54.48" ry="18" style=""/>
+<text text-anchor="middle" x="317.39" y="-191.8" font-family="Times,serif" font-size="14.00" style="">_getPayout</text>
 </g>
 <!-- CoinToss.wager -->
 <g id="node3" class="node" pointer-events="visible" data-name="CoinToss.wager">
 
-<ellipse fill="#ffbdb9" stroke="brown" stroke-width="3" cx="107.5" cy="-142" rx="34.75" ry="18" style=""/>
-<text text-anchor="middle" x="107.5" y="-137.8" font-family="Times,serif" font-size="14.00" style="">wager</text>
+<ellipse fill="#ffbdb9" stroke="brown" stroke-width="3" cx="107.5" cy="-196" rx="34.75" ry="18" style=""/>
+<text text-anchor="middle" x="107.5" y="-191.8" font-family="Times,serif" font-size="14.00" style="">wager</text>
 </g>
 <!-- CoinToss.wager&#45;&gt;CoinToss._getPayout -->
 <g id="edge2" class="edge" data-name="CoinToss.wager-&gt;CoinToss._getPayout">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M142.38,-142C171.49,-142 214.27,-142 249.79,-142" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="250.07,-145.5 260.07,-142 250.07,-138.5 250.07,-145.5" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M143.29,-196C172.02,-196 213.63,-196 248.85,-196" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="248.48,-199.5 258.48,-196 248.48,-192.5 248.48,-199.5" style=""/>
 </g>
 <!-- CoinToss._newBet -->
 <g id="node6" class="node" pointer-events="visible" data-name="CoinToss._newBet">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="314.69" cy="-196" rx="45.23" ry="18" style=""/>
-<text text-anchor="middle" x="314.69" y="-191.8" font-family="Times,serif" font-size="14.00" style="">_newBet</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="317.39" cy="-250" rx="45.23" ry="18" style=""/>
+<text text-anchor="middle" x="317.39" y="-245.8" font-family="Times,serif" font-size="14.00" style="">_newBet</text>
 </g>
 <!-- CoinToss.wager&#45;&gt;CoinToss._newBet -->
 <g id="edge1" class="edge" data-name="CoinToss.wager-&gt;CoinToss._newBet">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M138.77,-149.97C172.41,-158.82 227.15,-173.23 266.44,-183.56" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="265.76,-187.01 276.32,-186.17 267.54,-180.24 265.76,-187.01" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M140.07,-204.2C173.31,-212.84 226.15,-226.56 265.32,-236.74" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="264.29,-240.08 274.85,-239.21 266.05,-233.31 264.29,-240.08" style=""/>
 </g>
 <!-- CoinToss.fulfillRandomWords -->
 <g id="node4" class="node" pointer-events="visible" data-name="CoinToss.fulfillRandomWords">
 
-<ellipse fill="#f2c383" stroke="#f2c383" stroke-width="3" cx="107.5" cy="-88" rx="91.5" ry="18" style=""/>
-<text text-anchor="middle" x="107.5" y="-83.8" font-family="Times,serif" font-size="14.00" style="">fulfillRandomWords</text>
+<ellipse fill="#f2c383" stroke="#f2c383" stroke-width="3" cx="107.5" cy="-142" rx="91.5" ry="18" style=""/>
+<text text-anchor="middle" x="107.5" y="-137.8" font-family="Times,serif" font-size="14.00" style="">fulfillRandomWords</text>
 </g>
 <!-- CoinToss.fulfillRandomWords&#45;&gt;CoinToss._getPayout -->
 <g id="edge4" class="edge" data-name="CoinToss.fulfillRandomWords-&gt;CoinToss._getPayout">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M162.95,-102.33C193.56,-110.39 231.57,-120.39 261.76,-128.34" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="261.12,-131.78 271.68,-130.95 262.9,-125.02 261.12,-131.78" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M166.41,-157.04C195.61,-164.63 230.88,-173.79 259.88,-181.32" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="258.81,-184.66 269.37,-183.79 260.57,-177.89 258.81,-184.66" style=""/>
 </g>
 <!-- CoinToss._resolveBet -->
 <g id="node7" class="node" pointer-events="visible" data-name="CoinToss._resolveBet">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="314.69" cy="-88" rx="57.32" ry="18" style=""/>
-<text text-anchor="middle" x="314.69" y="-83.8" font-family="Times,serif" font-size="14.00" style="">_resolveBet</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="317.39" cy="-88" rx="57.32" ry="18" style=""/>
+<text text-anchor="middle" x="317.39" y="-83.8" font-family="Times,serif" font-size="14.00" style="">_resolveBet</text>
 </g>
 <!-- CoinToss.fulfillRandomWords&#45;&gt;CoinToss._resolveBet -->
 <g id="edge3" class="edge" data-name="CoinToss.fulfillRandomWords-&gt;CoinToss._resolveBet">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M199.1,-88C215.23,-88 231.77,-88 247.08,-88" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="247.47,-91.5 257.47,-88 247.47,-84.5 247.47,-91.5" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M166.41,-126.96C195.19,-119.48 229.87,-110.47 258.63,-103" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="259.24,-106.46 268.04,-100.56 257.48,-99.69 259.24,-106.46" style=""/>
+</g>
+<!-- CoinToss._accountVRFCost -->
+<g id="node8" class="node" pointer-events="visible" data-name="CoinToss._accountVRFCost">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="317.39" cy="-142" rx="82.28" ry="18" style=""/>
+<text text-anchor="middle" x="317.39" y="-137.8" font-family="Times,serif" font-size="14.00" style="">_accountVRFCost</text>
+</g>
+<!-- CoinToss.fulfillRandomWords&#45;&gt;CoinToss._accountVRFCost -->
+<g id="edge5" class="edge" data-name="CoinToss.fulfillRandomWords-&gt;CoinToss._accountVRFCost">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M200.29,-142C207.05,-142 213.88,-142 220.66,-142" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="220.59,-145.5 230.59,-142 220.59,-138.5 220.59,-145.5" style=""/>
 </g>
 <!-- CoinToss.getLastUserBets -->
 <g id="node5" class="node" pointer-events="visible" data-name="CoinToss.getLastUserBets">
@@ -80,47 +92,47 @@
 <text text-anchor="middle" x="107.5" y="-29.8" font-family="Times,serif" font-size="14.00" style="">getLastUserBets</text>
 </g>
 <!-- CoinToss._getLastUserBets -->
-<g id="node8" class="node" pointer-events="visible" data-name="CoinToss._getLastUserBets">
+<g id="node9" class="node" pointer-events="visible" data-name="CoinToss._getLastUserBets">
 
-<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="314.69" cy="-34" rx="79.88" ry="18" style=""/>
-<text text-anchor="middle" x="314.69" y="-29.8" font-family="Times,serif" font-size="14.00" style="">_getLastUserBets</text>
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="317.39" cy="-34" rx="79.88" ry="18" style=""/>
+<text text-anchor="middle" x="317.39" y="-29.8" font-family="Times,serif" font-size="14.00" style="">_getLastUserBets</text>
 </g>
 <!-- CoinToss.getLastUserBets&#45;&gt;CoinToss._getLastUserBets -->
-<g id="edge5" class="edge" data-name="CoinToss.getLastUserBets-&gt;CoinToss._getLastUserBets">
+<g id="edge6" class="edge" data-name="CoinToss.getLastUserBets-&gt;CoinToss._getLastUserBets">
 
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M182.58,-34C196.25,-34 210.65,-34 224.71,-34" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="224.87,-37.5 234.87,-34 224.87,-30.5 224.87,-37.5" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M183.55,-34C196.51,-34 210.11,-34 223.47,-34" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="223.15,-37.5 233.15,-34 223.15,-30.5 223.15,-37.5" style=""/>
 </g>
 <!-- key -->
-<g id="node9" class="node" pointer-events="visible" data-name="key">
+<g id="node10" class="node" pointer-events="visible" data-name="key">
 
-<polygon fill="#edad56" stroke="none" stroke-width="3" points="172.5,-351 42.5,-351 42.5,-263 172.5,-263 172.5,-351" style=""/>
-<text text-anchor="start" x="92.14" y="-332.4" font-family="Times,serif" font-size="14.00" style="">Internal Call</text>
-<text text-anchor="start" x="88.25" y="-312.4" font-family="Times,serif" font-size="14.00" style="">External Call</text>
-<text text-anchor="start" x="65.7" y="-292.4" font-family="Times,serif" font-size="14.00" style="">Defined Contract</text>
-<text text-anchor="start" x="52.1" y="-272.4" font-family="Times,serif" font-size="14.00" style="">Undefined Contract</text>
+<polygon fill="#edad56" stroke="none" stroke-width="3" points="172.5,-405 42.5,-405 42.5,-317 172.5,-317 172.5,-405" style=""/>
+<text text-anchor="start" x="92.14" y="-386.4" font-family="Times,serif" font-size="14.00" style="">Internal Call</text>
+<text text-anchor="start" x="88.25" y="-366.4" font-family="Times,serif" font-size="14.00" style="">External Call</text>
+<text text-anchor="start" x="65.7" y="-346.4" font-family="Times,serif" font-size="14.00" style="">Defined Contract</text>
+<text text-anchor="start" x="52.1" y="-326.4" font-family="Times,serif" font-size="14.00" style="">Undefined Contract</text>
 </g>
 <!-- key2 -->
-<g id="node10" class="node" pointer-events="visible" data-name="key2">
+<g id="node11" class="node" pointer-events="visible" data-name="key2">
 
-<polygon fill="#edad56" stroke="none" stroke-width="3" points="341.69,-351 287.69,-351 287.69,-263 341.69,-263 341.69,-351" style=""/>
-<text text-anchor="start" x="304.69" y="-332.4" font-family="Times,serif" font-size="14.00" style="">   </text>
-<text text-anchor="start" x="304.69" y="-312.4" font-family="Times,serif" font-size="14.00" style="">   </text>
-<polygon fill="#445773" stroke="none" points="302.69,-287 302.69,-307 327.69,-307 327.69,-287 302.69,-287" style=""/>
-<text text-anchor="start" x="304.69" y="-292.4" font-family="Times,serif" font-size="14.00" style="">   </text>
-<polygon fill="none" stroke="#e8726d" points="304.69,-269 304.69,-285 325.69,-285 325.69,-269 304.69,-269" style=""/>
-</g>
-<!-- key&#45;&gt;key2 -->
-<g id="edge6" class="edge" data-name="key-&gt;key2">
-
-<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M165.5,-337C222.48,-337 239.23,-337 291.5,-337" style=""/>
-<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="291.69,-340.5 301.69,-337 291.69,-333.5 291.69,-340.5" style=""/>
+<polygon fill="#edad56" stroke="none" stroke-width="3" points="344.39,-405 290.39,-405 290.39,-317 344.39,-317 344.39,-405" style=""/>
+<text text-anchor="start" x="307.39" y="-386.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<text text-anchor="start" x="307.39" y="-366.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<polygon fill="#445773" stroke="none" points="305.39,-341 305.39,-361 330.39,-361 330.39,-341 305.39,-341" style=""/>
+<text text-anchor="start" x="307.39" y="-346.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<polygon fill="none" stroke="#e8726d" points="307.39,-323 307.39,-339 328.39,-339 328.39,-323 307.39,-323" style=""/>
 </g>
 <!-- key&#45;&gt;key2 -->
 <g id="edge7" class="edge" data-name="key-&gt;key2">
 
-<path fill="none" stroke="white" stroke-width="2" d="M165.5,-317C222.48,-317 239.23,-317 291.5,-317" style=""/>
-<polygon fill="white" stroke="white" stroke-width="2" points="291.69,-320.5 301.69,-317 291.69,-313.5 291.69,-320.5" style=""/>
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M165.5,-391C222.64,-391 240.11,-391 291.37,-391" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="291.36,-394.5 301.36,-391 291.36,-387.5 291.36,-394.5" style=""/>
+</g>
+<!-- key&#45;&gt;key2 -->
+<g id="edge8" class="edge" data-name="key-&gt;key2">
+
+<path fill="none" stroke="white" stroke-width="2" d="M165.5,-371C222.64,-371 240.11,-371 291.37,-371" style=""/>
+<polygon fill="white" stroke="white" stroke-width="2" points="291.36,-374.5 301.36,-371 291.36,-367.5 291.36,-374.5" style=""/>
 </g>
 </g>
 </svg>

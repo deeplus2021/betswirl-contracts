@@ -1,0 +1,198 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="455pt" height="724pt" viewBox="0.00 0.00 454.86 724.00">
+<g id="graph0" class="graph" transform="translate(4,720) scale(1)" data-name="G">
+
+<polygon fill="#2e3e56" stroke="none" points="-4,4 -4,-720 450.86,-720 450.86,4 -4,4" style=""/>
+<g id="clust1" class="cluster" data-name="clusterRussianRoulette">
+
+<path fill="#445773" stroke="#445773" d="M20,-8C20,-8 426.86,-8 426.86,-8 432.86,-8 438.86,-14 438.86,-20 438.86,-20 438.86,-559 438.86,-559 438.86,-565 432.86,-571 426.86,-571 426.86,-571 20,-571 20,-571 14,-571 8,-565 8,-559 8,-559 8,-20 8,-20 8,-14 14,-8 20,-8" style=""/>
+<text text-anchor="middle" x="223.43" y="-554.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">RussianRoulette</text>
+</g>
+<g id="clust2" class="cluster" data-name="cluster_01">
+
+<polygon fill="#2e3e56" stroke="black" points="42.55,-579 42.55,-708 375.98,-708 375.98,-579 42.55,-579" style=""/>
+<text text-anchor="middle" x="209.26" y="-691.4" font-family="Times,serif" font-size="14.00" style="">Legend</text>
+</g>
+<!-- RussianRoulette.&lt;Constructor&gt; -->
+<g id="node1" class="node" pointer-events="visible" data-name="RussianRoulette.&lt;Constructor&gt;">
+
+<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="115.55" cy="-520" rx="67.55" ry="18" style=""/>
+<text text-anchor="middle" x="115.55" y="-515.8" font-family="Times,serif" font-size="14.00" style="">&lt;Constructor&gt;</text>
+</g>
+<!-- RussianRoulette.setMaxSeats -->
+<g id="node2" class="node" pointer-events="visible" data-name="RussianRoulette.setMaxSeats">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="115.55" cy="-466" rx="59.7" ry="18" style=""/>
+<text text-anchor="middle" x="115.55" y="-461.8" font-family="Times,serif" font-size="14.00" style="">setMaxSeats</text>
+</g>
+<!-- RussianRoulette.wager -->
+<g id="node3" class="node" pointer-events="visible" data-name="RussianRoulette.wager">
+
+<ellipse fill="#ffbdb9" stroke="brown" stroke-width="3" cx="115.55" cy="-412" rx="34.75" ry="18" style=""/>
+<text text-anchor="middle" x="115.55" y="-407.8" font-family="Times,serif" font-size="14.00" style="">wager</text>
+</g>
+<!-- RussianRoulette.WrongSeatsNumber -->
+<g id="node11" class="node" pointer-events="visible" data-name="RussianRoulette.WrongSeatsNumber">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="340.98" cy="-412" rx="89.76" ry="18" style=""/>
+<text text-anchor="middle" x="340.98" y="-407.8" font-family="Times,serif" font-size="14.00" style="">WrongSeatsNumber</text>
+</g>
+<!-- RussianRoulette.wager&#45;&gt;RussianRoulette.WrongSeatsNumber -->
+<g id="edge1" class="edge" data-name="RussianRoulette.wager-&gt;RussianRoulette.WrongSeatsNumber">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M151.46,-412C174.65,-412 206.4,-412 237.24,-412" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="236.88,-415.5 246.88,-412 236.88,-408.5 236.88,-415.5" style=""/>
+</g>
+<!-- RussianRoulette.InvalidDeathRatio -->
+<g id="node12" class="node" pointer-events="visible" data-name="RussianRoulette.InvalidDeathRatio">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="340.98" cy="-466" rx="82.24" ry="18" style=""/>
+<text text-anchor="middle" x="340.98" y="-461.8" font-family="Times,serif" font-size="14.00" style="">InvalidDeathRatio</text>
+</g>
+<!-- RussianRoulette.wager&#45;&gt;RussianRoulette.InvalidDeathRatio -->
+<g id="edge2" class="edge" data-name="RussianRoulette.wager-&gt;RussianRoulette.InvalidDeathRatio">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M148.56,-419.74C180.09,-427.36 229.31,-439.25 269.94,-449.07" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="269.03,-452.45 279.57,-451.4 270.68,-445.65 269.03,-452.45" style=""/>
+</g>
+<!-- RussianRoulette.InvalidDate -->
+<g id="node13" class="node" pointer-events="visible" data-name="RussianRoulette.InvalidDate">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="340.98" cy="-520" rx="56.74" ry="18" style=""/>
+<text text-anchor="middle" x="340.98" y="-515.8" font-family="Times,serif" font-size="14.00" style="">InvalidDate</text>
+</g>
+<!-- RussianRoulette.wager&#45;&gt;RussianRoulette.InvalidDate -->
+<g id="edge3" class="edge" data-name="RussianRoulette.wager-&gt;RussianRoulette.InvalidDate">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M151.08,-415.38C171.27,-418.75 196.39,-425.5 215.09,-439 238.48,-455.88 227.94,-475.8 251.09,-493 258.93,-498.82 268.02,-503.39 277.34,-506.99" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="276.18,-510.29 286.77,-510.2 278.43,-503.66 276.18,-510.29" style=""/>
+</g>
+<!-- RussianRoulette._newBet -->
+<g id="node14" class="node" pointer-events="visible" data-name="RussianRoulette._newBet">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="340.98" cy="-358" rx="45.23" ry="18" style=""/>
+<text text-anchor="middle" x="340.98" y="-353.8" font-family="Times,serif" font-size="14.00" style="">_newBet</text>
+</g>
+<!-- RussianRoulette.wager&#45;&gt;RussianRoulette._newBet -->
+<g id="edge4" class="edge" data-name="RussianRoulette.wager-&gt;RussianRoulette._newBet">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M148.56,-404.26C184.94,-395.47 244.86,-380.99 287.97,-370.57" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="288.65,-374.01 297.55,-368.25 287,-367.2 288.65,-374.01" style=""/>
+</g>
+<!-- RussianRoulette.joinGame -->
+<g id="node4" class="node" pointer-events="visible" data-name="RussianRoulette.joinGame">
+
+<ellipse fill="#ffbdb9" stroke="brown" stroke-width="3" cx="115.55" cy="-358" rx="49.23" ry="18" style=""/>
+<text text-anchor="middle" x="115.55" y="-353.8" font-family="Times,serif" font-size="14.00" style="">joinGame</text>
+</g>
+<!-- RussianRoulette._joinGame -->
+<g id="node15" class="node" pointer-events="visible" data-name="RussianRoulette._joinGame">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="340.98" cy="-304" rx="53.89" ry="18" style=""/>
+<text text-anchor="middle" x="340.98" y="-299.8" font-family="Times,serif" font-size="14.00" style="">_joinGame</text>
+</g>
+<!-- RussianRoulette.joinGame&#45;&gt;RussianRoulette._joinGame -->
+<g id="edge5" class="edge" data-name="RussianRoulette.joinGame-&gt;RussianRoulette._joinGame">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M158.57,-347.84C193.55,-339.39 243.71,-327.27 282.42,-317.91" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="283.23,-321.32 292.13,-315.56 281.59,-314.51 283.23,-321.32" style=""/>
+</g>
+<!-- RussianRoulette.fulfillRandomWords -->
+<g id="node5" class="node" pointer-events="visible" data-name="RussianRoulette.fulfillRandomWords">
+
+<ellipse fill="#f2c383" stroke="#f2c383" stroke-width="3" cx="115.55" cy="-304" rx="91.5" ry="18" style=""/>
+<text text-anchor="middle" x="115.55" y="-299.8" font-family="Times,serif" font-size="14.00" style="">fulfillRandomWords</text>
+</g>
+<!-- RussianRoulette.NotPendingBet -->
+<g id="node16" class="node" pointer-events="visible" data-name="RussianRoulette.NotPendingBet">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="340.98" cy="-250" rx="70.67" ry="18" style=""/>
+<text text-anchor="middle" x="340.98" y="-245.8" font-family="Times,serif" font-size="14.00" style="">NotPendingBet</text>
+</g>
+<!-- RussianRoulette.fulfillRandomWords&#45;&gt;RussianRoulette.NotPendingBet -->
+<g id="edge6" class="edge" data-name="RussianRoulette.fulfillRandomWords-&gt;RussianRoulette.NotPendingBet">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M177.01,-289.39C207.22,-282.08 243.82,-273.24 274.68,-265.78" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="275.23,-269.25 284.13,-263.5 273.59,-262.44 275.23,-269.25" style=""/>
+</g>
+<!-- RussianRoulette.pullTriggers -->
+<g id="node6" class="node" pointer-events="visible" data-name="RussianRoulette.pullTriggers">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="115.55" cy="-250" rx="58.55" ry="18" style=""/>
+<text text-anchor="middle" x="115.55" y="-245.8" font-family="Times,serif" font-size="14.00" style="">pullTriggers</text>
+</g>
+<!-- RussianRoulette.pullTriggers&#45;&gt;RussianRoulette.NotPendingBet -->
+<g id="edge7" class="edge" data-name="RussianRoulette.pullTriggers-&gt;RussianRoulette.NotPendingBet">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M175.54,-250C200.21,-250 229.32,-250 256.15,-250" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="256.07,-253.5 266.07,-250 256.07,-246.5 256.07,-253.5" style=""/>
+</g>
+<!-- RussianRoulette._resolveBet -->
+<g id="node17" class="node" pointer-events="visible" data-name="RussianRoulette._resolveBet">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="340.98" cy="-196" rx="57.32" ry="18" style=""/>
+<text text-anchor="middle" x="340.98" y="-191.8" font-family="Times,serif" font-size="14.00" style="">_resolveBet</text>
+</g>
+<!-- RussianRoulette.pullTriggers&#45;&gt;RussianRoulette._resolveBet -->
+<g id="edge8" class="edge" data-name="RussianRoulette.pullTriggers-&gt;RussianRoulette._resolveBet">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M163.93,-238.55C198.08,-230.3 244.39,-219.1 280.94,-210.27" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="281.59,-213.71 290.48,-207.96 279.94,-206.91 281.59,-213.71" style=""/>
+</g>
+<!-- RussianRoulette.betMaxSeats -->
+<g id="node7" class="node" pointer-events="visible" data-name="RussianRoulette.betMaxSeats">
+
+<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="115.55" cy="-196" rx="60.84" ry="18" style=""/>
+<text text-anchor="middle" x="115.55" y="-191.8" font-family="Times,serif" font-size="14.00" style="">betMaxSeats</text>
+</g>
+<!-- RussianRoulette.betMinSeats -->
+<g id="node8" class="node" pointer-events="visible" data-name="RussianRoulette.betMinSeats">
+
+<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="115.55" cy="-142" rx="59.13" ry="18" style=""/>
+<text text-anchor="middle" x="115.55" y="-137.8" font-family="Times,serif" font-size="14.00" style="">betMinSeats</text>
+</g>
+<!-- RussianRoulette.gameCanStart -->
+<g id="node9" class="node" pointer-events="visible" data-name="RussianRoulette.gameCanStart">
+
+<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="115.55" cy="-88" rx="65.99" ry="18" style=""/>
+<text text-anchor="middle" x="115.55" y="-83.8" font-family="Times,serif" font-size="14.00" style="">gameCanStart</text>
+</g>
+<!-- RussianRoulette.getRussianRouletteBet -->
+<g id="node10" class="node" pointer-events="visible" data-name="RussianRoulette.getRussianRouletteBet">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="115.55" cy="-34" rx="99.6" ry="18" style=""/>
+<text text-anchor="middle" x="115.55" y="-29.8" font-family="Times,serif" font-size="14.00" style="">getRussianRouletteBet</text>
+</g>
+<!-- key -->
+<g id="node18" class="node" pointer-events="visible" data-name="key">
+
+<polygon fill="#edad56" stroke="none" stroke-width="3" points="180.55,-675 50.55,-675 50.55,-587 180.55,-587 180.55,-675" style=""/>
+<text text-anchor="start" x="100.19" y="-656.4" font-family="Times,serif" font-size="14.00" style="">Internal Call</text>
+<text text-anchor="start" x="96.3" y="-636.4" font-family="Times,serif" font-size="14.00" style="">External Call</text>
+<text text-anchor="start" x="73.75" y="-616.4" font-family="Times,serif" font-size="14.00" style="">Defined Contract</text>
+<text text-anchor="start" x="60.15" y="-596.4" font-family="Times,serif" font-size="14.00" style="">Undefined Contract</text>
+</g>
+<!-- key2 -->
+<g id="node19" class="node" pointer-events="visible" data-name="key2">
+
+<polygon fill="#edad56" stroke="none" stroke-width="3" points="367.98,-675 313.98,-675 313.98,-587 367.98,-587 367.98,-675" style=""/>
+<text text-anchor="start" x="330.98" y="-656.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<text text-anchor="start" x="330.98" y="-636.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<polygon fill="#445773" stroke="none" points="328.98,-611 328.98,-631 353.98,-631 353.98,-611 328.98,-611" style=""/>
+<text text-anchor="start" x="330.98" y="-616.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<polygon fill="none" stroke="#e8726d" points="330.98,-593 330.98,-609 351.98,-609 351.98,-593 330.98,-593" style=""/>
+</g>
+<!-- key&#45;&gt;key2 -->
+<g id="edge9" class="edge" data-name="key-&gt;key2">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M173.55,-661C237.62,-661 256.84,-661 314.95,-661" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="314.95,-664.5 324.95,-661 314.95,-657.5 314.95,-664.5" style=""/>
+</g>
+<!-- key&#45;&gt;key2 -->
+<g id="edge10" class="edge" data-name="key-&gt;key2">
+
+<path fill="none" stroke="white" stroke-width="2" d="M173.55,-641C237.62,-641 256.84,-641 314.95,-641" style=""/>
+<polygon fill="white" stroke="white" stroke-width="2" points="314.95,-644.5 324.95,-641 314.95,-637.5 314.95,-644.5" style=""/>
+</g>
+</g>
+</svg>

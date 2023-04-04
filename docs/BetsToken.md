@@ -24,14 +24,14 @@ function allowance(address owner, address spender) external view returns (uint25
 
 | Name | Type | Description |
 |---|---|---|
-| owner | address | undefined
-| spender | address | undefined
+| owner | address | undefined |
+| spender | address | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | uint256 | undefined
+| _0 | uint256 | undefined |
 
 ### approve
 
@@ -47,14 +47,14 @@ function approve(address spender, uint256 amount) external nonpayable returns (b
 
 | Name | Type | Description |
 |---|---|---|
-| spender | address | undefined
-| amount | uint256 | undefined
+| spender | address | undefined |
+| amount | uint256 | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | bool | undefined
+| _0 | bool | undefined |
 
 ### balanceOf
 
@@ -70,13 +70,13 @@ function balanceOf(address account) external view returns (uint256)
 
 | Name | Type | Description |
 |---|---|---|
-| account | address | undefined
+| account | address | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | uint256 | undefined
+| _0 | uint256 | undefined |
 
 ### decimals
 
@@ -93,7 +93,7 @@ function decimals() external view returns (uint8)
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | uint8 | undefined
+| _0 | uint8 | undefined |
 
 ### decreaseAllowance
 
@@ -109,14 +109,14 @@ function decreaseAllowance(address spender, uint256 subtractedValue) external no
 
 | Name | Type | Description |
 |---|---|---|
-| spender | address | undefined
-| subtractedValue | uint256 | undefined
+| spender | address | undefined |
+| subtractedValue | uint256 | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | bool | undefined
+| _0 | bool | undefined |
 
 ### getOwner
 
@@ -133,7 +133,7 @@ function getOwner() external view returns (address)
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | address | undefined
+| _0 | address | undefined |
 
 ### increaseAllowance
 
@@ -149,14 +149,14 @@ function increaseAllowance(address spender, uint256 addedValue) external nonpaya
 
 | Name | Type | Description |
 |---|---|---|
-| spender | address | undefined
-| addedValue | uint256 | undefined
+| spender | address | undefined |
+| addedValue | uint256 | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | bool | undefined
+| _0 | bool | undefined |
 
 ### multicall
 
@@ -172,13 +172,13 @@ function multicall(bytes[] data) external nonpayable returns (bytes[] results)
 
 | Name | Type | Description |
 |---|---|---|
-| data | bytes[] | undefined
+| data | bytes[] | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| results | bytes[] | undefined
+| results | bytes[] | undefined |
 
 ### name
 
@@ -195,7 +195,7 @@ function name() external view returns (string)
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | string | undefined
+| _0 | string | undefined |
 
 ### owner
 
@@ -212,7 +212,7 @@ function owner() external view returns (address)
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | address | undefined
+| _0 | address | undefined |
 
 ### renounceOwnership
 
@@ -240,7 +240,7 @@ function symbol() external view returns (string)
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | string | undefined
+| _0 | string | undefined |
 
 ### totalSupply
 
@@ -257,7 +257,7 @@ function totalSupply() external view returns (uint256)
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | uint256 | undefined
+| _0 | uint256 | undefined |
 
 ### transfer
 
@@ -273,14 +273,14 @@ function transfer(address to, uint256 amount) external nonpayable returns (bool)
 
 | Name | Type | Description |
 |---|---|---|
-| to | address | undefined
-| amount | uint256 | undefined
+| to | address | undefined |
+| amount | uint256 | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | bool | undefined
+| _0 | bool | undefined |
 
 ### transferFrom
 
@@ -296,15 +296,15 @@ function transferFrom(address from, address to, uint256 amount) external nonpaya
 
 | Name | Type | Description |
 |---|---|---|
-| from | address | undefined
-| to | address | undefined
-| amount | uint256 | undefined
+| from | address | undefined |
+| to | address | undefined |
+| amount | uint256 | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | bool | undefined
+| _0 | bool | undefined |
 
 ### transferOwnership
 
@@ -320,7 +320,7 @@ function transferOwnership(address newOwner) external nonpayable
 
 | Name | Type | Description |
 |---|---|---|
-| newOwner | address | undefined
+| newOwner | address | undefined |
 
 
 

@@ -1,8 +1,8 @@
 require('@primitivefi/hardhat-dodoc')
 
 module.exports = {
-  solidity: '0.8.16',
+  solidity: '0.8.17',
   dodoc: {
-    include: ['Bank', 'Dice', 'CoinToss', 'Roulette', 'BetsToken']
+    include: ['Bank', 'Dice', 'CoinToss', 'Roulette', 'RussianRoulette', 'PvPGamesStore', 'BetsToken']
   },
 }

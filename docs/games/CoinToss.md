@@ -25,12 +25,12 @@ The bank that manage to payout a won bet and collect a loss bet.
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | contract IBank | undefined
+| _0 | contract IBank | undefined |
 
 ### bets
 
 ```solidity
-function bets(uint256) external view returns (bool resolved, address payable user, address token, uint256 id, uint256 amount, uint256 blockNumber, uint256 payout, uint256 vrfCost)
+function bets(uint256) external view returns (bool resolved, address user, address token, uint256 id, uint256 amount, uint256 blockNumber, uint256 payout, uint256 vrfCost)
 ```
 
 Maps bets IDs to Bet information.
@@ -41,20 +41,20 @@ Maps bets IDs to Bet information.
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | uint256 | undefined
+| _0 | uint256 | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| resolved | bool | undefined
-| user | address payable | undefined
-| token | address | undefined
-| id | uint256 | undefined
-| amount | uint256 | undefined
-| blockNumber | uint256 | undefined
-| payout | uint256 | undefined
-| vrfCost | uint256 | undefined
+| resolved | bool | undefined |
+| user | address | undefined |
+| token | address | undefined |
+| id | uint256 | undefined |
+| amount | uint256 | undefined |
+| blockNumber | uint256 | undefined |
+| payout | uint256 | undefined |
+| vrfCost | uint256 | undefined |
 
 ### coinTossBets
 
@@ -70,19 +70,19 @@ Maps bets IDs to chosen and rolled coin faces.
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | uint256 | undefined
+| _0 | uint256 | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| face | bool | undefined
-| rolled | bool | undefined
+| face | bool | undefined |
+| rolled | bool | undefined |
 
 ### getChainlinkConfig
 
 ```solidity
-function getChainlinkConfig() external view returns (uint16 requestConfirmations, bytes32 keyHash, contract IVRFCoordinatorV2 chainlinkCoordinator)
+function getChainlinkConfig() external view returns (uint16 requestConfirmations, bytes32 keyHash, contract IVRFCoordinatorV2 chainlinkCoordinator, uint256 gasAfterCalculation)
 ```
 
 Returns the Chainlink VRF config.
@@ -94,9 +94,10 @@ Returns the Chainlink VRF config.
 
 | Name | Type | Description |
 |---|---|---|
-| requestConfirmations | uint16 | undefined
-| keyHash | bytes32 | undefined
-| chainlinkCoordinator | contract IVRFCoordinatorV2 | undefined
+| requestConfirmations | uint16 | undefined |
+| keyHash | bytes32 | undefined |
+| chainlinkCoordinator | contract IVRFCoordinatorV2 | undefined |
+| gasAfterCalculation | uint256 | undefined |
 
 ### getChainlinkVRFCost
 
@@ -112,13 +113,13 @@ Returns the amount of ETH that should be passed to the wager transaction. to cov
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | undefined
+| token | address | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | uint256 | The bet resolution cost amount.
+| _0 | uint256 | The bet resolution cost amount. |
 
 ### getLastUserBets
 
@@ -134,14 +135,14 @@ Gets the list of the last user bets.
 
 | Name | Type | Description |
 |---|---|---|
-| user | address | Address of the gamer.
-| dataLength | uint256 | The amount of bets to return.
+| user | address | Address of the gamer. |
+| dataLength | uint256 | The amount of bets to return. |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | CoinToss.FullCoinTossBet[] | A list of Coin Toss bet.
+| _0 | CoinToss.FullCoinTossBet[] | A list of Coin Toss bet. |
 
 ### hasPendingBets
 
@@ -157,13 +158,13 @@ Returns whether the token has pending bets.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | undefined
+| token | address | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | bool | Whether the token has pending bets.
+| _0 | bool | Whether the token has pending bets. |
 
 ### multicall
 
@@ -179,13 +180,13 @@ function multicall(bytes[] data) external nonpayable returns (bytes[] results)
 
 | Name | Type | Description |
 |---|---|---|
-| data | bytes[] | undefined
+| data | bytes[] | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| results | bytes[] | undefined
+| results | bytes[] | undefined |
 
 ### owner
 
@@ -202,7 +203,7 @@ function owner() external view returns (address)
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | address | undefined
+| _0 | address | undefined |
 
 ### pause
 
@@ -230,7 +231,7 @@ function paused() external view returns (bool)
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | bool | undefined
+| _0 | bool | undefined |
 
 ### rawFulfillRandomWords
 
@@ -246,8 +247,8 @@ function rawFulfillRandomWords(uint256 requestId, uint256[] randomWords) externa
 
 | Name | Type | Description |
 |---|---|---|
-| requestId | uint256 | undefined
-| randomWords | uint256[] | undefined
+| requestId | uint256 | undefined |
+| randomWords | uint256[] | undefined |
 
 ### refundBet
 
@@ -263,7 +264,7 @@ Refunds the bet to the user if the Chainlink VRF callback failed.
 
 | Name | Type | Description |
 |---|---|---|
-| id | uint256 | The Bet ID.
+| id | uint256 | The Bet ID. |
 
 ### renounceOwnership
 
@@ -276,26 +277,10 @@ function renounceOwnership() external nonpayable
 *Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.*
 
 
-### setBank
-
-```solidity
-function setBank(contract IBank _bank) external nonpayable
-```
-
-Sets the Bank contract.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| _bank | contract IBank | Address of the Bank contract.
-
 ### setChainlinkConfig
 
 ```solidity
-function setChainlinkConfig(uint16 requestConfirmations, bytes32 keyHash) external nonpayable
+function setChainlinkConfig(uint16 requestConfirmations, bytes32 keyHash, uint256 gasAfterCalculation) external nonpayable
 ```
 
 Sets the Chainlink VRF V2 configuration.
@@ -306,8 +291,9 @@ Sets the Chainlink VRF V2 configuration.
 
 | Name | Type | Description |
 |---|---|---|
-| requestConfirmations | uint16 | How many confirmations the Chainlink node should wait before responding.
-| keyHash | bytes32 | Hash of the public key used to verify the VRF proof.
+| requestConfirmations | uint16 | How many confirmations the Chainlink node should wait before responding. |
+| keyHash | bytes32 | Hash of the public key used to verify the VRF proof. |
+| gasAfterCalculation | uint256 | Gas to be added for VRF cost refund. |
 
 ### setHouseEdge
 
@@ -323,8 +309,8 @@ Sets the game house edge rate for a specific token.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
-| houseEdge | uint16 | House edge rate.
+| token | address | Address of the token. |
+| houseEdge | uint16 | House edge rate. |
 
 ### setVRFCallbackGasLimit
 
@@ -340,8 +326,8 @@ Sets the Chainlink VRF V2 configuration.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | undefined
-| callbackGasLimit | uint32 | How much gas is needed in the Chainlink VRF callback.
+| token | address | undefined |
+| callbackGasLimit | uint32 | How much gas is needed in the Chainlink VRF callback. |
 
 ### tokens
 
@@ -357,16 +343,16 @@ Maps tokens addresses to token configuration.
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | address | undefined
+| _0 | address | undefined |
 
 #### Returns
 
 | Name | Type | Description |
 |---|---|---|
-| houseEdge | uint16 | undefined
-| pendingCount | uint64 | undefined
-| VRFCallbackGasLimit | uint32 | undefined
-| VRFFees | uint256 | undefined
+| houseEdge | uint16 | undefined |
+| pendingCount | uint64 | undefined |
+| VRFCallbackGasLimit | uint32 | undefined |
+| VRFFees | uint256 | undefined |
 
 ### transferOwnership
 
@@ -382,7 +368,29 @@ function transferOwnership(address newOwner) external nonpayable
 
 | Name | Type | Description |
 |---|---|---|
-| newOwner | address | undefined
+| newOwner | address | undefined |
+
+### userOverchargedVRFCost
+
+```solidity
+function userOverchargedVRFCost(address) external view returns (uint256)
+```
+
+Maps user addresses to VRF overcharged cost.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| _0 | address | undefined |
+
+#### Returns
+
+| Name | Type | Description |
+|---|---|---|
+| _0 | uint256 | undefined |
 
 ### wager
 
@@ -398,9 +406,25 @@ Creates a new bet and stores the chosen coin face.
 
 | Name | Type | Description |
 |---|---|---|
-| face | bool | The chosen coin face.
-| token | address | Address of the token.
-| tokenAmount | uint256 | The number of tokens bet.
+| face | bool | The chosen coin face. |
+| token | address | Address of the token. |
+| tokenAmount | uint256 | The number of tokens bet. |
+
+### withdrawOverchargedVRFCost
+
+```solidity
+function withdrawOverchargedVRFCost(address user) external nonpayable
+```
+
+Withdraw user&#39;s overcharged Chainlink fees.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| user | address | undefined |
 
 ### withdrawTokensVRFFees
 
@@ -416,11 +440,28 @@ Distributes the token&#39;s collected Chainlink fees.
 
 | Name | Type | Description |
 |---|---|---|
-| token | address | Address of the token.
+| token | address | Address of the token. |
 
 
 
 ## Events
+
+### AccountOverchargedVRFCost
+
+```solidity
+event AccountOverchargedVRFCost(address indexed user, uint256 overchargedVRFCost)
+```
+
+Emitted after the overcharged VRF cost amount is accounted.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| user `indexed` | address | undefined |
+| overchargedVRFCost  | uint256 | undefined |
 
 ### BetRefunded
 
@@ -440,6 +481,23 @@ Emitted after the bet amount is transfered to the user.
 | user  | address | undefined |
 | amount  | uint256 | undefined |
 | chainlinkVRFCost  | uint256 | undefined |
+
+### DistributeOverchargedVRFCost
+
+```solidity
+event DistributeOverchargedVRFCost(address indexed user, uint256 overchargedVRFCost)
+```
+
+Emitted after the user&#39;s overcharged VRF cost amount is transfered.
+
+
+
+#### Parameters
+
+| Name | Type | Description |
+|---|---|---|
+| user `indexed` | address | undefined |
+| overchargedVRFCost  | uint256 | undefined |
 
 ### DistributeTokenVRFFees
 
@@ -534,26 +592,10 @@ Emitted after a bet is rolled.
 | rolled  | bool | The rolled coin face. |
 | payout  | uint256 | The payout amount. |
 
-### SetBank
-
-```solidity
-event SetBank(address bank)
-```
-
-Emitted after the bank is set.
-
-
-
-#### Parameters
-
-| Name | Type | Description |
-|---|---|---|
-| bank  | address | undefined |
-
 ### SetChainlinkConfig
 
 ```solidity
-event SetChainlinkConfig(uint16 requestConfirmations, bytes32 keyHash)
+event SetChainlinkConfig(uint16 requestConfirmations, bytes32 keyHash, uint256 gasAfterCalculation)
 ```
 
 Emitted after the Chainlink config is set.
@@ -566,6 +608,7 @@ Emitted after the Chainlink config is set.
 |---|---|---|
 | requestConfirmations  | uint16 | undefined |
 | keyHash  | bytes32 | undefined |
+| gasAfterCalculation  | uint256 | undefined |
 
 ### SetHouseEdge
 
@@ -632,17 +675,6 @@ Reverting error when sender isn&#39;t allowed.
 
 
 
-### BetVRFCostRefundFailed
-
-```solidity
-error BetVRFCostRefundFailed()
-```
-
-Reverting error when bet resolution cost refund to user failed.
-
-
-
-
 ### ExcessiveHouseEdge
 
 ```solidity
@@ -691,6 +723,17 @@ Chainlink price feed not working
 | Name | Type | Description |
 |---|---|---|
 | linkWei | int256 | LINK/ETH price returned. |
+
+### NoOverchargedVRFCost
+
+```solidity
+error NoOverchargedVRFCost()
+```
+
+No user&#39;s overcharged Chainlink fee.
+
+
+
 
 ### NotFulfilled
 

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.16;
+pragma solidity 0.8.17;
 
 /// @notice Minimal interface for Bank.
 /// @author Romuald Hog.
@@ -16,7 +16,7 @@ interface IBank {
     /// @param profit Number of tokens to be sent to the gamer.
     /// @param fees Bet amount and bet profit fees amount.
     function payout(
-        address payable user,
+        address user,
         address token,
         uint256 profit,
         uint256 fees
@@ -27,7 +27,12 @@ interface IBank {
     /// @dev In case of the gas token, the bet amount is sent along with this tx.
     /// @param tokenAddress Address of the token.
     /// @param amount Loss bet amount.
-    function cashIn(address tokenAddress, uint256 amount) external payable;
+    /// @param fees Bet amount and bet profit fees amount.
+    function cashIn(
+        address tokenAddress,
+        uint256 amount,
+        uint256 fees
+    ) external payable;
 
     /// @notice Calculates the max bet amount based on the token balance, the balance risk, and the game multiplier.
     /// @param token Address of the token.
@@ -38,21 +43,6 @@ interface IBank {
         external
         view
         returns (uint256);
-
-    /// @notice Harvests tokens dividends.
-    /// @return tokens The list of tokens addresses.
-    /// @return amounts The list of tokens' amounts harvested.
-    function harvestDividends()
-        external
-        returns (address[] memory tokens, uint256[] memory amounts);
-
-    /// @notice Get the available tokens dividends amounts.
-    /// @return tokens The list of tokens addresses.
-    /// @return amounts The list of tokens' amounts harvested.
-    function getDividends()
-        external
-        view
-        returns (address[] memory tokens, uint256[] memory amounts);
 
     function getVRFSubId(address token) external view returns (uint64);
 
